@@ -326,98 +326,73 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
 
-      <section className="relative pt-12 h-screen bg-gradient-to-br from-emerald-50 via-cyan-50 to-blue-50 overflow-hidden">
-        {/* Enhanced animated background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-emerald-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-96 h-96 bg-gradient-to-r from-teal-400/20 to-blue-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute bottom-20 left-1/4 w-80 h-80 bg-gradient-to-r from-cyan-400/20 to-indigo-400/20 rounded-full blur-3xl animate-pulse delay-500"></div>
-          <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-r from-blue-400/15 to-purple-400/15 rounded-full blur-3xl animate-pulse delay-2000"></div>
-        </div>
+      {/* Hero Section with mobile responsive fix */}
 
-        {/* Enhanced geometric shapes */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-32 right-16 w-20 h-20 border-4 border-emerald-200/50 rotate-45 animate-spin-slow"></div>
-          <div className="absolute bottom-32 left-12 w-16 h-16 bg-cyan-200/50 rounded-full animate-bounce"></div>
-          <div className="absolute top-2/3 left-16 w-12 h-12 bg-teal-200/50 transform rotate-45 animate-pulse"></div>
-          <div className="absolute top-1/4 left-1/2 w-8 h-8 bg-blue-200/50 rounded-full animate-ping"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-10 h-10 border-2 border-indigo-300/50 rounded-full animate-bounce delay-1000"></div>
-        </div>
+      <section className="relative pt-20 pb-16 md:pt-24 md:pb-20 lg:pt-28 lg:pb-24 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center">
+            {/* Left Column - Text */}
+            <div className="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Transforming <span className="gradient-text">Education</span> for the Digital Age
+              </h1>
+              <p className="text-gray-700 text-lg md:text-xl mb-8 max-w-xl">
+                A comprehensive platform that connects schools, teachers, parents, and students to create a seamless
+                educational experience.
+              </p>
 
-        <div className="relative z-10 container mx-auto px-4 py-8 h-full flex items-center">
-          <div className="grid lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto w-full">
-            {/* Left Column - Enhanced Content */}
-            <div className="space-y-8 lg:pr-6">
-              {/* Enhanced Badge */}
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 via-cyan-600 to-blue-600 text-white rounded-full px-6 py-3 text-sm font-bold shadow-xl transform hover:scale-105 transition-all duration-300">
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <GraduationCap className="w-4 h-4 text-yellow-300" />
-                </div>
-                <span>One stop solutions for schools</span>
-              </div>
-
-              {/* Enhanced main heading */}
-              <div className="space-y-0">
-                <h1 className="font-['Playfair_Display','Times_New_Roman',serif] leading-none tracking-wide">
-                  <span className="block text-5xl lg:text-6xl font-black text-gray-900">Transforming</span>
-                  <span className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-emerald-600 to-cyan-500 bg-clip-text text-transparent">
-                    Education
-                  </span>
-                  <span className="text-5xl lg:text-6xl font-black text-gray-900"> for the</span>
-                  <span className="block text-5xl lg:text-6xl font-black text-gray-900">Digital Age</span>
-                </h1>
-              </div>
-              {/* Description */}
-              <div className="max-w-xl">
-                <p className="text-xl text-gray-700 leading-relaxed font-medium">
-                  A comprehensive platform that connects schools, teachers, parents, and students to create a seamless
-                  educational experience.
-                </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="bg-primary-500 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:bg-primary-600 transition-colors">
+                  Get Started
+                </button>
+                <button className="bg-white text-primary-500 font-medium py-3 px-8 rounded-full shadow-lg border border-primary-500 hover:bg-gray-50 transition-colors">
+                  Watch Demo
+                </button>
               </div>
             </div>
 
-            {/* Right Column - Enhanced Visual */}
-            <div className="relative lg:pl-6">
-              <div className="relative max-w-lg mx-auto">
-                <div className="relative group">
-                  <div className="absolute -inset-2 bg-gradient-to-r from-emerald-600 via-cyan-600 to-blue-600 rounded-2xl blur-xl opacity-25 group-hover:opacity-40 transition-opacity duration-700"></div>
+            {/* Right Column - Image */}
+            <div className="md:w-1/2">
+              <div className="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1932&q=80"
+                  alt="Students learning"
+                  className="rounded-lg shadow-xl w-full h-auto"
+                />
 
-                  <div className="relative bg-white/95 backdrop-blur-xl border border-white/60 rounded-2xl p-3 shadow-xl">
-                    <div className="relative rounded-xl overflow-hidden">
-                      <img
-                        src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1932&q=80"
-                        alt="Modern school classroom with students learning"
-                        className="w-full h-64 lg:h-80 object-cover"
-                      />
-
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end">
-                        <div className="text-white p-4 w-full">
-                          <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 border border-white/30">
-                            <div className="text-sm font-bold mb-1">Complete Digital Ecosystem</div>
-                            <div className="text-xs opacity-90 mb-2">
-                              Students • Teachers • Parents • Administration
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                              <span className="text-xs font-semibold">Live System Status</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                {/* Floating elements */}
+                <div className="absolute -top-5 -right-5 bg-yellow-500 text-white p-3 rounded-lg shadow-lg">
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    />
+                  </svg>
                 </div>
 
-                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-orange-500 text-white p-3 rounded-2xl shadow-xl animate-bounce hover:animate-none transition-all duration-300 border-2 border-white group cursor-pointer hover:scale-110">
-                  <TrendingUp className="w-5 h-5" />
-                </div>
-
-                <div className="absolute -bottom-4 -left-4 bg-gradient-to-br from-emerald-400 to-teal-500 text-white p-3 rounded-2xl shadow-xl animate-pulse hover:animate-none transition-all duration-300 border-2 border-white group cursor-pointer hover:scale-110">
-                  <Users className="w-5 h-5" />
-                </div>
-
-                <div className="absolute top-16 -left-6 bg-gradient-to-br from-cyan-500 to-blue-500 text-white p-3 rounded-xl shadow-lg border-2 border-white group cursor-pointer hover:scale-110 transition-transform">
-                  <BookOpen className="w-4 h-4" />
+                <div className="absolute -bottom-5 -left-5 bg-primary-500 text-white p-3 rounded-lg shadow-lg">
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -525,7 +500,7 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our Features</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our exclusive Premium services</h2>
             <p className="text-gray-700 max-w-2xl mx-auto text-lg">
               Comprehensive tools designed to make education management simpler, more efficient, and more effective.
             </p>
