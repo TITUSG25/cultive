@@ -1,13 +1,8 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Player } from '@lottiefiles/react-lottie-player'
-
-// Animations
-import attendanceAnimation from '../assets/animations/attendance.json'
-import examsAnimation from '../assets/animations/exams.json'
-import communicationAnimation from '../assets/animations/communication.json'
-import analyticsAnimation from '../assets/animations/analytics.json'
+import schools from '../assets/schools.png'
 
 const Services = () => {
   // Refs for animations
@@ -22,71 +17,87 @@ const Services = () => {
   const isInView3 = useInView(sectionRef3, { once: true, amount: 0.3 })
   const isInView4 = useInView(sectionRef4, { once: true, amount: 0.3 })
 
+   // State for image loading
+  const [imageLoaded, setImageLoaded] = useState({})
+
+  const handleImageLoad = (serviceId) => {
+    setImageLoaded(prev => ({ ...prev, [serviceId]: true }))
+  }
+
   // Service sections
   const services = [
     {
       id: 1,
       title: "For Schools",
-      description: "Streamline administrative tasks, improve communication, and enhance overall educational outcomes.",
+      description: "Cultive empowers schools by streamlining administrative tasks, improving communication, and enhancing overall educational outcomes through a suite of integrated services.",
       features: [
-        "Centralized data management",
-        "Comprehensive reporting",
-        "Staff scheduling and management",
-        "Resource allocation tools",
-        "Campus event coordination"
+        "Centralized Data Management – Unifying student, staff, and institutional records into a secure, accessible system for efficient data handling and informed decision-making.",
+        "Campus Event Coordination – Enabling seamless planning, scheduling, and execution of school events through intuitive digital tools that foster collaboration and participation.",
+        "Strategic Admission Planning – Implementing data-driven strategies to optimize the admissions process, from outreach and lead tracking to enrollment conversion.",
+        "School Administration Solutions – Providing robust tools for managing daily operations, compliance, resource allocation, and institutional workflows.",
+        "IT Infrastructure and Support – Establishing a reliable, scalable technology infrastructure with continuous support to ensure uninterrupted academic and administrative functions.",
+        "Staff Scheduling and Management – Simplifying staff allocation, timetable generation, and performance monitoring to enhance productivity and reduce administrative burden."
       ],
-      animation: attendanceAnimation,
+      image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80",
+      alt: "Modern school building with students",
       ref: sectionRef1,
       isInView: isInView1,
-      color: "bg-primary-500"
+      color: "bg-blue-500",
+      gradient: "from-blue-500 to-blue-600"
     },
     {
       id: 2,
       title: "For Teachers",
-      description: "Focus more on teaching and less on administrative tasks with our intuitive tools.",
+      description: "Cultive empowers educators to focus more on teaching and less on administrative tasks through our intuitive, user-friendly tools.",
       features: [
-        "Digital attendance tracking",
-        "Assignment creation and grading",
-        "Exam scheduling and assessment",
-        "Student performance analytics",
-        "Parent communication channels"
+        "Digital Attendance Tracking – Effortlessly monitor and manage student attendance with real-time accuracy.",
+        "Assignment Creation and Grading – Streamline the process of assigning, collecting, and evaluating student work with automated tools.",
+        "Exam Scheduling and Assessment – Organize and administer exams efficiently, with flexible scheduling and digital evaluation capabilities.",
+        "Student Performance Analytics – Gain actionable insights through data-driven analysis of academic progress and learning trends.",
+        "Parent Communication Channels – Maintain transparent and consistent engagement with parents through integrated messaging and updates."
       ],
-      animation: examsAnimation,
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2088&q=80",
+      alt: "Teacher using digital tools in classroom",
       ref: sectionRef2,
       isInView: isInView2,
-      color: "bg-green-500"
+      color: "bg-green-500",
+      gradient: "from-green-500 to-green-600"
     },
     {
       id: 3,
       title: "For Parents",
-      description: "Stay connected with your child's education and engage more effectively with teachers.",
+      description: "Stay actively connected to your child's educational journey and engage more effectively with teachers through Cultive's parent-focused features.",
       features: [
-        "Real-time updates on attendance",
-        "Assignment and grade notifications",
-        "Direct messaging with teachers",
-        "School event calendar",
-        "Progress tracking and reporting"
+        "Real-Time Attendance Updates – Instantly view your child's daily attendance records.",
+        "Assignment and Grade Notifications – Receive timely alerts on homework, submissions, and academic performance.",
+        "Direct Messaging with Teachers – Communicate seamlessly with educators for updates, feedback, and support.",
+        "School Event Calendar – Stay informed about upcoming events, activities, and important school dates.",
+        "Progress Tracking and Reporting – Access comprehensive reports to monitor your child's academic growth and development."
       ],
-      animation: communicationAnimation,
+      image: "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2087&q=80",
+      alt: "Parent and child using educational app together",
       ref: sectionRef3,
       isInView: isInView3,
-      color: "bg-yellow-500"
+      color: "bg-purple-500",
+      gradient: "from-purple-500 to-purple-600"
     },
     {
       id: 4,
       title: "For Students",
-      description: "Access learning resources, track progress, and stay organized throughout the academic year.",
+      description: "Empowering students to stay organized, track their progress, and access essential learning resources throughout the academic year with Cultive's student-focused features.",
       features: [
-        "Assignment dashboard",
-        "Exam schedule and reminders",
-        "Personal performance analytics",
-        "Digital learning resources",
-        "Collaboration tools for group projects"
+        "Assignment Dashboard – View, manage, and submit assignments in one centralized location.",
+        "Exam Schedule and Reminders – Stay prepared with timely notifications and a clear view of upcoming assessments.",
+        "Personal Performance Analytics – Monitor academic progress with insightful data and visual reports.",
+        "Digital Learning Resources – Access curated educational content, study materials, and reference tools anytime, anywhere.",
+        "Collaboration Tools for Group Projects – Work seamlessly with peers through shared digital workspaces and communication tools."
       ],
-      animation: analyticsAnimation,
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      alt: "Students collaborating on digital devices",
       ref: sectionRef4,
       isInView: isInView4,
-      color: "bg-orange-500"
+      color: "bg-orange-500",
+      gradient: "from-orange-500 to-orange-600"
     }
   ]
 
@@ -122,122 +133,100 @@ const Services = () => {
       </section>
 
       {/* Service Sections */}
+      {/* Service Sections */}
       {services.map((service, index) => (
         <section
           key={service.id}
           ref={service.ref}
-          className={`py-20 ${index % 2 === 1 ? 'bg-gray-50' : 'bg-white'}`}
+          className={`py-24 ${index % 2 === 1 ? 'bg-white' : 'bg-gray-50'} relative overflow-hidden`}
         >
-          <div className="container mx-auto px-4">
-            <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12`}>
+          {/* Background decorative elements */}
+          <div className="absolute inset-0 opacity-5">
+            <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${service.gradient} rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2`}></div>
+            <div className={`absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr ${service.gradient} rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2`}></div>
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16`}>
               {/* Text Content */}
               <motion.div
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 animate={service.isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.7 }}
-                className="md:w-1/2"
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="lg:w-1/2"
               >
-                <div className={`${service.color} w-16 h-1 mb-6`}></div>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">{service.title}</h2>
-                <p className="text-gray-700 text-lg mb-8">{service.description}</p>
+                <div className={`${service.color} w-20 h-1.5 mb-8 rounded-full`}></div>
+                <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 text-gray-800 leading-tight">
+                  {service.title}
+                </h2>
+                <p className="text-gray-600 text-lg md:text-xl mb-10 leading-relaxed">
+                  {service.description}
+                </p>
                 
-                <ul className="space-y-4 mb-8">
+                <div className="space-y-6">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-start">
-                      <svg className={`w-5 h-5 ${service.color.replace('bg-', 'text-')} mt-1 mr-3 flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={service.isInView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ duration: 0.6, delay: 0.1 * i }}
+                      className="flex items-start group"
+                    >
+                      <div className={`w-6 h-6 rounded-full bg-gradient-to-r ${service.gradient} flex items-center justify-center mt-1 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-200`}>
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-gray-700 text-base md:text-lg leading-relaxed group-hover:text-gray-900 transition-colors duration-200">
+                        {feature}
+                      </span>
+                    </motion.div>
                   ))}
-                </ul>
-                
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`${service.color} text-white font-medium py-3 px-8 rounded-lg shadow-md`}
-                >
-                  Learn More
-                </motion.button>
+                </div>
               </motion.div>
               
-              {/* Animation */}
+              {/* Image */}
               <motion.div
-                initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
                 animate={service.isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="md:w-1/2"
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                className="lg:w-1/2"
               >
-                <div className="max-w-md mx-auto">
-                  <Player
-                    autoplay
-                    loop
-                    src={service.animation}
-                    style={{ height: '300px', width: '100%' }}
-                  />
+                <div className="relative max-w-lg mx-auto">
+                  {/* Loading placeholder */}
+                  {!imageLoaded[service.id] && (
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} rounded-3xl animate-pulse flex items-center justify-center`}>
+                      <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                  )}
+                  
+                  {/* Main image */}
+                  <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
+                    <img
+                      src={service.image}
+                      alt={service.alt}
+                      onLoad={() => handleImageLoad(service.id)}
+                      className={`w-full h-80 md:h-96 object-cover transition-all duration-700 group-hover:scale-105 ${
+                        imageLoaded[service.id] ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    />
+                    
+                    {/* Overlay gradient */}
+                    <div className={`absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                    
+                    {/* Floating elements */}
+                    <div className={`absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br ${service.gradient} rounded-full opacity-80 blur-xl group-hover:scale-110 transition-transform duration-500`}></div>
+                    <div className={`absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-tr ${service.gradient} rounded-full opacity-60 blur-lg group-hover:scale-110 transition-transform duration-500 delay-100`}></div>
+                  </div>
+                  
+                  {/* Decorative ring */}
+                  <div className={`absolute -inset-4 border-2 border-gradient-to-r ${service.gradient} rounded-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-300`}></div>
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
       ))}
-
-      {/* End-to-End Process Section */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">End-to-End Educational Process</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-              Our platform seamlessly handles every aspect of the educational journey.
-            </p>
-          </motion.div>
-
-          {/* Process Steps */}
-          <div className="max-w-5xl mx-auto">
-            <div className="relative">
-              {/* Process Line */}
-              <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-700 transform -translate-y-1/2"></div>
-              
-              {/* Process Steps */}
-              <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
-                {[
-                  { title: "Attendance", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" },
-                  { title: "Exams", icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
-                  { title: "Grades", icon: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" },
-                  { title: "Reports", icon: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
-                  { title: "Communication", icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" },
-                  { title: "Activities", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" }
-                ].map((step, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="relative text-center"
-                  >
-                    {/* Icon Circle */}
-                    <div className="relative z-10 w-16 h-16 mx-auto bg-primary-500 rounded-full flex items-center justify-center shadow-lg mb-4">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={step.icon} />
-                      </svg>
-                    </div>
-                    
-                    {/* Title */}
-                    <h3 className="text-lg font-medium mb-2">{step.title}</h3>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-16 bg-primary-500 text-white relative">

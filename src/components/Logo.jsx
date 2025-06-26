@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import cultiveArrow from '../assets/arrow.svg'
 
 const Logo = () => {
   return (
@@ -8,18 +9,21 @@ const Logo = () => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="flex items-center"
+        className="flex items-center gap-3"
       >
-        <div className="text-primary-500 mr-2">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L4 6V18L12 22L20 18V6L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M12 22V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M20 6L12 10L4 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M4 14L12 18L20 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+        {/* Logo Icon */}
+        <div className="flex-shrink-0">
+          <img src={cultiveArrow} alt="Cultive Logo" className="w-14 h-14" />
         </div>
-        <div>
-          <span className="font-serif font-bold text-2xl text-gray-900">Cultive</span>
+        
+        {/* Logo Text */}
+        <div className="flex flex-col leading-tight">
+          <span className="font-serif font-bold text-2xl text-gray-900">
+            Cultive
+          </span>
+          <span className="font-sans font-medium text-base text-gray-700 -mt-1">
+            the solution ocean
+          </span>
         </div>
       </motion.div>
     </Link>
