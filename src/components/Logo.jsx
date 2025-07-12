@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import cultiveArrow from '../assets/arrow.svg'
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import cultive_logo from "../assets/cultive_logo.svg";
 
 const Logo = () => {
   return (
@@ -12,22 +12,12 @@ const Logo = () => {
         className="flex items-center gap-3"
       >
         {/* Logo Icon */}
-        <div className="flex-shrink-0">
-          <img src={cultiveArrow} alt="Cultive Logo" className="w-14 h-14" />
-        </div>
-        
-        {/* Logo Text */}
-        <div className="flex flex-col leading-tight">
-          <span className="font-serif font-bold text-2xl text-gray-900">
-            Cultive
-          </span>
-          <span className="font-sans font-medium text-base text-gray-700 -mt-1">
-            the solution ocean
-          </span>
+        <div className="flex-shrink-0 flex-direction">
+          <img src={cultive_logo} alt="Cultive Logo" className="w-50 h-20" />
         </div>
       </motion.div>
     </Link>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;

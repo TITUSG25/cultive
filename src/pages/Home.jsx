@@ -328,73 +328,68 @@ const Home = () => {
 
       {/* Hero Section with mobile responsive fix */}
 
-      <section className="relative pt-20 pb-16 md:pt-24 md:pb-20 lg:pt-28 lg:pb-24 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center">
-            {/* Left Column - Text */}
-            <div className="md:w-1/2 mb-12 md:mb-0 md:pr-12">
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Transforming <span className="gradient-text">Education</span> for the Digital Age
-              </h1>
-              <p className="text-gray-700 text-lg md:text-xl mb-8 max-w-xl">
-                A comprehensive platform that connects schools, teachers, parents, and students to create a seamless
-                educational experience.
+    {/* Enhanced Hero Section */}
+      <section className="relative min-h-screen flex items-center  pt-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-2">
+              <div className="space-y-0">
+  
+<div style={{
+  display: "inline-block",
+  padding: "8px 20px",
+  background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+  color: "white",
+  fontSize: "0.9rem",
+  fontWeight: "600",
+  borderRadius: "25px",
+  textTransform: "lowercase",
+  letterSpacing: "1px",
+  boxShadow: "0 8px 25px rgba(102, 126, 234, 0.4)",
+  transform: "translateY(-3px)",
+  marginTop: "1rem"
+}}>
+  the solution ocean
+</div>
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                  Transforming{' '}
+                  <span className="text-blue-600">Education</span>{' '}
+                  <span className="text-teal-500">for the</span>{' '}
+                  Digital Age
+                </h1>
+              </div>
+              
+              <p className="text-lg md:text-xl text-gray-600 max-w-lg">
+                A comprehensive platform that connects schools, teachers, parents, and students to create a seamless educational experience.
               </p>
-
+              
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-primary-500 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:bg-primary-600 transition-colors">
-                  Get Started
+                <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center">
+                  Explore Services
                 </button>
-                <button className="bg-white text-primary-500 font-medium py-3 px-8 rounded-full shadow-lg border border-primary-500 hover:bg-gray-50 transition-colors">
-                  Watch Demo
+                <button className="border border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center">
+                  Get Started
                 </button>
               </div>
             </div>
-
-            {/* Right Column - Image */}
-            <div className="md:w-1/2">
-              <div className="relative">
+            
+            {/* Right Content - Image */}
+            <div className="relative">
+              <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1932&q=80"
-                  alt="Students learning"
-                  className="rounded-lg shadow-xl w-full h-auto"
+                  alt="Modern classroom with digital learning tools"
+                  className="w-full h-auto object-cover"
                 />
-
-                {/* Floating elements */}
-                <div className="absolute -top-5 -right-5 bg-yellow-500 text-white p-3 rounded-lg shadow-lg">
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                    />
-                  </svg>
-                </div>
-
-                <div className="absolute -bottom-5 -left-5 bg-primary-500 text-white p-3 rounded-lg shadow-lg">
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                    />
-                  </svg>
+                <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  Digital Learning
                 </div>
               </div>
+              
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-teal-500 rounded-full opacity-20 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-600 rounded-full opacity-20 animate-pulse delay-300"></div>
             </div>
           </div>
         </div>
@@ -617,7 +612,7 @@ const Home = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               <span>Request a Demo</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -627,7 +622,7 @@ const Home = () => {
               <Play className="w-5 h-5" />
               <span>Watch Demo</span>
             </button>
-          </div>
+          </div> */}
 
           {/* Trust Indicators */}
           <div className="mt-16 pt-8 border-t border-white/20">
