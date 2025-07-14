@@ -20,6 +20,8 @@ import {
   Clock,
 } from "lucide-react";
 import school_tree from "../assets/school_tree.png";
+import student from "../assets/student.png";
+import teacher from "../assets/teacher.png";
 
 const ModernNetworkDiagram = ({ segments, centerTitle }) => {
   const [hoveredNode, setHoveredNode] = useState(null);
@@ -456,20 +458,47 @@ const Services = () => {
                 </div>
 
                 <div className={`flex justify-center ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                  {service.id === 1 ? (
+                  {service.id === 1 && (
                     <img
                       src={school_tree}
                       alt="School Management System"
                       style={{
-                        height: "580px", // Adjust this value as needed
+                        height: "580px",
                         background: "transparent",
                         border: "none",
                         boxShadow: "none",
                         marginTop: "25px",
                       }}
                     />
-                  ) : (
+                  )}
+                  {service.id === 2 && (
+                    <img
+                      src={teacher}
+                      alt="Teacher Dashboard"
+                      style={{
+                        height: "250px",
+                        background: "transparent",
+                        border: "none",
+                        boxShadow: "none",
+                        marginTop: "25px",
+                      }}
+                    />
+                  )}
+                  {service.id === 3 && (
                     <ModernNetworkDiagram segments={service.segments} centerTitle={service.centerTitle} />
+                  )}
+                  {service.id === 4 && (
+                    <img
+                      src={student}
+                      alt="Student Hub"
+                      style={{
+                        height: "400px",
+                        background: "transparent",
+                        border: "none",
+                        boxShadow: "none",
+                        marginTop: "25px",
+                      }}
+                    />
                   )}
                 </div>
               </div>

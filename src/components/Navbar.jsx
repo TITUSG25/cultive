@@ -74,7 +74,7 @@ const Navbar = () => {
             <img
               src={cultive_logo}
               alt="Cultive Logo"
-              className="w-32 h-12 sm:w-40 sm:h-16 md:w-50 md:h-20"
+              className="w-32 h-10 sm:w-40 sm:h-14 md:w-50 md:h-18"
             />
           </div>
         </motion.div>
@@ -98,11 +98,11 @@ const Navbar = () => {
     <>
       <header
         className={`fixed w-full z-50 transition-all duration-300 ${
-          scrolled ? "bg-white shadow-md py-2" : "bg-white/95 backdrop-blur-sm py-3"
+          scrolled ? "bg-white shadow-md py-0" : "bg-white/95 backdrop-blur-sm py-0"
         }`}
       >
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center h-14">
             {/* Logo */}
             <Logo />
 
@@ -164,7 +164,7 @@ const Navbar = () => {
 
           {/* Mobile Menu */}
           <div
-            className={`fixed left-0 right-0 top-[60px] bg-white z-50 md:hidden mobile-menu-container shadow-lg transition-transform duration-300`}
+            className={`fixed left-0 right-0 top-[56px] bg-white z-50 md:hidden mobile-menu-container shadow-lg transition-transform duration-300`}
           >
             <div className="container mx-auto px-4">
               {/* Menu Items */}

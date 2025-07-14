@@ -9,9 +9,9 @@ const Footer = () => {
       title: 'Forms',
       links: [
         { name: 'Events', url: '/events', description: 'Join our upcoming events' },
-        { name: 'Intern', url: '/intern', description: 'Apply for internships' },
-        { name: 'Volunteer', url: '/volunteer', description: 'Volunteer with us' },
-        { name: 'Apply for Training', url: '/apply-training', description: 'Professional training programs' }
+        { name: 'Intern', url: 'https://docs.google.com/forms/d/1luSfOItGpN-Ep7BSbcNr-tq5w6Fn4HFOlUkw8cCsH_I/edit', description: 'Apply for internships' },
+        { name: 'Career Application', url: 'https://docs.google.com/forms/d/1h_ac-ltcERU8j4cdAYt6tMTsys2Fxmy-qqmNqEsFRDY/edit', description: 'Apply for career opportunities' },
+        { name: 'Feedback', url: 'https://docs.google.com/forms/d/1q_wI2jxCaPfw55yLjwve5zsihhaAMVH2Vp8L44NIWio/edit', description: 'Share your feedback' }
       ]
     },
     {
@@ -81,13 +81,12 @@ const Footer = () => {
       
       <div className="container mx-auto px-6 py-16 relative z-10">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="mb-8">
               <a href="/" className="inline-block group">
                 <div className="flex items-center space-x-3 mb-4">
-                 
                   <span className="font-bold text-3xl bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                     Cultive
                   </span>
@@ -143,6 +142,8 @@ const Footer = () => {
                   <li key={link.name} className="group">
                     <a
                       href={link.url}
+                      target={link.url.startsWith('https://docs.google.com') ? '_blank' : '_self'}
+                      rel={link.url.startsWith('https://docs.google.com') ? 'noopener noreferrer' : undefined}
                       className="block p-3 rounded-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
                     >
                       <div className="font-medium text-white group-hover:text-blue-400 transition-colors">
@@ -200,7 +201,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10">
+        <div className="pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-6 text-slate-400">
               <span>&copy; {new Date().getFullYear()} Cultive. All rights reserved.</span>
