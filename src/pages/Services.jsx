@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Users,
   UserCheck,
@@ -18,488 +18,263 @@ import {
   CreditCard,
   User,
   Clock,
+  GraduationCap,
+  School,
+  Heart,
+  Sparkles,
+  ArrowRight,
+  Play,
+  Star,
+  Shield,
+  Headphones,
 } from "lucide-react";
-import school_tree from "../assets/school_tree.png";
-import student from "../assets/student.png";
-import teacher from "../assets/teacher.png";
-
-const ModernNetworkDiagram = ({ segments, centerTitle }) => {
-  const [hoveredNode, setHoveredNode] = useState(null);
-
-  const centerX = 200;
-  const centerY = 200;
-  const radius = 130;
-  const nodeRadius = 28;
-  const centerRadius = 50;
-
-  const nodes = segments.map((segment, index) => {
-    const angle = (index * 2 * Math.PI) / segments.length - Math.PI / 2;
-    const x = centerX + radius * Math.cos(angle);
-    const y = centerY + radius * Math.sin(angle);
-
-    return {
-      ...segment,
-      x,
-      y,
-      angle,
-    };
-  });
-
-  return (
-    <div className="flex flex-col items-center justify-center w-full max-w-md mx-auto">
-      <svg viewBox="0 0 400 400" className="w-full h-auto max-w-sm">
-        {nodes.map((node, index) => (
-          <g key={`connection-${index}`}>
-            <line x1={centerX} y1={centerY} x2={node.x} y2={node.y} stroke="#e5e7eb" strokeWidth="2" />
-
-            <circle r="3" fill={node.color} className="opacity-60">
-              <animateMotion
-                dur="4s"
-                repeatCount="indefinite"
-                begin={`${index * 0.5}s`}
-                path={`M ${centerX} ${centerY} L ${node.x} ${node.y}`}
-              />
-            </circle>
-          </g>
-        ))}
-
-        <circle cx={centerX} cy={centerY} r={centerRadius} fill="#1e40af" className="drop-shadow-lg" />
-
-        {nodes.map((node, index) => {
-          const IconComponent = node.icon;
-          const isHovered = hoveredNode === index;
-
-          return (
-            <g
-              key={`node-${index}`}
-              onMouseEnter={() => setHoveredNode(index)}
-              onMouseLeave={() => setHoveredNode(null)}
-              className="cursor-pointer"
-            >
-              {isHovered && (
-                <circle
-                  cx={node.x}
-                  cy={node.y}
-                  r={nodeRadius + 8}
-                  fill={node.color}
-                  opacity="0.2"
-                  className="animate-pulse"
-                />
-              )}
-
-              <circle
-                cx={node.x}
-                cy={node.y}
-                r={nodeRadius}
-                fill={node.color}
-                stroke="white"
-                strokeWidth="2"
-                className="drop-shadow-md"
-              />
-
-              <foreignObject x={node.x - 12} y={node.y - 12} width={24} height={24} className="pointer-events-none">
-                <IconComponent size={24} color="white" />
-              </foreignObject>
-
-              <text
-                x={node.x}
-                y={node.y + nodeRadius + 16}
-                textAnchor="middle"
-                className="fill-gray-700 font-medium text-xs"
-              >
-                {node.title}
-              </text>
-
-              {isHovered && (
-                <foreignObject
-                  x={node.x - 50}
-                  y={node.y - nodeRadius - 45}
-                  width={100}
-                  height={40}
-                  className="pointer-events-none"
-                >
-                  <div className="bg-white p-2 rounded-lg shadow-lg border">
-                    <div className="text-xs font-medium text-gray-800 text-center">{node.description}</div>
-                  </div>
-                </foreignObject>
-              )}
-            </g>
-          );
-        })}
-
-        <foreignObject x={centerX - 40} y={centerY - 12} width={80} height={24} className="pointer-events-none">
-          <div className="text-center">
-            <div className="text-white font-bold text-xs leading-tight">{centerTitle}</div>
-          </div>
-        </foreignObject>
-      </svg>
-    </div>
-  );
-};
 
 const Services = () => {
-  const schoolSegments = [
-    {
-      id: 1,
-      title: "Examination",
-      icon: FileText,
-      color: "#dc2626",
-      description: "Comprehensive exam management and assessment tools",
-    },
-    {
-      id: 2,
-      title: "Expenses",
-      icon: DollarSign,
-      color: "#f59e0b",
-      description: "Financial tracking and expense management",
-    },
-    {
-      id: 3,
-      title: "Hostel",
-      icon: Home,
-      color: "#3b82f6",
-      description: "Student accommodation and hostel management",
-    },
-    {
-      id: 4,
-      title: "Parent",
-      icon: Users,
-      color: "#10b981",
-      description: "Parent communication and engagement platform",
-    },
-    {
-      id: 5,
-      title: "Certificate",
-      icon: Award,
-      color: "#84cc16",
-      description: "Digital certificate generation and management",
-    },
-    {
-      id: 6,
-      title: "Student",
-      icon: User,
-      color: "#f97316",
-      description: "Student information and academic tracking",
-    },
-    {
-      id: 7,
-      title: "Transport",
-      icon: Bus,
-      color: "#f59e0b",
-      description: "School transport and route management",
-    },
-    {
-      id: 8,
-      title: "Fees",
-      icon: CreditCard,
-      color: "#1e40af",
-      description: "Fee collection and payment processing",
-    },
-    {
-      id: 9,
-      title: "Communicate",
-      icon: MessageCircle,
-      color: "#0f172a",
-      description: "Internal communication and messaging system",
-    },
-  ];
-
-  const teacherSegments = [
-    {
-      id: 1,
-      title: "Attendance",
-      icon: CheckCircle,
-      color: "#059669",
-      description: "Digital attendance tracking and management",
-    },
-    {
-      id: 2,
-      title: "Assignments",
-      icon: FileText,
-      color: "#1e40af",
-      description: "Assignment creation and submission portal",
-    },
-    {
-      id: 3,
-      title: "Grading",
-      icon: Award,
-      color: "#7c3aed",
-      description: "Automated grading and assessment tools",
-    },
-    {
-      id: 4,
-      title: "Progress",
-      icon: BarChart3,
-      color: "#be185d",
-      description: "Student progress tracking and analytics",
-    },
-    {
-      id: 5,
-      title: "Resources",
-      icon: Database,
-      color: "#0891b2",
-      description: "Educational resources and material library",
-    },
-    {
-      id: 6,
-      title: "Communication",
-      icon: MessageCircle,
-      color: "#dc2626",
-      description: "Parent-teacher communication platform",
-    },
-  ];
-
-  const parentSegments = [
-    {
-      id: 1,
-      title: "Attendance",
-      icon: CheckCircle,
-      color: "#7c3aed",
-      description: "Real-time attendance notifications",
-    },
-    {
-      id: 2,
-      title: "Grades",
-      icon: Award,
-      color: "#0891b2",
-      description: "Academic performance and grade updates",
-    },
-    {
-      id: 3,
-      title: "Messages",
-      icon: MessageCircle,
-      color: "#e11d48",
-      description: "Direct messaging with teachers and school",
-    },
-    {
-      id: 4,
-      title: "Events",
-      icon: Calendar,
-      color: "#d97706",
-      description: "School events and activity calendar",
-    },
-    {
-      id: 5,
-      title: "Reports",
-      icon: FileText,
-      color: "#4338ca",
-      description: "Comprehensive academic progress reports",
-    },
-    {
-      id: 6,
-      title: "Fees",
-      icon: CreditCard,
-      color: "#059669",
-      description: "Fee payment and transaction history",
-    },
-    {
-      id: 7,
-      title: "Transport",
-      icon: Bus,
-      color: "#f59e0b",
-      description: "School transport tracking and updates",
-    },
-  ];
-
-  const studentSegments = [
-    {
-      id: 1,
-      title: "Assignments",
-      icon: PenTool,
-      color: "#d97706",
-      description: "Assignment submission and tracking portal",
-    },
-    {
-      id: 2,
-      title: "Schedule",
-      icon: Calendar,
-      color: "#1e40af",
-      description: "Class schedule and exam timetable",
-    },
-    {
-      id: 3,
-      title: "Grades",
-      icon: BarChart3,
-      color: "#059669",
-      description: "Academic performance and grade tracking",
-    },
-    {
-      id: 4,
-      title: "Library",
-      icon: BookOpen,
-      color: "#7c3aed",
-      description: "Digital library and learning resources",
-    },
-    {
-      id: 5,
-      title: "Projects",
-      icon: Users,
-      color: "#dc2626",
-      description: "Collaborative projects and group work",
-    },
-    {
-      id: 6,
-      title: "Attendance",
-      icon: CheckCircle,
-      color: "#10b981",
-      description: "Personal attendance record and history",
-    },
-    {
-      id: 7,
-      title: "Activities",
-      icon: Target,
-      color: "#f97316",
-      description: "Extracurricular activities and clubs",
-    },
-  ];
-
   const services = [
     {
       id: 1,
       title: "For Schools",
       subtitle: "Comprehensive School Management Solutions",
       description:
-        "Cultive empowers schools by streamlining administrative tasks, improving communication, and enhancing overall educational outcomes through a suite of integrated services designed for modern educational institutions.",
-      segments: schoolSegments,
-      centerTitle: "School Management",
-      bgColor: "bg-blue-50",
-      accentColor: "bg-blue-500",
+        "Cultive empowers schools by streamlining administrative tasks, improving communication, and enhancing overall educational outcomes through integrated services designed for modern educational institutions.",
+      features: [
+        {
+          title: "Examination Management",
+          description: "Comprehensive exam management and assessment tools",
+        },
+        {
+          title: "Financial Tracking",
+          description: "Advanced expense management and financial oversight",
+        },
+        {
+          title: "Hostel Management",
+          description: "Complete student accommodation solutions",
+        },
+        {
+          title: "Parent Communication",
+          description: "Seamless parent engagement platform",
+        },
+        {
+          title: "Certificate Generation",
+          description: "Digital certificate creation and management",
+        },
+        {
+          title: "Student Information",
+          description: "Comprehensive student data management",
+        },
+      ],
+      icon: School,
+      color: "#283a89",
+      imageUrl:
+        "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 2,
       title: "For Teachers",
       subtitle: "Empowering Educators with Smart Tools",
       description:
-        "Focus more on teaching and less on administrative tasks through our intuitive, user-friendly educational tools designed specifically for modern educators to enhance classroom efficiency and student engagement.",
-      segments: teacherSegments,
-      centerTitle: "Teacher Dashboard",
-      bgColor: "bg-green-50",
-      accentColor: "bg-green-500",
+        "Focus more on teaching and less on administrative tasks through intuitive, user-friendly educational tools designed specifically for modern educators to enhance classroom efficiency.",
+      features: [
+        {
+          title: "Digital Attendance",
+          description: "Streamlined attendance tracking and management",
+        },
+        {
+          title: "Assignment Portal",
+          description: "Easy assignment creation and submission system",
+        },
+        {
+          title: "Automated Grading",
+          description: "Intelligent grading and assessment tools",
+        },
+        {
+          title: "Progress Analytics",
+          description: "Detailed student progress tracking and insights",
+        },
+        {
+          title: "Resource Library",
+          description: "Comprehensive educational resources and materials",
+        },
+        {
+          title: "Parent Communication",
+          description: "Direct communication with parents and guardians",
+        },
+      ],
+      icon: GraduationCap,
+      color: "#10b981",
+      imageUrl:
+        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 3,
       title: "For Parents",
       subtitle: "Stay Connected to Your Child's Journey",
       description:
-        "Maintain active engagement with your child's educational progress and communicate effectively with teachers through comprehensive parent-focused features that keep you informed and involved in their academic success.",
-      segments: parentSegments,
-      centerTitle: "Parent Portal",
-      bgColor: "bg-purple-50",
-      accentColor: "bg-purple-500",
+        "Maintain active engagement with your child's educational progress and communicate effectively with teachers through comprehensive parent-focused features.",
+      features: [
+        {
+          title: "Real-time Attendance",
+          description: "Instant attendance notifications and updates",
+        },
+        {
+          title: "Academic Performance",
+          description: "Comprehensive grade tracking and analysis",
+        },
+        {
+          title: "Direct Messaging",
+          description: "Seamless communication with teachers",
+        },
+        {
+          title: "School Events",
+          description: "Complete school calendar and event updates",
+        },
+        {
+          title: "Progress Reports",
+          description: "Detailed academic progress documentation",
+        },
+        {
+          title: "Fee Management",
+          description: "Easy online fee payment and tracking",
+        },
+      ],
+      icon: Heart,
+      color: "#7c3aed",
+      imageUrl:
+        "https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 4,
       title: "For Students",
       subtitle: "Organize, Track, and Excel in Your Studies",
       description:
-        "Stay organized, monitor academic progress, and access essential learning resources with student-focused tools designed to enhance your educational experience and academic achievement throughout your learning journey.",
-      segments: studentSegments,
-      centerTitle: "Student Hub",
-      bgColor: "bg-orange-50",
-      accentColor: "bg-orange-500",
+        "Stay organized, monitor academic progress, and access essential learning resources with student-focused tools designed to enhance your educational experience.",
+      features: [
+        {
+          title: "Assignment Tracker",
+          description: "Easy assignment submission and tracking",
+        },
+        {
+          title: "Class Schedule",
+          description: "Personalized timetable and exam calendar",
+        },
+        {
+          title: "Grade Tracking",
+          description: "Real-time academic performance monitoring",
+        },
+        {
+          title: "Digital Library",
+          description: "Comprehensive learning resources access",
+        },
+        {
+          title: "Project Collaboration",
+          description: "Team projects and group work platform",
+        },
+        {
+          title: "Personal Attendance",
+          description: "Individual attendance record and history",
+        },
+      ],
+      icon: User,
+      color: "#f97316",
+      imageUrl:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
-        <div className="container mx-auto px-4 text-center">
-          <div className="mb-6">
-            <span className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold">
-              Our Services
-            </span>
+    <div className="min-h-screen bg-white font-sans mt-10">
+      {/* Hero Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div>
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-[#283a89] text-shadow">
+                Transforming Education with
+                <span className="text-[#fbb040]"> Digital Excellence</span>
+              </h1>
+
+              <p className="text-lg mb-6 text-gray-600 leading-relaxed">
+                Our mission is to support educational institutions in creating dynamic, efficient, and engaging learning
+                environments by offering a comprehensive range of products and services tailored to meet the unique
+                needs of each school.
+              </p>
+
+              <p className="text-lg mb-8 text-gray-600 leading-relaxed">
+                Cultive serves schools, teachers, parents, and students across the globe, making education more
+                accessible, efficient, and effective.
+              </p>
+            </div>
+
+            {/* Right Image */}
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Educational Technology"
+                className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
+              />
+              <div className="absolute -bottom-6 -right-6 w-10 h-10 bg-[#fbb040] rounded-full opacity-20"></div>
+            </div>
           </div>
-
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Transforming Education
-            <br />
-            Through Innovation
-          </h1>
-
-          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-600">
-            Comprehensive solutions designed for each stakeholder in the educational ecosystem, empowering schools with
-            innovative, technology-driven solutions.
-          </p>
         </div>
       </section>
 
+      {/* All Services - One by One */}
       <div className="space-y-0">
         {services.map((service, index) => (
-          <section key={service.id} className={`py-16 ${service.bgColor}`}>
-            <div className="container mx-auto px-4">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className={`space-y-6 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                  <div className={`w-12 h-1 ${service.accentColor} rounded-full`}></div>
-
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800">{service.title}</h2>
-
-                  <h3 className="text-xl font-semibold text-blue-600">{service.subtitle}</h3>
-
-                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-                    {service.segments.slice(0, 6).map((segment, i) => (
+          <section key={service.id} className={`py-20 ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}>
+            <div className="max-w-7xl mx-auto px-6">
+              <div
+                className={`grid lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
+              >
+                {/* Content */}
+                <div className={`space-y-8 ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
+                  <div>
+                    <div className="flex items-center space-x-3 mb-6">
                       <div
-                        key={i}
-                        className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white hover:shadow-md transition-all duration-200 border border-gray-100"
+                        className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg"
+                        style={{ backgroundColor: service.color }}
                       >
-                        <div className={`p-2 rounded-lg flex-shrink-0`} style={{ backgroundColor: segment.color }}>
-                          <segment.icon size={16} color="white" />
+                        <service.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-3xl font-bold text-[#283a89]">{service.title}</h3>
+                        <p className="text-lg font-medium" style={{ color: service.color }}>
+                          {service.subtitle}
+                        </p>
+                      </div>
+                    </div>
+
+                    <p className="text-lg text-gray-600 leading-relaxed mb-8">{service.description}</p>
+                  </div>
+
+                  {/* Features List - No Card Design */}
+                  <div className="space-y-4">
+                    {service.features.map((feature, i) => (
+                      <div key={i} className="flex items-start space-x-3">
+                        <div className="flex-shrink-0 mt-1">
+                          <div className="w-2 h-2 rounded-full bg-gray-400"></div>
                         </div>
                         <div>
-                          <h4 className="font-medium text-gray-800 text-sm">{segment.title}</h4>
-                          <p className="text-xs text-gray-600">
-                            {segment.description.split(" ").slice(0, 6).join(" ")}...
-                          </p>
+                          <h4 className="font-semibold text-[#283a89] text-base mb-1">{feature.title}</h4>
+                          <p className="text-sm text-gray-600">{feature.description}</p>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className={`flex justify-center ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                  {service.id === 1 && (
-                    <img
-                      src={school_tree}
-                      alt="School Management System"
-                      style={{
-                        height: "580px",
-                        background: "transparent",
-                        border: "none",
-                        boxShadow: "none",
-                        marginTop: "25px",
-                      }}
-                    />
-                  )}
-                  {service.id === 2 && (
-                    <img
-                      src={teacher}
-                      alt="Teacher Dashboard"
-                      style={{
-                        height: "250px",
-                        background: "transparent",
-                        border: "none",
-                        boxShadow: "none",
-                        marginTop: "25px",
-                      }}
-                    />
-                  )}
-                  {service.id === 3 && (
-                    <ModernNetworkDiagram segments={service.segments} centerTitle={service.centerTitle} />
-                  )}
-                  {service.id === 4 && (
-                    <img
-                      src={student}
-                      alt="Student Hub"
-                      style={{
-                        height: "400px",
-                        background: "transparent",
-                        border: "none",
-                        boxShadow: "none",
-                        marginTop: "25px",
-                      }}
-                    />
-                  )}
+                {/* Image - Reduced Size */}
+                <div className={`relative ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                  <img
+                    src={service.imageUrl}
+                    alt={service.title}
+                    className="rounded-2xl shadow-xl w-3/4 h-[350px] object-cover mx-auto"
+                  />
+                  <div
+                    className="absolute -top-4 -right-4 w-8 h-8 rounded-full opacity-30"
+                    style={{ backgroundColor: service.color }}
+                  />
                 </div>
               </div>
             </div>
@@ -507,23 +282,73 @@ const Services = () => {
         ))}
       </div>
 
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-700">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Transform Your Educational Institution?
-          </h2>
+      {/* Why Choose Us */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#283a89] mb-4">Why Choose Cultive?</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Experience the difference with our comprehensive, user-friendly solutions designed specifically for modern
+              educational institutions.
+            </p>
+          </div>
 
-          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of educational institutions already benefiting from our comprehensive solutions.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-              Get Started Today
-            </button>
-            <button className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-              Schedule a Demo
-            </button>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Target,
+                title: "Comprehensive Solution",
+                description:
+                  "Complete ecosystem covering all educational stakeholders with integrated tools and seamless communication.",
+                color: "#283a89",
+              },
+              {
+                icon: Shield,
+                title: "Secure & Reliable",
+                description:
+                  "Enterprise-grade security with regular backups and 99.9% uptime guarantee for peace of mind.",
+                color: "#dc2626",
+              },
+              {
+                icon: Headphones,
+                title: "24/7 Support",
+                description:
+                  "Round-the-clock technical support and customer service to ensure smooth operations always.",
+                color: "#10b981",
+              },
+              {
+                icon: Users,
+                title: "User-Friendly Design",
+                description:
+                  "Intuitive interfaces designed for educators, students, and parents with minimal learning curve required.",
+                color: "#f97316",
+              },
+              {
+                icon: Award,
+                title: "Proven Track Record",
+                description:
+                  "Trusted by 500+ institutions worldwide with 99% satisfaction rate and continuous improvement.",
+                color: "#fbb040",
+              },
+              {
+                icon: BarChart3,
+                title: "Data-Driven Insights",
+                description:
+                  "Advanced analytics and reporting tools to make informed decisions and track progress effectively.",
+                color: "#7c3aed",
+              },
+            ].map((feature, index) => (
+              <div key={index} className="text-center p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors">
+                <div
+                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+                  style={{ backgroundColor: feature.color }}
+                >
+                  <feature.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-[#283a89] mb-3">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

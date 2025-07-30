@@ -11,7 +11,8 @@ const Footer = () => {
         { name: 'Events', url: '/events', description: 'Join our upcoming events' },
         { name: 'Intern', url: 'https://docs.google.com/forms/d/1luSfOItGpN-Ep7BSbcNr-tq5w6Fn4HFOlUkw8cCsH_I/edit', description: 'Apply for internships' },
         { name: 'Career Application', url: 'https://docs.google.com/forms/d/1h_ac-ltcERU8j4cdAYt6tMTsys2Fxmy-qqmNqEsFRDY/edit', description: 'Apply for career opportunities' },
-        { name: 'Feedback', url: 'https://docs.google.com/forms/d/1q_wI2jxCaPfw55yLjwve5zsihhaAMVH2Vp8L44NIWio/edit', description: 'Share your feedback' }
+        { name: 'Feedback', url: 'https://docs.google.com/forms/d/1q_wI2jxCaPfw55yLjwve5zsihhaAMVH2Vp8L44NIWio/edit', description: 'Share your feedback' },
+        { name: 'Training', url: 'https://docs.google.com/forms/d/1biihW8UttyOEDo-edpJhRan5lB8DEfnhMVYQPxj4gww/edit', description: 'Apply for training' },
       ]
     },
     {
