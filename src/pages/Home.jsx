@@ -12,19 +12,13 @@ import {
   Globe,
   Shield,
   Settings,
-  ChevronRight,
   Sparkles,
   Lightbulb,
   School,
   Heart,
   Zap,
-  CheckCircle,
   Star,
-  ArrowRight,
-  Play,
   Award,
-  TrendingUp,
-  Briefcase,
 } from "lucide-react";
 import rocket_design from "../assets/rocket_design.png";
 import bulb_img from "../assets/bulb_img.png";

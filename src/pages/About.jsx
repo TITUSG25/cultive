@@ -2,29 +2,16 @@ import { useRef, useEffect, useState } from "react";
 import {
   GraduationCap,
   BookOpen,
-  Brain,
-  Monitor,
   Users,
-  MapPin,
-  Calendar,
-  Building,
   Target,
-  Globe,
   Shield,
-  Settings,
-  ChevronRight,
-  Sparkles,
   Lightbulb,
   School,
   Heart,
   Zap,
-  CheckCircle,
   Star,
-  ArrowRight,
-  Play,
   Award,
   TrendingUp,
-  Briefcase,
 } from "lucide-react";
 
 const About = () => {
@@ -50,32 +37,7 @@ const About = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Intersection Observer for animations
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if (entry.target === sectionRef1.current) setIsVisible1(true);
-          if (entry.target === sectionRef2.current) setIsVisible2(true);
-          if (entry.target === sectionRef3.current) setIsVisible3(true);
-          if (entry.target === journeyRef.current) setIsJourneyVisible(true);
-        }
-      });
-    }, observerOptions);
-
-    if (sectionRef1.current) observer.observe(sectionRef1.current);
-    if (sectionRef2.current) observer.observe(sectionRef2.current);
-    if (sectionRef3.current) observer.observe(sectionRef3.current);
-    if (journeyRef.current) observer.observe(journeyRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
+ 
   // Core Principles data with matching icons from home page
   const corePrinciples = [
     {

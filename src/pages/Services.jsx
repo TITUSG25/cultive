@@ -1,33 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Users,
-  UserCheck,
-  BookOpen,
-  Target,
-  Database,
-  Calendar,
-  CheckCircle,
-  FileText,
-  BarChart3,
-  MessageCircle,
-  Award,
-  PenTool,
-  DollarSign,
-  Home,
-  Bus,
-  CreditCard,
-  User,
-  Clock,
-  GraduationCap,
-  School,
-  Heart,
-  Sparkles,
-  ArrowRight,
-  Play,
-  Star,
-  Shield,
-  Headphones,
-} from "lucide-react";
+import { Users, Target, BarChart3, Award, User, GraduationCap, School, Heart, Shield, Headphones } from "lucide-react";
 
 const Services = () => {
   const services = [
