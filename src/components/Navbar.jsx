@@ -5,6 +5,7 @@ import cultive_logo from "../assets/cultive_logo.svg";
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState(window.location.pathname);
 
   // Handle scroll event to change navbar appearance
   useEffect(() => {
@@ -51,7 +52,7 @@ const Navbar = () => {
 
   const Logo = () => (
     <a href="/" className="flex items-center">
-      <div className="flex items-center gap-3">
+      <div className="flex flex-col items-start">
         <div className="flex-shrink-0">
           <img
             src={cultive_logo}
@@ -63,30 +64,47 @@ const Navbar = () => {
             }`}
           />
         </div>
+        <p className={`text-sm pl-2 font-medium text-slate-600 transition-all duration-300 -mt-1 ${
+          scrolled ? 'text-xs -mt-0.5' : 'text-sm -mt-1'
+        }`}>
+          The solution ocean
+        </p>
       </div>
     </a>
   );
 
-  const DesktopNavLink = ({ href, children, icon: IconComponent }) => (
-    <a
-      href={href}
-      className="flex items-center gap-2 px-4 py-2 font-medium transition-colors duration-200 relative group"
-      style={{ color: '#283a89' }}
-    >
-      <IconComponent 
-        className="w-4 h-4"
+  const DesktopNavLink = ({ href, children, icon: IconComponent }) => {
+    const isActive = activeLink === href;
+    
+    return (
+      <a
+        href={href}
+        onClick={() => setActiveLink(href)}
+        className="flex items-center gap-2 px-4 py-2 font-medium transition-colors duration-200 relative group"
         style={{ color: '#283a89' }}
-      />
-      <span>{children}</span>
-      {/* Underline animation with gradient */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 transition-all duration-300 ease-out group-hover:w-3/4 underline-gradient"></div>
-    </a>
-  );
+      >
+        <IconComponent 
+          className="w-4 h-4"
+          style={{ color: '#283a89' }}
+        />
+        <span>{children}</span>
+        {/* Underline animation with gradient - active state */}
+        <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 transition-all duration-300 ease-out underline-gradient ${
+          isActive 
+            ? 'w-3/4' 
+            : 'w-0 group-hover:w-3/4'
+        }`}></div>
+      </a>
+    );
+  };
 
   const MobileNavLink = ({ href, children, icon: IconComponent, onClick }) => (
     <a
       href={href}
-      onClick={onClick}
+      onClick={(e) => {
+        setActiveLink(href);
+        onClick();
+      }}
       className="flex items-center justify-between p-6 text-slate-700 transition-colors duration-200 border-b border-slate-100 last:border-b-0"
     >
       <div className="flex items-center gap-4">

@@ -22,6 +22,10 @@ import {
 } from "lucide-react";
 import rocket_design from "../assets/rocket_design.png";
 import bulb_img from "../assets/bulb_img.png";
+import book_design from "../assets/book_design.png";
+import aim_arrow from "../assets/aim_arrow.png";
+import cultive_arrow from "../assets/cultive_arrow.png";
+import calculator from "../assets/calculator.png";
 
 const Home = () => {
   const [hoveredService, setHoveredService] = useState(null);
@@ -438,11 +442,6 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-6 animate-slide-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#fbb040] bg-opacity-10 text-[#283a89] rounded-full text-sm font-medium border border-[#fbb040] border-opacity-30">
-                <Sparkles className="w-4 h-4" />
-                Premium Educational Solutions
-              </div>
-
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-[#283a89] text-shadow">
                 Transforming Education with
                 <span className="text-[#fbb040]"> Digital Excellence</span>
@@ -466,15 +465,38 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Content - Educational Graphics */}
             <div className="relative animate-slide-right flex-col justify-end items-center h-full hidden lg:flex">
-              {/* Bulb Image - Bottom Right */}
+              {/* Main Bulb Image - Center */}
               <div className="relative mb-8">
                 <img
                   src={bulb_img}
                   alt="Innovation Bulb"
-                  className="w-80 h-auto animate-float"
+                  className="w-80 h-auto animate-float relative z-10 mt-10"
                   style={{ animationDelay: "1s" }}
+                />
+
+                {/* Book Design - Behind the student */}
+                <img
+                  src={calculator}
+                  alt="Calculator"
+                  className="w-48 h-auto animate-float absolute top-1/2 -right-32 z-5 transform -translate-y-1/2"
+                  style={{ animationDelay: "1.5s" }}
+                />
+
+                {/* Calculator - Behind person */}
+                <img
+                  src={book_design}
+                  alt="Book Design"
+                  className="w-40 h-auto animate-float absolute top-1/4 -left-40 z-5 transform -translate-y-1/2"
+                  style={{ animationDelay: "2s" }}
+                />
+
+                {/* Aim Arrow - Behind person (lower z-index) */}
+                <img
+                  src={aim_arrow}
+                  alt="Aim Arrow"
+                  className="w-24 h-auto animate-float absolute top-1/4 -right-20 z-5"
+                  style={{ animationDelay: "2.5s" }}
                 />
               </div>
             </div>

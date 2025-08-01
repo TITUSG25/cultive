@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Users, Target, BarChart3, Award, User, GraduationCap, School, Heart, Shield, Headphones } from "lucide-react";
-
+import student_img from "../assets/stud.png";
 const Services = () => {
   const services = [
     {
@@ -148,14 +148,14 @@ const Services = () => {
       ],
       icon: User,
       color: "#f97316",
-      imageUrl:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      imageUrl: student_img, // ✅ fixed here
     },
   ];
 
   return (
     <div className="min-h-screen bg-white font-sans mt-10">
       {/* Hero Section */}
+
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
