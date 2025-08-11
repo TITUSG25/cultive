@@ -79,7 +79,7 @@ const Footer = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="w-full pl-12 pr-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-[#fbb040] focus:border-transparent transition-all duration-300"
+                  className="w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-[#fbb040] focus:border-transparent transition-all duration-300"
                 />
               </div>
               <button
@@ -117,16 +117,16 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-3 text-blue-200">
                   <Phone className="w-5 h-5 text-[#fbb040]" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>8680804060</span>
                 </div>
                 <div className="flex items-center gap-3 text-blue-200">
                   <MapPin className="w-5 h-5 text-[#fbb040]" />
-                  <span>123 Education St, Learning City</span>
+                  <span>No 5, Veteranlines, Pallavaram, Chennai</span>
                 </div>
               </div>
               
               {/* Social Media */}
-              <div className="flex space-x-4">
+              {/* <div className="flex space-x-4">
                 {socialLinks.map((social) => {
                   const IconComponent = social.icon;
                   return (
@@ -142,7 +142,7 @@ const Footer = () => {
                     </a>
                   );
                 })}
-              </div>
+              </div> */}
             </div>
           </div>
 

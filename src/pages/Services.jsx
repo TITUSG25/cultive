@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { Users, Target, BarChart3, Award, User, GraduationCap, School, Heart, Shield, Headphones } from "lucide-react";
-import student_img from "../assets/stud.png";
+import school from '../assets/school.jpg';
+import students from '../assets/students.jpg';
+import teachers from '../assets/teachers.jpg';
+import parents from '../assets/parents.jpg';
+
 const Services = () => {
   const services = [
     {
@@ -37,8 +41,7 @@ const Services = () => {
       ],
       icon: School,
       color: "#283a89",
-      imageUrl:
-        "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      imageUrl: school
     },
     {
       id: 2,
@@ -74,8 +77,7 @@ const Services = () => {
       ],
       icon: GraduationCap,
       color: "#10b981",
-      imageUrl:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      imageUrl: teachers
     },
     {
       id: 3,
@@ -111,8 +113,7 @@ const Services = () => {
       ],
       icon: Heart,
       color: "#7c3aed",
-      imageUrl:
-        "https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      imageUrl: parents
     },
     {
       id: 4,
@@ -148,15 +149,15 @@ const Services = () => {
       ],
       icon: User,
       color: "#f97316",
-      imageUrl: student_img, // ✅ fixed here
+      imageUrl: students, // ✅ fixed here
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white font-sans mt-10">
+    <div className="min-h-screen bg-white font-sans mt-12">
       {/* Hero Section */}
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white mt-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}

@@ -1,5 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 
 // Pages
@@ -20,9 +19,12 @@ function App() {
     window.scrollTo(0, 0)
   }, [location.pathname])
 
+  const isHomePage = location.pathname === '/'
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <Navbar />
+      {/* Show Navbar only if not home page */}
+      {!isHomePage && <Navbar />}
 
       <main className="flex-grow">
         <Routes>
@@ -32,6 +34,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+
       <Footer />
     </div>
   )

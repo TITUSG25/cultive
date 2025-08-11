@@ -107,7 +107,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-white mt-20">
+    <div className="min-h-screen font-sans bg-white mt-24">
       {/* Custom Styles matching home page */}
       <style jsx>{`
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
@@ -243,7 +243,7 @@ const Contact = () => {
                   <Phone className="w-5 h-5 flex-shrink-0" />
                   <div className="text-left">
                     <p className="text-sm font-semibold leading-tight">Call Now</p>
-                    <p className="text-xs opacity-90 whitespace-nowrap">+91-86-80-80-40-60</p>
+                    <p className="text-xs opacity-90 whitespace-nowrap">+91-8680804060</p>
                   </div>
                 </a>
 

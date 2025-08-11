@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import NewHome from "./NewHome";
 import {
   GraduationCap,
   BookOpen,
@@ -244,33 +245,38 @@ const Home = () => {
     {
       id: 1,
       quote:
-        "Cultive has transformed how we manage our school operations. Everything is streamlined and efficient now.",
-      name: "Michael Johnson",
-      title: "School Principal",
-      image:
-        "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "Cultive's software solutions have significantly streamlined our school operations, making daily tasks, reporting, and data management efficient and hassle-free.",
+      name: "Dr. Vinnoly Gaberial",
+      title: "Principal – AVMS, Chennai",
+      role: "Principal",
       rating: 5,
-      improvement: "85% reduction in administrative tasks",
     },
     {
       id: 2,
-      quote: "As a teacher, I can now focus more on teaching rather than administrative tasks. Highly recommended!",
-      name: "Sarah Williams",
-      title: "High School Teacher",
-      image:
-        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      quote:
+        "The unique and well-designed IEP provided by Cultive has given us valuable clarity and insight into our child’s development. We feel privileged to partner with Cultive, whose support has greatly enhanced our understanding and positively impacted our child’s growth.",
+      name: "Remali Sarah",
+      title: "Parent, Housewife, Trichy",
+      role: "Parent",
       rating: 5,
-      improvement: "3x more time for actual teaching",
     },
     {
       id: 3,
-      quote: "The parent communication feature has been a game-changer for keeping track of my children's progress.",
-      name: "David Chen",
-      title: "Parent",
-      image:
-        "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      quote:
+        "Cultive's Faculty Development Program (FDP) has been a powerful, insightful, and transformative experience that has significantly enriched our teaching methodologies. I am proud to have been trained by Cultive and to say that I am a proud school teacher confidently. The training insights and knowledge imparted were both meaningful and impactful.",
+      name: "Bhadhur Nisha",
+      title: "School Teacher – St. Joseph’s Global School, Chennai",
+      role: "Teacher",
       rating: 5,
-      improvement: "100% improved communication with school",
+    },
+    {
+      id: 4,
+      quote:
+        "Cultive's workshops and seminars provided us with an enriching and enjoyable learning experience. I feel fortunate to have Cultive as part of our school community, and I especially appreciate the opportunity to learn music, dance, art, and craft through their engaging programs.",
+      name: "Annanya",
+      title: "Student, DMI group of institutions",
+      role: "Student",
+      rating: 5,
     },
   ];
 
@@ -435,76 +441,8 @@ const Home = () => {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-white mt-20">
-        {/* Animated Background Elements */}
+      <NewHome />
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="space-y-6 animate-slide-left">
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-[#283a89] text-shadow">
-                Transforming Education with
-                <span className="text-[#fbb040]"> Digital Excellence</span>
-              </h1>
-
-              <p className="text-lg text-[#283a89] leading-relaxed max-w-lg font-medium">
-                Experience the future of education management with our comprehensive suite of innovative solutions
-                designed for modern educational institutions.
-              </p>
-              {/* Right Content - Educational Graphics */}
-              <div className="relative animate-slide-right flex flex-col justify-end items-center h-full">
-                {/* Bulb Image - Bottom Right */}
-                <div className="relative mb-0">
-                  <img
-                    src={rocket_design}
-                    alt="Innovation Bulb"
-                    className="w-80 h-auto animate-float"
-                    style={{ animationDelay: "1s" }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="relative animate-slide-right flex-col justify-end items-center h-full hidden lg:flex">
-              {/* Main Bulb Image - Center */}
-              <div className="relative mb-8">
-                <img
-                  src={bulb_img}
-                  alt="Innovation Bulb"
-                  className="w-80 h-auto animate-float relative z-10 mt-10"
-                  style={{ animationDelay: "1s" }}
-                />
-
-                {/* Book Design - Behind the student */}
-                <img
-                  src={calculator}
-                  alt="Calculator"
-                  className="w-48 h-auto animate-float absolute top-1/2 -right-32 z-5 transform -translate-y-1/2"
-                  style={{ animationDelay: "1.5s" }}
-                />
-
-                {/* Calculator - Behind person */}
-                <img
-                  src={book_design}
-                  alt="Book Design"
-                  className="w-40 h-auto animate-float absolute top-1/4 -left-40 z-5 transform -translate-y-1/2"
-                  style={{ animationDelay: "2s" }}
-                />
-
-                {/* Aim Arrow - Behind person (lower z-index) */}
-                <img
-                  src={aim_arrow}
-                  alt="Aim Arrow"
-                  className="w-24 h-auto animate-float absolute top-1/4 -right-20 z-5"
-                  style={{ animationDelay: "2.5s" }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
       <section className="py-16 bg-gray-50 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
@@ -535,46 +473,49 @@ const Home = () => {
               return (
                 <div
                   key={service.id}
-                  className="group bg-white p-6 rounded-xl shadow-md hover-lift border border-gray-100 relative overflow-hidden animate-fade-up"
+                  className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl border-2 border-gray-100 hover:border-amber-400 relative overflow-hidden animate-fade-up transition-all duration-300 hover:-translate-y-2 hover:scale-105"
                   style={{ animationDelay: `${service.delay}s` }}
                   onMouseEnter={() => setHoveredService(service.id)}
                   onMouseLeave={() => setHoveredService(null)}
                 >
+                  {/* Background Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-amber-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
                   {/* Service Icon */}
-                  <div className="relative mb-4">
-                    <div
-                      className={`w-12 h-12 rounded-lg ${
-                        hoveredService === service.id ? "bg-[#fbb040]" : "bg-[#283a89]"
-                      } flex items-center justify-center transform transition-all duration-300 ${
-                        hoveredService === service.id ? "rotate-12 scale-110" : ""
-                      }`}
-                    >
-                      <Icon className="w-6 h-6 text-white" />
+                  <div className="relative mb-6 z-10">
+                    <div className="relative">
+                      <div
+                        className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-[#283a89] to-[#1e2a5e] flex items-center justify-center transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-lg`}
+                      >
+                        <Icon className="w-8 h-8 text-white" />
+                      </div>
+                      {/* Glowing background effect on hover */}
+                      <div className="absolute inset-0 w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-400 rounded-2xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500 -z-10"></div>
                     </div>
-                    {hoveredService === service.id && (
-                      <div className="absolute inset-0 w-12 h-12 bg-[#fbb040] rounded-lg blur-md opacity-50"></div>
-                    )}
                   </div>
 
                   {/* Service Content */}
-                  <h3 className="text-lg font-semibold mb-2 text-[#283a89] group-hover:text-[#fbb040] transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                  <div className="relative z-10">
+                    <h3 className="text-xl font-bold mb-3 text-[#283a89] group-hover:text-[#283a89] transition-all duration-300 transform group-hover:translate-x-1">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                      {service.description}
+                    </p>
+                  </div>
 
-                  {/* Hover Effect Border */}
-                  <div
-                    className={`absolute inset-0 border-2 rounded-xl transition-all duration-300 ${
-                      hoveredService === service.id ? "border-[#fbb040] border-opacity-50" : "border-transparent"
-                    }`}
-                  ></div>
+                  {/* Decorative Corner Element */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-amber-100 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  {/* Bottom Accent Line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 </div>
               );
             })}
           </div>
 
           {/* Stats Section */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-up">
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-up">
             {[
               { number: "500+", label: "Educational Institutions", icon: School },
               { number: "10K+", label: "Active Teachers", icon: Users },
@@ -586,70 +527,91 @@ const Home = () => {
                 className="text-center group animate-scale-in"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="w-16 h-16 bg-[#283a89] rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-[#fbb040] transition-colors duration-300">
-                  <stat.icon className="w-8 h-8 text-white" />
+                <div className="relative mb-4">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#283a89] to-[#1e2a5e] rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all duration-300 shadow-lg">
+                    <stat.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="absolute inset-0 w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-400 rounded-2xl blur-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 mx-auto"></div>
                 </div>
-                <div className="text-2xl font-bold text-[#283a89] mb-1">{stat.number}</div>
-                <div className="text-gray-600 text-sm font-medium">{stat.label}</div>
+                <div className="text-3xl font-bold text-[#283a89] mb-2 group-hover:scale-105 transition-transform duration-300">
+                  {stat.number}
+                </div>
+                <div className="text-gray-600 font-medium group-hover:text-gray-700 transition-colors duration-300">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Exclusive and premium features */}
       <section className="py-16 bg-white relative">
-        {/* 🔥 Add custom glowing hover style */}
+        {/* Custom Styles */}
         <style>
           {`
-    .feature-card {
-      position: relative;
-      overflow: hidden;
-      z-index: 0;
-    }
-
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-top: 3px solid transparent;
-      border-right: 3px solid transparent;
-      border-image: linear-gradient(45deg, #fbb040, #f59e0b);
-      border-image-slice: 1;
-      z-index: 10;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .feature-card:hover::before {
-      animation: neonBorderHover 1s linear forwards;
-      opacity: 1;
-    }
-
-    @keyframes neonBorderHover {
-      0% {
-        width: 0;
-        height: 0;
-        left: 50%;
-        top: 0;
-      }
-      50% {
-        width: 50%;
-        height: 0;
-        left: 50%;
-        top: 0;
-      }
-      100% {
-        width: 0;
-        height: 50%;
-        left: 100%;
-        top: 0;
-      }
-    }
-  `}
+            .feature-card {
+              position: relative;
+              overflow: hidden;
+            }
+            
+            .feature-card::before {
+              content: '';
+              position: absolute;
+              top: -50%;
+              left: -50%;
+              width: 200%;
+              height: 200%;
+              background: conic-gradient(from 0deg, transparent, #fbb040, transparent);
+              opacity: 0;
+              transition: all 0.6s ease;
+              animation: rotate 3s linear infinite;
+              z-index: 0;
+            }
+            
+            .feature-card:hover::before {
+              opacity: 0.1;
+            }
+            
+            .feature-card::after {
+              content: '';
+              position: absolute;
+              inset: 2px;
+              background: white;
+              border-radius: 10px;
+              z-index: 1;
+            }
+            
+            .feature-content {
+              position: relative;
+              z-index: 2;
+            }
+            
+            @keyframes rotate {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+            
+            .shimmer-effect {
+              position: relative;
+              overflow: hidden;
+            }
+            
+            .shimmer-effect::before {
+              content: '';
+              position: absolute;
+              top: -50%;
+              left: -100%;
+              width: 50%;
+              height: 200%;
+              background: linear-gradient(90deg, transparent, rgba(251, 176, 64, 0.4), transparent);
+              transform: skewX(-20deg);
+              transition: left 0.8s ease;
+            }
+            
+            .feature-card:hover .shimmer-effect::before {
+              left: 100%;
+            }
+          `}
         </style>
 
         <div className="container mx-auto px-6 max-w-7xl">
@@ -659,8 +621,8 @@ const Home = () => {
               <Lightbulb className="w-4 h-4" />
               Premium Services
             </div>
-            <h2 className="text-4xl text-center text-[#283a89] font-extrabold">
-              <span className="underline-animate">EXCLUSIVE</span> & <span className="underline-animate">PREMIUM</span>
+            <h2 className="text-4xl text-center text-[#283a89] font-extrabold mb-4">
+              <span>EXCLUSIVE</span> & <span>PREMIUM</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Experience cutting-edge technology solutions designed specifically for modern educational environments.
@@ -672,35 +634,44 @@ const Home = () => {
             {features.map((feature, index) => (
               <div
                 key={feature.id}
-                className="feature-card group bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover-lift relative overflow-hidden animate-fade-up transition-transform"
+                className="feature-card group bg-white p-8 rounded-xl shadow-lg border border-gray-100 relative transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 animate-fade-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Icon */}
-                <div
-                  className={`w-14 h-14 ${feature.color} rounded-xl flex items-center justify-center mb-4 group-hover:brightness-110 transition duration-300 shadow-md`}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="white"
-                    className="w-7 h-7"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d={feature.icon} />
-                  </svg>
+                <div className="feature-content">
+                  {/* Icon with shimmer effect */}
+                  <div className="relative mb-6">
+                    <div
+                      className={`shimmer-effect w-16 h-16 ${feature.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-xl`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="white"
+                        className="w-8 h-8 group-hover:scale-110 transition-transform duration-300"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d={feature.icon} />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold mb-3 text-[#283a89] transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    {feature.description}
+                  </p>
+
+                  {/* Single top-right dot - always visible */}
+                  <div className="absolute top-2 right-2 w-3 h-3 bg-[#fbb040] rounded-full"></div>
+
+                  {/* Animated corner border on hover - appears around the dot */}
+                  <div className="absolute top-0 right-0 w-7 h-7 border-t-2 border-r-2 border-[#fbb040] rounded-tr-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-lg font-semibold mb-3 text-[#283a89] group-hover:text-[#fbb040] transition-colors">
-                  {feature.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
-
-                {/* Decorative Dot */}
-                <div className="absolute top-4 right-4 w-2 h-2 bg-[#fbb040] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
           </div>
@@ -708,95 +679,41 @@ const Home = () => {
       </section>
 
       {/* Testimonials section */}
-      <section className="py-16 bg-gray-50 relative z-0">
-        <style>
-          {`
-          .testimonial-card {
-            position: relative;
-            overflow: hidden;
-            z-index: 0;
-          }
-
-          .testimonial-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-top: 3px solid transparent;
-            border-right: 3px solid transparent;
-            border-image: linear-gradient(45deg, #fbb040, #f59e0b);
-            border-image-slice: 1;
-            animation: neonBorder 2.5s linear infinite;
-            z-index: 10;
-          }
-
-          @keyframes neonBorder {
-            0% {
-              width: 0;
-              height: 0;
-              left: 50%;
-              top: 0;
-            }
-            50% {
-              width: 50%;
-              height: 0;
-              left: 50%;
-              top: 0;
-            }
-            100% {
-              width: 0;
-              height: 50%;
-              left: 100%;
-              top: 0;
-            }
-          }
-        `}
-        </style>
-
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center mb-12 animate-fade-up">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-[#283a89]">Trusted by Educational Leaders</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-sm">
               Hear from institutions that have transformed their educational experience with our solutions.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.id}
-                className="testimonial-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition hover:shadow-xl animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="relative bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100"
               >
+                {/* Role tag */}
+                <span className="absolute top-4 right-4 bg-yellow-400 text-gray-900 text-xs font-semibold px-3 py-1 rounded-full shadow">
+                  {testimonial.role}
+                </span>
+
                 {/* Rating */}
-                <div className="flex items-center mb-4">
+                <div className="flex items-center mb-2">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-[#fbb040] fill-current" />
+                    <Star key={i} className="w-4 h-4 text-amber-500 fill-current" />
                   ))}
                 </div>
 
                 {/* Quote */}
-                <blockquote className="text-gray-800 text-base mb-4 leading-relaxed italic">
-                  "{testimonial.quote}"
+                <blockquote className="text-gray-700 text-sm leading-relaxed mb-4 italic">
+                  “{testimonial.quote}”
                 </blockquote>
 
-                {/* Improvement */}
-                <p className="text-sm text-green-600 font-semibold mb-6">{testimonial.improvement}</p>
-
-                {/* Author */}
-                <div className="flex items-center">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-14 h-14 rounded-full object-cover mr-4 border-2 border-white shadow-md"
-                  />
-                  <div>
-                    <div className="font-bold text-[#283a89]">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.title}</div>
-                  </div>
-                </div>
+                {/* Name & Title */}
+                <p className="text-[#283a89] font-semibold text-sm">{testimonial.name}</p>
+                <p className="text-gray-500 text-xs mt-1">{testimonial.title}</p>
               </div>
             ))}
           </div>
@@ -805,27 +722,15 @@ const Home = () => {
 
       {/* CTA Section */}
       <section className="relative overflow-hidden py-20 bg-[#0d1a45]">
-        {/* 🔭 Cosmic Background: Stars + Planets */}
-        <div className="absolute inset-0 z-0">
-          {/* Stars (twinkling dots) */}
-          <div className="absolute inset-0 bg-stars opacity-20 animate-star-twinkle"></div>
-        </div>
+        {/* 🌌 Background Image (students/education themed) */}
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('/path-to-your-education-themed-image.png')" }}
+        ></div>
 
-        {/* 🟧 Glowing Card Container */}
-        <div className="relative max-w-5xl mx-auto px-6 py-12 bg-[#1e2a6d] rounded-3xl border border-white border-opacity-10 shadow-xl overflow-hidden animate-fade-up group">
-          {/* 🌈 Neon Borders (4 sides) */}
-          <div className="pointer-events-none absolute inset-0 z-20 rounded-3xl overflow-hidden">
-            {/* Top */}
-            <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-yellow-400 to-orange-500 animate-glow-top" />
-            {/* Right */}
-            <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-yellow-400 to-orange-500 animate-glow-right" />
-            {/* Bottom */}
-            <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-orange-500 to-yellow-400 animate-glow-bottom" />
-            {/* Left */}
-            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-orange-500 to-yellow-400 animate-glow-left" />
-          </div>
-
-          {/* 🌟 Card Content */}
+        {/* 💬 Main Content Card */}
+        <div className="relative max-w-5xl mx-auto px-6 py-12 bg-[#1e2a6d] bg-opacity-90 rounded-3xl shadow-2xl backdrop-blur-md">
+          {/* 💡 CTA Text */}
           <div className="relative z-30 text-center">
             <h2 className="text-4xl font-extrabold text-white mb-4 leading-tight">
               Ready to Transform Your Institution?
@@ -835,7 +740,7 @@ const Home = () => {
               <span className="text-yellow-400 font-medium">Cultive</span> for their digital transformation journey.
             </p>
 
-            {/* Trust indicators */}
+            {/* 📊 Trust Indicators */}
             <div className="mt-10 pt-8 border-t border-white border-opacity-10">
               <div className="text-sm text-gray-400 mb-4 tracking-wide">
                 Trusted by educational institutions worldwide
@@ -859,117 +764,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        {/* 🎨 Custom Animations */}
-        <style jsx>{`
-          .animate-fade-up {
-            animation: fadeUp 0.8s ease-out both;
-          }
-
-          .animate-glow-top {
-            animation: glowTop 3s linear infinite;
-          }
-
-          .animate-glow-right {
-            animation: glowRight 3s linear infinite 0.75s;
-          }
-
-          .animate-glow-bottom {
-            animation: glowBottom 3s linear infinite 1.5s;
-          }
-
-          .animate-glow-left {
-            animation: glowLeft 3s linear infinite 2.25s;
-          }
-
-          .animate-planet-spin {
-            animation: spinPlanet 30s linear infinite;
-          }
-
-          .animate-star-twinkle {
-            background: radial-gradient(white 1px, transparent 1px);
-            background-size: 30px 30px;
-            animation: twinkle 6s ease-in-out infinite;
-          }
-
-          @keyframes fadeUp {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          @keyframes glowTop {
-            0% {
-              left: -100%;
-            }
-            50% {
-              left: 0%;
-            }
-            100% {
-              left: 100%;
-            }
-          }
-
-          @keyframes glowRight {
-            0% {
-              top: -100%;
-            }
-            50% {
-              top: 0%;
-            }
-            100% {
-              top: 100%;
-            }
-          }
-
-          @keyframes glowBottom {
-            0% {
-              left: 100%;
-            }
-            50% {
-              left: 0%;
-            }
-            100% {
-              left: -100%;
-            }
-          }
-
-          @keyframes glowLeft {
-            0% {
-              top: 100%;
-            }
-            50% {
-              top: 0%;
-            }
-            100% {
-              top: -100%;
-            }
-          }
-
-          @keyframes spinPlanet {
-            0% {
-              transform: rotate(0deg);
-            }
-            100% {
-              transform: rotate(360deg);
-            }
-          }
-
-          @keyframes twinkle {
-            0%,
-            100% {
-              opacity: 0.3;
-            }
-            50% {
-              opacity: 0.6;
-            }
-          }
-        `}</style>
       </section>
     </div>
   );
