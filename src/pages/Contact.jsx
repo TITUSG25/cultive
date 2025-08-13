@@ -6,10 +6,6 @@ import {
   Clock,
   Send,
   MessageCircle,
-  Star,
-  Users,
-  Globe,
-  Award,
   CheckCircle,
   Headphones,
   Sparkles,
@@ -237,7 +233,7 @@ const Contact = () => {
               <div className="flex flex-col sm:flex-row gap-3 pt-6">
                 {/* Call Button */}
                 <a
-                  href="tel:+916880804060"
+                  href="tel:+918680804060"
                   className="flex items-center gap-3 px-5 py-4 bg-[#283a89] text-white rounded-xl hover:bg-[#1e2a6d] transition-all duration-300 shadow-sm hover:shadow-md group min-w-[200px]"
                 >
                   <Phone className="w-5 h-5 flex-shrink-0" />
@@ -255,7 +251,7 @@ const Contact = () => {
                   <Mail className="w-5 h-5 flex-shrink-0" />
                   <div className="text-left">
                     <p className="text-sm font-semibold leading-tight">Email Us</p>
-                    <p className="text-xs opacity-90">cultivetech@gmail.com</p>
+                    <p className="text-xs opacity-90">connect@cultive.in</p>
                   </div>
                 </a>
 
@@ -296,34 +292,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-50 relative overflow-hidden">
-        <div className="container mx-auto px-6 relative max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-up">
-            {[
-              { number: "10,000+", label: "Happy Clients", icon: Users, color: "bg-[#283a89]" },
-              { number: "50+", label: "Countries Served", icon: Globe, color: "bg-[#fbb040]" },
-              { number: "99.9%", label: "Uptime Guarantee", icon: Award, color: "bg-[#283a89]" },
-              { number: "4.9/5", label: "Customer Rating", icon: Star, color: "bg-[#fbb040]" },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="text-center group animate-scale-in"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div
-                  className={`w-16 h-16 ${stat.color} rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-all duration-300 shadow-lg`}
-                >
-                  <stat.icon className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-2xl font-bold text-[#283a89] mb-1">{stat.number}</div>
-                <div className="text-gray-600 text-sm font-medium">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -2,10 +2,6 @@ import { useState, useEffect } from "react";
 import { X, Menu, ChevronRight, Home, Users, Zap, Phone } from "lucide-react";
 import rocket_design from "../assets/rocket_design.png";
 import bulb_img from "../assets/bulb_img.png";
-import book_design from "../assets/book_design.png";
-import aim_arrow from "../assets/aim_arrow.png";
-import cultive_arrow from "../assets/cultive_arrow.png";
-import calculator from "../assets/calculator.png";
 import cultive_logo from "../assets/cultive_logo.svg";
 
 const NewHome = () => {
@@ -13,9 +9,8 @@ const NewHome = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState("/");
   const [scrollY, setScrollY] = useState(0);
-  const [visibleSections, setVisibleSections] = useState({});
 
-  // Handle scroll event to change navbar appearance and other animations
+  // Handle scroll event to change navbar appearance and other animations - FASTER TRANSITIONS
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -66,7 +61,7 @@ const NewHome = () => {
           <img
             src={cultive_logo}
             alt="Cultive Logo"
-            className={`object-contain transition-all duration-300 ${
+            className={`object-contain transition-all duration-150 ${
               scrolled
                 ? "w-16 h-12 sm:w-18 sm:h-14 md:w-20 md:h-16 lg:w-24 lg:h-18"
                 : "w-24 h-18 sm:w-28 sm:h-20 md:w-32 md:h-24 lg:w-36 lg:h-26"
@@ -74,7 +69,7 @@ const NewHome = () => {
           />
         </div>
         <p
-          className={`text-sm pl-2 font-medium text-slate-600 transition-all duration-300 -mt-1 ${
+          className={`text-sm pl-2 font-medium text-slate-600 transition-all duration-150 -mt-1 ${
             scrolled ? "text-xs -mt-0.5" : "text-sm -mt-1"
           }`}
         >
@@ -91,18 +86,18 @@ const NewHome = () => {
       <a
         href={href}
         onClick={() => setActiveLink(href)}
-        className={`flex items-center gap-2 px-4 py-2 font-medium transition-colors duration-200 relative group ${
+        className={`flex items-center gap-2 px-4 py-2 font-medium transition-colors duration-150 relative group ${
           scrolled ? "text-[#283a89]" : "text-white"
         }`}
       >
         <IconComponent className="w-4 h-4" />
         <span>{children}</span>
         {/* Underline animation with gradient - active state */}
-        {/* <div
-          className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 transition-all duration-300 ease-out ${
+        <div
+          className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 transition-all duration-200 ease-out ${
             scrolled ? "underline-gradient" : "bg-white"
           } ${isActive ? "w-3/4" : "w-0 group-hover:w-3/4"}`}
-        ></div> */}
+        ></div>
       </a>
     );
   };
@@ -114,7 +109,7 @@ const NewHome = () => {
         setActiveLink(href);
         onClick();
       }}
-      className="flex items-center justify-between p-6 text-slate-700 transition-colors duration-200 border-b border-slate-100 last:border-b-0"
+      className="flex items-center justify-between p-6 text-slate-700 transition-colors duration-150 border-b border-slate-100 last:border-b-0"
     >
       <div className="flex items-center gap-4">
         <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
@@ -230,9 +225,9 @@ const NewHome = () => {
         }
 
         /* Gradient underline */
-        // .underline-gradient {
-        //   background: linear-gradient(90deg, #fbb040 0%, #fbb040 50%, #283a89 50%, #283a89 100%);
-        // }
+        .underline-gradient {
+          background: linear-gradient(90deg, #fbb040 0%, #fbb040 50%, #283a89 50%, #283a89 100%);
+        }
 
         /* Smooth scrolling */
         html {
@@ -242,7 +237,7 @@ const NewHome = () => {
 
       {/* Fixed Navbar Header */}
       <header
-        className={`fixed w-full z-40 transition-all duration-300 ${
+        className={`fixed w-full z-40 transition-all duration-150 ${
           scrolled
             ? "bg-white/95 backdrop-blur-lg shadow-lg py-0.5 border-b border-slate-200/30"
             : "bg-transparent py-3"
@@ -262,11 +257,13 @@ const NewHome = () => {
               ))}
             </nav>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - FIXED FOR MOBILE VISIBILITY */}
             <button
               onClick={() => setIsSidebarOpen(true)}
-              className={`lg:hidden p-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-opacity-50 ${
-                scrolled ? "text-slate-600 focus:ring-blue-500" : "text-white focus:ring-white"
+              className={`lg:hidden p-2 rounded-lg transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-opacity-50 z-50 ${
+                scrolled
+                  ? "text-slate-600 hover:text-slate-800 focus:ring-blue-500 bg-white/80 hover:bg-white"
+                  : "text-white hover:text-slate-200 focus:ring-white bg-black/20 hover:bg-black/30"
               }`}
               aria-label="Open menu"
             >
@@ -281,7 +278,7 @@ const NewHome = () => {
         <>
           {/* Backdrop */}
           <div
-            className={`fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 lg:hidden transition-opacity duration-300 ${
+            className={`fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 lg:hidden transition-opacity duration-200 ${
               isSidebarOpen ? "opacity-100" : "opacity-0"
             }`}
             onClick={() => setIsSidebarOpen(false)}
@@ -289,7 +286,7 @@ const NewHome = () => {
 
           {/* Sidebar */}
           <div
-            className={`fixed left-0 top-0 bottom-0 w-80 bg-white z-50 lg:hidden shadow-xl transform transition-transform duration-300 ease-out ${
+            className={`fixed left-0 top-0 bottom-0 w-80 bg-white z-50 lg:hidden shadow-xl transform transition-transform duration-200 ease-out ${
               isSidebarOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
@@ -304,7 +301,7 @@ const NewHome = () => {
               </div>
               <button
                 onClick={() => setIsSidebarOpen(false)}
-                className="p-2 text-slate-500 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                className="p-2 text-slate-500 rounded-lg transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                 aria-label="Close menu"
               >
                 <X className="w-5 h-5" />
@@ -342,24 +339,24 @@ const NewHome = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="flex w-full min-h-screen">
+        <div className="flex w-full min-h-screen flex-col lg:flex-row">
           {/* Left Section - White Background */}
           <div className="flex-1 bg-white relative">
             <div className="container mx-auto px-6 relative z-10 h-full flex items-center">
-              <div className="space-y-6 animate-slide-left m-12">
-                <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-[#283a89] text-shadow">
+              <div className="space-y-6 animate-slide-left m-4 lg:m-12 mt-40">
+                <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-[#283a89] text-shadow">
                   Transforming Education with
                   <span className="text-[#fbb040]"> Digital Excellence</span>
                 </h1>
-                <p className="text-lg text-[#283a89] leading-relaxed max-w-lg font-medium">
+                <p className="text-base lg:text-lg text-[#283a89] leading-relaxed max-w-lg font-medium">
                   Experience the future of education management with our comprehensive suite of innovative solutions
                   designed for modern educational institutions.
                 </p>
               </div>
             </div>
 
-            {/* Rocket Image */}
-            <div className="absolute bottom-0 right-0 animate-slide-right flex flex-col justify-end items-center h-full">
+            {/* Rocket Image - Hidden on mobile, visible on larger screens */}
+            <div className="absolute bottom-0 right-0 animate-slide-right flex-col justify-end items-center h-full hidden lg:flex">
               <div className="relative mb-0">
                 <img
                   src={rocket_design}
@@ -373,14 +370,14 @@ const NewHome = () => {
 
           {/* Right Section - Gradient Background */}
           <div
-            className="flex-1 relative overflow-hidden"
+            className="flex-1 relative overflow-hidden min-h-[50vh] lg:min-h-screen"
             style={{
               background: "linear-gradient(135deg, #061b2e 0%, #0f2a47 30%, #1a365d 70%, #2c5282 100%)",
             }}
           >
-            {/* Curved Cloud Divider */}
+            {/* Curved Cloud Divider - Only visible on larger screens */}
             <div
-              className="absolute top-0 left-0 w-48 h-full bg-white z-10"
+              className="absolute top-0 left-0 w-48 h-full bg-white z-10 hidden lg:block"
               style={{
                 left: "-160px",
                 width: "200px",
@@ -458,12 +455,12 @@ const NewHome = () => {
             </div>
 
             {/* Right-side Content */}
-            <div className="relative animate-slide-right flex-col justify-end items-center h-full hidden lg:flex z-20">
+            <div className="relative animate-slide-right flex-col justify-end items-center h-full flex lg:hidden xl:flex z-20">
               <div className="relative mb-0">
                 <img
                   src={bulb_img}
                   alt="Innovation Bulb"
-                  className="w-80 h-auto relative z-10 mt-10"
+                  className="w-60 lg:w-80 h-auto relative z-10 mt-10"
                   style={{ animationDelay: "1s" }}
                 />
               </div>

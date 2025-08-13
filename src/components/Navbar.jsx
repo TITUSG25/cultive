@@ -174,10 +174,14 @@ const Navbar = () => {
             <div className="flex items-center justify-between p-6 border-b border-slate-100">
               <div className="flex items-center gap-3">
                 <img
-                  src="/api/placeholder/40/32"
+                  src={cultive_logo}
                   alt="Cultive Logo"
                   className="w-10 h-8 object-contain"
                 />
+                <div className="flex flex-col">
+                  <span className="text-sm font-medium text-slate-700">Cultive</span>
+                  <span className="text-xs text-orange-500">The Solution Ocean</span>
+                </div>
               </div>
               <button
                 onClick={() => setIsSidebarOpen(false)}

@@ -15,23 +15,14 @@ import {
   Settings,
   Sparkles,
   Lightbulb,
-  School,
   Heart,
   Zap,
   Star,
-  Award,
 } from "lucide-react";
-import rocket_design from "../assets/rocket_design.png";
-import bulb_img from "../assets/bulb_img.png";
-import book_design from "../assets/book_design.png";
-import aim_arrow from "../assets/aim_arrow.png";
-import cultive_arrow from "../assets/cultive_arrow.png";
-import calculator from "../assets/calculator.png";
 
 const Home = () => {
   const [hoveredService, setHoveredService] = useState(null);
   const [scrollY, setScrollY] = useState(0);
-  const [visibleSections, setVisibleSections] = useState({});
 
   // Handle scroll animations
   useEffect(() => {
@@ -49,7 +40,6 @@ const Home = () => {
         "We craft Individualized Education Plans (IEPs) that guide personalized learning journeys tailored to each student's unique needs, beginning from birth and evolving throughout their developmental stages.",
       icon: GraduationCap,
       color: "from-blue-600 to-purple-600",
-      bgColor: "bg-blue-50",
       delay: 0.1,
     },
     {
@@ -59,7 +49,6 @@ const Home = () => {
         "We seamlessly integrate Activity-Based Learning (ABL) into the curriculum while continuously refining our pedagogical methods, and our team of experts collaborates closely with schools to design, implement, and update curriculum that align with current educational standards and best practices.",
       icon: BookOpen,
       color: "from-green-600 to-teal-600",
-      bgColor: "bg-green-50",
       delay: 0.2,
     },
     {
@@ -69,7 +58,6 @@ const Home = () => {
         "Our Psychological Counseling services offer essential support for the mental health and well-being of students, parents, and educators, fostering a positive and resilient educational environment.",
       icon: Heart,
       color: "from-pink-600 to-rose-600",
-      bgColor: "bg-pink-50",
       delay: 0.3,
     },
     {
@@ -79,7 +67,6 @@ const Home = () => {
         "We provide cutting-edge educational technology tools and platforms that facilitate interactive learning, digital classrooms, and seamless communication between students and teachers. Our solutions include Learning Management Systems (LMS), language labs, and e-learning content development.",
       icon: Monitor,
       color: "from-indigo-600 to-blue-600",
-      bgColor: "bg-indigo-50",
       delay: 0.4,
     },
     {
@@ -89,7 +76,6 @@ const Home = () => {
         "Through Soft Skills and Personality Training, we deliver seminars and workshops that focus on cultivating crucial interpersonal abilities and enhancing personality development, equipping individuals with the skills needed to succeed in both academic and professional settings.",
       icon: Users,
       color: "from-orange-600 to-red-600",
-      bgColor: "bg-orange-50",
       delay: 0.5,
     },
     {
@@ -99,7 +85,6 @@ const Home = () => {
         "Our Career Counseling and Guidance services empower students to make informed and strategic decisions about their future career paths, providing them the knowledge and confidence to pursue their ambitions.",
       icon: MapPin,
       color: "from-purple-600 to-pink-600",
-      bgColor: "bg-purple-50",
       delay: 0.6,
     },
     {
@@ -109,7 +94,6 @@ const Home = () => {
         "We offer comprehensive SIS solutions that streamline student data management, including attendance, grading, and reporting, ensuring that schools can efficiently manage and track student progress.",
       icon: Brain,
       color: "from-cyan-600 to-blue-600",
-      bgColor: "bg-cyan-50",
       delay: 0.7,
     },
     {
@@ -119,7 +103,6 @@ const Home = () => {
         "The Students Services Center (SSC) serves as a centralized hub dedicated to supporting the diverse needs of students throughout their academic journey, providing a wide range of essential services designed to enhance student success, well-being, and overall campus experience.",
       icon: Building,
       color: "from-teal-600 to-green-600",
-      bgColor: "bg-teal-50",
       delay: 0.8,
     },
     {
@@ -129,7 +112,6 @@ const Home = () => {
         "We conduct Outbound Training Programs that use experiential learning to develop teamwork, leadership, and practical skills, offering participants hands-on experiences that translate to real-world success.",
       icon: Target,
       color: "from-amber-600 to-orange-600",
-      bgColor: "bg-amber-50",
       delay: 0.9,
     },
     {
@@ -139,7 +121,6 @@ const Home = () => {
         "We provide ongoing professional development programs and workshops for teachers and staff, focusing on modern teaching techniques, technology integration, and classroom management.",
       icon: Lightbulb,
       color: "from-yellow-600 to-amber-600",
-      bgColor: "bg-yellow-50",
       delay: 1.0,
     },
     {
@@ -149,7 +130,6 @@ const Home = () => {
         "Our Strategic Admission Planning services assist schools in developing effective strategies to attract and retain students, ensuring sustainable growth and a strong academic community.",
       icon: Calendar,
       color: "from-emerald-600 to-teal-600",
-      bgColor: "bg-emerald-50",
       delay: 1.1,
     },
     {
@@ -159,7 +139,6 @@ const Home = () => {
         "Our administrative software solutions are designed to optimize school operations, including admissions, fee management, human resources, and facility management, allowing administrators to focus more on educational outcomes.",
       icon: Settings,
       color: "from-slate-600 to-gray-600",
-      bgColor: "bg-slate-50",
       delay: 1.2,
     },
     {
@@ -179,7 +158,6 @@ const Home = () => {
         "From setting up computer labs to ensuring secure and reliable internet connectivity, we offer IT infrastructure solutions that support the technological needs of modern schools. Our services include network design, hardware procurement, and ongoing technical support.",
       icon: Zap,
       color: "from-blue-600 to-indigo-600",
-      bgColor: "bg-blue-50",
       delay: 1.4,
     },
     {
@@ -189,7 +167,6 @@ const Home = () => {
         "We help schools implement robust security measures to protect student data and ensure compliance with local and international educational regulations. Our services include cybersecurity solutions, data protection policies, and compliance audits.",
       icon: Shield,
       color: "from-red-600 to-pink-600",
-      bgColor: "bg-red-50",
       delay: 1.5,
     },
     {
@@ -199,10 +176,22 @@ const Home = () => {
         "We understand that every school is unique, and we offer customized solutions and consulting services to address specific challenges and goals. Whether it's integrating new technologies or improving operational efficiency, we provide tailored strategies that deliver results.",
       icon: Sparkles,
       color: "from-indigo-600 to-purple-600",
-      bgColor: "bg-indigo-50",
       delay: 1.6,
     },
   ];
+
+  // Generate random stars
+  const generateStars = () => {
+    return Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      delay: Math.random() * 3,
+      duration: 2 + Math.random() * 3,
+    }));
+  };
+
+  const stars = generateStars();
 
   // Features data
   const features = [
@@ -238,8 +227,15 @@ const Home = () => {
       icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
       color: "bg-gradient-to-br from-pink-500 to-rose-600",
     },
+    {
+      id: 5,
+      title: "Music, Art & Craft and Dance (MAD)",
+      description:
+        "Creative arts programs fostering imagination, cultural expression, and artistic talents through comprehensive music, visual arts, and dance curriculum.",
+      icon: "M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3",
+      color: "bg-gradient-to-br from-orange-500 to-amber-600",
+    },
   ];
-
   // Testimonials data
   const testimonials = [
     {
@@ -443,235 +439,392 @@ const Home = () => {
       {/* Hero Section */}
       <NewHome />
 
-      <section className="py-16 bg-gray-50 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23283a89' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          ></div>
+      {/* Our premium services */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+        {/* Animated Stars Background */}
+        <div className="absolute inset-0">
+          {stars.map((star) => (
+            <div
+              key={star.id}
+              className="absolute w-1 h-1 bg-white rounded-full animate-pulse opacity-70"
+              style={{
+                left: `${star.left}%`,
+                top: `${star.top}%`,
+                animationDelay: `${star.delay}s`,
+                animationDuration: `${star.duration}s`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Floating Particles */}
+        <div className="absolute inset-0">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-30 animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${8 + Math.random() * 4}s`,
+              }}
+            />
+          ))}
         </div>
 
         <div className="container mx-auto px-6 relative max-w-7xl">
-          <div className="text-center mb-12 animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#283a89] rounded-full text-sm font-medium mb-4 shadow-md border border-gray-200">
-              <Award className="w-4 h-4" />
-              Comprehensive Solutions
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4">
+              <h2 className="text-5xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent animate-fade-in">
+                Our Services
+              </h2>
+              <div className="h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent mt-4 animate-expand"></div>
             </div>
-            <h2 className="text-3xl font-bold mb-4 text-[#283a89]">Premium Educational Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-blue-100 max-w-3xl mx-auto leading-relaxed text-lg opacity-90">
               Discover our comprehensive suite of educational solutions designed to enhance learning experiences and
               streamline institutional operations.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Services Grid - Horizontal Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {services.map((service, index) => {
               const Icon = service.icon;
+              const isHovered = hoveredService === service.id;
+
               return (
                 <div
                   key={service.id}
-                  className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl border-2 border-gray-100 hover:border-amber-400 relative overflow-hidden animate-fade-up transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+                  className="group relative"
                   style={{ animationDelay: `${service.delay}s` }}
                   onMouseEnter={() => setHoveredService(service.id)}
                   onMouseLeave={() => setHoveredService(null)}
                 >
-                  {/* Background Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-amber-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Card - Horizontal Layout */}
+                  <div className="relative bg-gradient-to-br from-slate-800/50 via-blue-900/30 to-indigo-900/50 backdrop-blur-sm border border-blue-400/20 rounded-3xl p-8 transition-all duration-700 hover:scale-105 hover:border-blue-400/50 hover:shadow-2xl hover:shadow-blue-500/20 overflow-hidden animate-slide-up min-h-[320px] flex flex-col">
+                    {/* Glowing Background Effect */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-all duration-700 rounded-3xl`}
+                    ></div>
 
-                  {/* Service Icon */}
-                  <div className="relative mb-6 z-10">
-                    <div className="relative">
-                      <div
-                        className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-[#283a89] to-[#1e2a5e] flex items-center justify-center transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-lg`}
-                      >
-                        <Icon className="w-8 h-8 text-white" />
-                      </div>
-                      {/* Glowing background effect on hover */}
-                      <div className="absolute inset-0 w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-400 rounded-2xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500 -z-10"></div>
+                    {/* Static Border Glow */}
+                    <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                      <div className="absolute inset-0 rounded-3xl border-2 border-blue-400/30 group-hover:border-blue-400/50"></div>
                     </div>
+
+                    {/* Top Section with Number and Icon */}
+                    <div className="flex items-start justify-between mb-6">
+                      {/* Service Number */}
+                      <div className="text-4xl font-bold text-amber-400 group-hover:text-amber-300 transition-colors duration-500">
+                        {String(index + 1).padStart(2, "0")}
+                      </div>
+
+                      {/* Icon Container */}
+                      <div className="relative z-10">
+                        <div className="relative inline-block">
+                          <div
+                            className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center transform transition-all duration-700 group-hover:rotate-12 group-hover:scale-110 shadow-lg group-hover:shadow-2xl`}
+                          >
+                            <Icon className="w-8 h-8 text-white" />
+                          </div>
+                          {/* Icon Glow Effect */}
+                          <div
+                            className={`absolute inset-0 w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-all duration-700`}
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="relative z-10 flex-grow">
+                      <h3 className="text-xl font-bold mb-4 text-white group-hover:text-blue-200 transition-all duration-500">
+                        {service.title}
+                      </h3>
+                      <p className="text-blue-200/80 text-sm leading-relaxed group-hover:text-blue-100/90 transition-all duration-500">
+                        {service.description}
+                      </p>
+                    </div>
+
+                    {/* Floating Particles */}
+                    {isHovered && (
+                      <>
+                        {[...Array(3)].map((_, i) => (
+                          <div
+                            key={i}
+                            className="absolute w-1 h-1 bg-blue-400 rounded-full animate-float-up opacity-70"
+                            style={{
+                              left: `${20 + Math.random() * 60}%`,
+                              bottom: "20px",
+                              animationDelay: `${i * 0.3}s`,
+                            }}
+                          />
+                        ))}
+                      </>
+                    )}
+
+                    {/* Bottom Accent */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+
+                    {/* Corner Decorative Element */}
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-amber-100/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-
-                  {/* Service Content */}
-                  <div className="relative z-10">
-                    <h3 className="text-xl font-bold mb-3 text-[#283a89] group-hover:text-[#283a89] transition-all duration-300 transform group-hover:translate-x-1">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* Decorative Corner Element */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-amber-100 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                  {/* Bottom Accent Line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 </div>
               );
             })}
           </div>
-
-          {/* Stats Section */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-up">
-            {[
-              { number: "500+", label: "Educational Institutions", icon: School },
-              { number: "10K+", label: "Active Teachers", icon: Users },
-              { number: "50K+", label: "Students Served", icon: GraduationCap },
-              { number: "99%", label: "Satisfaction Rate", icon: Star },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="text-center group animate-scale-in"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="relative mb-4">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#283a89] to-[#1e2a5e] rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all duration-300 shadow-lg">
-                    <stat.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="absolute inset-0 w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-400 rounded-2xl blur-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 mx-auto"></div>
-                </div>
-                <div className="text-3xl font-bold text-[#283a89] mb-2 group-hover:scale-105 transition-transform duration-300">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600 font-medium group-hover:text-gray-700 transition-colors duration-300">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
+
+        <style jsx>{`
+          @keyframes float {
+            0%,
+            100% {
+              transform: translateY(0px) rotate(0deg);
+            }
+            33% {
+              transform: translateY(-10px) rotate(5deg);
+            }
+            66% {
+              transform: translateY(5px) rotate(-5deg);
+            }
+          }
+
+          @keyframes fade-in {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes slide-up {
+            from {
+              opacity: 0;
+              transform: translateY(40px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes fade-in-up {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes expand {
+            from {
+              width: 0;
+            }
+            to {
+              width: 100%;
+            }
+          }
+
+          @keyframes border-glow {
+            0% {
+              transform: translateX(-100%);
+            }
+            100% {
+              transform: translateX(100%);
+            }
+          }
+
+          @keyframes float-up {
+            0% {
+              transform: translateY(0px);
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(-60px);
+              opacity: 0;
+            }
+          }
+
+          @keyframes spin-slow {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+
+          .animate-float {
+            animation: float 6s ease-in-out infinite;
+          }
+
+          .animate-fade-in {
+            animation: fade-in 1s ease-out forwards;
+          }
+
+          .animate-slide-up {
+            animation: slide-up 0.8s ease-out forwards;
+          }
+
+          .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+            opacity: 0;
+          }
+
+          .animate-expand {
+            animation: expand 1.5s ease-out forwards;
+          }
+
+          .animate-border-glow {
+            animation: border-glow 2s linear infinite;
+          }
+
+          .animate-float-up {
+            animation: float-up 3s linear infinite;
+          }
+
+          .animate-spin-slow {
+            animation: spin-slow 8s linear infinite;
+          }
+        `}</style>
       </section>
 
-      <section className="py-16 bg-white relative">
-        {/* Custom Styles */}
+      {/* Premium Features */}
+      <section className="py-20 bg-white relative">
         <style>
           {`
-            .feature-card {
-              position: relative;
-              overflow: hidden;
-            }
-            
-            .feature-card::before {
-              content: '';
-              position: absolute;
-              top: -50%;
-              left: -50%;
-              width: 200%;
-              height: 200%;
-              background: conic-gradient(from 0deg, transparent, #fbb040, transparent);
-              opacity: 0;
-              transition: all 0.6s ease;
-              animation: rotate 3s linear infinite;
-              z-index: 0;
-            }
-            
-            .feature-card:hover::before {
-              opacity: 0.1;
-            }
-            
-            .feature-card::after {
-              content: '';
-              position: absolute;
-              inset: 2px;
-              background: white;
-              border-radius: 10px;
-              z-index: 1;
-            }
-            
-            .feature-content {
-              position: relative;
-              z-index: 2;
-            }
-            
-            @keyframes rotate {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-            
-            .shimmer-effect {
-              position: relative;
-              overflow: hidden;
-            }
-            
-            .shimmer-effect::before {
-              content: '';
-              position: absolute;
-              top: -50%;
-              left: -100%;
-              width: 50%;
-              height: 200%;
-              background: linear-gradient(90deg, transparent, rgba(251, 176, 64, 0.4), transparent);
-              transform: skewX(-20deg);
-              transition: left 0.8s ease;
-            }
-            
-            .feature-card:hover .shimmer-effect::before {
-              left: 100%;
-            }
-          `}
+      @keyframes shimmer-once {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      .feature-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        transition: all 0.4s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      }
+      .feature-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        padding: 2px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #fbb040, #ff7e5f, #fbb040);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      .feature-card:hover::before {
+        opacity: 1;
+      }
+      .premium-tag {
+        position: absolute;
+        top: 12px;
+        right: 0;
+        background: linear-gradient(90deg, #ff9800, #f44336);
+        background-size: 200% 100%;
+        animation: shimmer-once 1.5s linear 1;
+        color: white;
+        padding: 4px 14px;
+        font-size: 12px;
+        font-weight: bold;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        letter-spacing: 1px;
+      }
+      .icon-animate {
+        animation: pulse 2s infinite ease-in-out;
+      }
+    `}
         </style>
 
         <div className="container mx-auto px-6 max-w-7xl">
-          {/* Section Header */}
-          <div className="text-center mb-12 animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#fbb040] bg-opacity-10 text-[#283a89] rounded-full text-sm font-medium mb-4 border border-[#fbb040] border-opacity-30">
-              <Lightbulb className="w-4 h-4" />
-              Premium Services
-            </div>
-            <h2 className="text-4xl text-center text-[#283a89] font-extrabold mb-4">
-              <span>EXCLUSIVE</span> & <span>PREMIUM</span>
+          {/* Header */}
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-extrabold text-[#283a89]">
+              OUR EXCLUSIVE <span className="text-[#fbb040]">& PREMIUM SERVICES</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-gray-600 max-w-2xl mx-auto mt-4">
               Experience cutting-edge technology solutions designed specifically for modern educational environments.
             </p>
           </div>
 
-          {/* Feature Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <div
-                key={feature.id}
-                className="feature-card group bg-white p-8 rounded-xl shadow-lg border border-gray-100 relative transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="feature-content">
-                  {/* Icon with shimmer effect */}
-                  <div className="relative mb-6">
-                    <div
-                      className={`shimmer-effect w-16 h-16 ${feature.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-xl`}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="white"
-                        className="w-8 h-8 group-hover:scale-110 transition-transform duration-300"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d={feature.icon} />
-                      </svg>
-                    </div>
-                  </div>
+          {/* First Row - 3 Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {features.slice(0, 3).map((feature, index) => (
+              <div key={feature.id} className="feature-card bg-white p-8 shadow-lg relative">
+                <div className="premium-tag">PREMIUM</div>
 
-                  {/* Title */}
-                  <h3 className="text-xl font-bold mb-3 text-[#283a89] transition-colors duration-300">
-                    {feature.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                    {feature.description}
-                  </p>
-
-                  {/* Single top-right dot - always visible */}
-                  <div className="absolute top-2 right-2 w-3 h-3 bg-[#fbb040] rounded-full"></div>
-
-                  {/* Animated corner border on hover - appears around the dot */}
-                  <div className="absolute top-0 right-0 w-7 h-7 border-t-2 border-r-2 border-[#fbb040] rounded-tr-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <div
+                  className={`w-16 h-16 ${feature.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg icon-animate`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="white"
+                    className="w-8 h-8"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d={feature.icon} />
+                  </svg>
                 </div>
+
+                <h3 className="text-xl font-bold text-[#283a89] mb-3">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Second Row - 2 Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {features.slice(3).map((feature, index) => (
+              <div key={feature.id} className="feature-card bg-white p-8 shadow-lg relative">
+                <div className="premium-tag">PREMIUM</div>
+
+                <div
+                  className={`w-16 h-16 ${feature.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg icon-animate`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="white"
+                    className="w-8 h-8"
+                  >
+                    {feature.id === 5 ? (
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 19V6l12-2v13M9 19a2 2 0 11-4 0 2 2 0 014 0zm12-2a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    ) : (
+                      <path strokeLinecap="round" strokeLinejoin="round" d={feature.icon} />
+                    )}
+                  </svg>
+                </div>
+
+                <h3 className="text-xl font-bold text-[#283a89] mb-3">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
           </div>

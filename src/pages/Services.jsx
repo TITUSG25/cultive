@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Users, Target, BarChart3, Award, User, GraduationCap, School, Heart, Shield, Headphones } from "lucide-react";
 import school from '../assets/school.jpg';
 import students from '../assets/students.jpg';

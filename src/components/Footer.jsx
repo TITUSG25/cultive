@@ -54,7 +54,7 @@ const Footer = () => {
     if (email) {
       const subject = "Participation Request from " + email
       const body = `Hello,\n\nI would like to participate in Cultive programs.\n\nFrom: ${email}\n\nThank you!`
-      const mailtoLink = `mailto:cultivetech@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      const mailtoLink = `mailto:connect@cultive.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
       window.location.href = mailtoLink
     }
   }
@@ -113,7 +113,7 @@ const Footer = () => {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center gap-3 text-blue-200">
                   <Mail className="w-5 h-5 text-[#fbb040]" />
-                  <span>cultivetech@gmail.com</span>
+                  <span>connect@cultive.in</span>
                 </div>
                 <div className="flex items-center gap-3 text-blue-200">
                   <Phone className="w-5 h-5 text-[#fbb040]" />

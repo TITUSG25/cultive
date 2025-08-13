@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import {
   GraduationCap,
   BookOpen,
@@ -7,7 +7,7 @@ import {
   Shield,
   Lightbulb,
   School,
-  Heart,
+  ArrowUpRight,
   Zap,
   Star,
   Award,
@@ -16,19 +16,10 @@ import {
 
 const About = () => {
   // State for animations
-  const [isVisible1, setIsVisible1] = useState(false);
-  const [isVisible2, setIsVisible2] = useState(false);
-  const [isVisible3, setIsVisible3] = useState(false);
-  const [isJourneyVisible, setIsJourneyVisible] = useState(false);
   const [hoveredValue, setHoveredValue] = useState(null);
   const [scrollY, setScrollY] = useState(0);
-  const [hoveredPrinciple, setHoveredPrinciple] = useState(null);
-
-  // Refs for animations
-  const sectionRef1 = useRef(null);
-  const sectionRef2 = useRef(null);
-  const sectionRef3 = useRef(null);
-  const journeyRef = useRef(null);
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   // Handle scroll animations
   useEffect(() => {
@@ -37,50 +28,66 @@ const About = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
- 
   // Core Principles data with matching icons from home page
-  const corePrinciples = [
+  const principles = [
     {
-      id: 1,
-      title: "Empathy",
-      description: "Honoring each child's unique journey with personalized educational approaches.",
-      icon: Heart,
-      color: "from-rose-500 to-pink-500",
-      cardBg: "from-rose-50 via-pink-50 to-red-50",
-      shadowColor: "shadow-rose-500/20",
-      delay: 0.1,
-    },
-    {
-      id: 2,
+      id: "01",
       title: "Excellence",
-      description: "Upholding high standards in educational psychology and technology solutions.",
+      subtitle: "Beyond Standards",
+      description:
+        "Crafting educational experiences that transcend conventional boundaries through meticulous attention to detail and innovative pedagogical approaches.",
       icon: Award,
-      color: "from-[#283a89] to-blue-600",
-      cardBg: "from-blue-50 via-indigo-50 to-slate-50",
-      shadowColor: "shadow-blue-500/20",
-      delay: 0.2,
+      gradient: "from-violet-600 via-purple-600 to-indigo-700",
+      glowColor: "shadow-violet-500/25",
+      accentGradient: "from-yellow-400 to-orange-500",
+      bgPattern: "radial-gradient(circle at 20% 50%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)",
     },
     {
-      id: 3,
+      id: "02",
       title: "Innovation",
-      description: "Championing creativity and adaptive learning through cutting-edge technology.",
+      subtitle: "Future Forward",
+      description:
+        "Pioneering tomorrow's learning solutions today with cutting-edge technology integration and forward-thinking educational methodologies.",
       icon: Lightbulb,
-      color: "from-[#fbb040] to-amber-500",
-      cardBg: "from-amber-50 via-yellow-50 to-orange-50",
-      shadowColor: "shadow-amber-500/20",
-      delay: 0.3,
+      gradient: "from-emerald-500 via-teal-600 to-cyan-700",
+      glowColor: "shadow-emerald-500/25",
+      accentGradient: "from-pink-400 to-rose-500",
+      bgPattern: "radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)",
     },
     {
-      id: 4,
-      title: "Collaboration",
-      description: "Partnering with families, educators, and communities for holistic growth.",
-      icon: Users,
-      color: "from-teal-500 to-emerald-500",
-      cardBg: "from-teal-50 via-emerald-50 to-green-50",
-      shadowColor: "shadow-teal-500/20",
-      delay: 0.4,
+      id: "03",
+      title: "Integrity",
+      subtitle: "Trust Foundation",
+      description:
+        "Building lasting partnerships through transparent practices, ethical innovation, and unwavering commitment to educational excellence.",
+      icon: Shield,
+      gradient: "from-amber-500 via-orange-600 to-red-600",
+      glowColor: "shadow-amber-500/25",
+      accentGradient: "from-blue-400 to-indigo-500",
+      bgPattern: "radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%)",
+    },
+    {
+      id: "04",
+      title: "Impact",
+      subtitle: "Measurable Change",
+      description:
+        "Creating transformative educational outcomes that resonate beyond classrooms, shaping minds and building tomorrow's leaders.",
+      icon: Target,
+      gradient: "from-rose-500 via-pink-600 to-purple-700",
+      glowColor: "shadow-rose-500/25",
+      accentGradient: "from-green-400 to-emerald-500",
+      bgPattern: "radial-gradient(circle at 80% 80%, rgba(244, 63, 94, 0.1) 0%, transparent 50%)",
     },
   ];
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   // Methodology data
   const methodology = [
@@ -221,7 +228,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen font-sans bg-white">
+    <div className="min-h-screen font-sans bg-white mt-8">
       {/* Custom Styles - Same as Home Page */}
       <style jsx>{`
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
@@ -463,320 +470,224 @@ const About = () => {
 
       {/* Our core principles */}
 
-      <section className="mt-5 py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/40 relative overflow-hidden">
-        {/* Custom Styles */}
-        <style jsx>{`
-          @keyframes fadeInUp {
-            0% {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            100% {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          @keyframes float {
-            0%,
-            100% {
-              transform: translateY(0px) rotate(0deg);
-            }
-            50% {
-              transform: translateY(-8px) rotate(1deg);
-            }
-          }
-
-          @keyframes glow {
-            0%,
-            100% {
-              box-shadow: 0 0 20px rgba(40, 58, 137, 0.3);
-            }
-            50% {
-              box-shadow: 0 0 30px rgba(40, 58, 137, 0.5);
-            }
-          }
-
-          @keyframes shimmer {
-            0% {
-              background-position: -200% 0;
-            }
-            100% {
-              background-position: 200% 0;
-            }
-          }
-
-          .animate-fade-up {
-            animation: fadeInUp 0.6s ease-out;
-          }
-
-          .animate-float {
-            animation: float 6s ease-in-out infinite;
-          }
-
-          .animate-glow {
-            animation: glow 3s ease-in-out infinite;
-          }
-
-          .shimmer-effect {
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-            background-size: 200% 100%;
-            animation: shimmer 2s infinite;
-          }
-
-          .glass-card {
-            backdrop-filter: blur(16px);
-            background: rgba(255, 255, 255, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-          }
-
-          .excellence-card {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-          }
-
-          .excellence-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #283a89, transparent);
-            transition: left 0.6s ease-in-out;
-            z-index: 10;
-          }
-
-          .excellence-card:hover::before {
-            left: 100%;
-          }
-
-          .excellence-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(40, 58, 137, 0.15), 0 0 0 1px rgba(40, 58, 137, 0.1);
-            border-color: rgba(40, 58, 137, 0.3);
-          }
-
-          .icon-container {
-            position: relative;
-            background: linear-gradient(135deg, #283a89 0%, #1e2d6f 100%);
-            transition: all 0.4s ease;
-          }
-
-          .excellence-card:hover .icon-container {
-            background: linear-gradient(135deg, #1e2d6f 0%, #162454 100%);
-            transform: rotate(5deg) scale(1.1);
-          }
-
-          .excellence-card:hover .icon-container::after {
-            content: "";
-            position: absolute;
-            inset: -4px;
-            background: linear-gradient(135deg, #283a89, #5b21b6);
-            border-radius: 16px;
-            z-index: -1;
-            opacity: 0.3;
-            filter: blur(8px);
-          }
-
-          .text-primary {
-            color: #1e293b;
-          }
-
-          .text-secondary {
-            color: #475569;
-          }
-
-          .text-accent {
-            color: #283a89;
-          }
-
-          .bg-accent {
-            background: linear-gradient(135deg, #283a89 0%, #1e2d6f 100%);
-          }
-        `}</style>
-
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Floating Geometric Shapes */}
-          <div className="absolute top-20 left-10 w-16 h-16 bg-gradient-to-br from-[#283a89] to-[#1e2d6f] rounded-full opacity-10 animate-float"></div>
+      <section className="relative min-h-screen bg-slate-900 overflow-hidden">
+        {/* Dynamic Background */}
+        <div className="absolute inset-0">
+          {/* Animated Mesh Background */}
           <div
-            className="absolute top-32 right-16 w-12 h-12 bg-gradient-to-br from-purple-500 to-[#283a89] rounded-xl opacity-10 animate-float"
+            className="absolute inset-0 opacity-30"
+            style={{
+              background: `
+              radial-gradient(circle at ${mousePosition.x * 0.1}% ${
+                mousePosition.y * 0.1
+              }%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at ${100 - mousePosition.x * 0.1}% ${
+                100 - mousePosition.y * 0.1
+              }%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
+              linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.9) 100%)
+            `,
+            }}
+          />
+
+          {/* Floating Orbs */}
+          <div className="absolute top-1/4 left-1/6 w-2 h-2 bg-blue-400 rounded-full animate-ping" />
+          <div
+            className="absolute top-3/4 right-1/4 w-1 h-1 bg-purple-400 rounded-full animate-pulse"
             style={{ animationDelay: "1s" }}
-          ></div>
+          />
           <div
-            className="absolute bottom-40 left-1/4 w-10 h-10 bg-gradient-to-br from-emerald-500 to-[#283a89] rounded-full opacity-10 animate-float"
+            className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-emerald-400 rounded-full animate-bounce"
             style={{ animationDelay: "2s" }}
-          ></div>
-          <div
-            className="absolute bottom-24 right-1/3 w-14 h-14 bg-gradient-to-br from-[#283a89] to-purple-500 rounded-xl opacity-10 animate-float"
-            style={{ animationDelay: "1.5s" }}
-          ></div>
+          />
 
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23283a89' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-              }}
-            ></div>
-          </div>
+          {/* Grid Pattern */}
+          <div
+            className="absolute inset-0 opacity-5"
+            style={{
+              backgroundImage: `
+              linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
+            `,
+              backgroundSize: "50px 50px",
+            }}
+          />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative max-w-7xl">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-fade-up">
-            <div className="inline-flex items-center gap-3 px-6 py-3 glass-card text-accent rounded-full text-sm font-semibold mb-6 shadow-lg">
-              <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center animate-glow">
-                <Award className="w-4 h-4 text-white" />
-              </div>
-              Core Values
-            </div>
-
-            <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 text-[#fbb040] leading-tight">
-              Our Core{" "}
-              <span className="bg-gradient-to-r from-[#283a89] to-[#1e2d6f] bg-clip-text text-transparent">
-                Principles
-              </span>
+        <div className="relative z-10 container mx-auto px-6 py-20">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <h2
+              className="text-4xl md:text-5xl font-black mb-6 leading-none text-white"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              Our Core Principles
             </h2>
 
-            <p className="text-lg text-secondary max-w-3xl mx-auto leading-relaxed font-medium">
-              The fundamental values that guide our work and our relationship with the educational community, driving
-              innovation and excellence in every solution we deliver.
+            <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed font-light">
+              The driving forces behind our educational revolution – where innovation meets excellence in transformative
+              learning experiences.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Excellence Card */}
-            <div className="excellence-card group p-8 rounded-xl shadow-lg relative animate-fade-up backdrop-blur-sm">
-              {/* Icon */}
-              <div className="relative mb-6">
-                <div className="icon-container w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">
-                  <Award className="w-8 h-8 text-white" />
+          {/* Principles Grid */}
+          <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            {principles.map((principle, index) => {
+              const Icon = principle.icon;
+              const isHovered = hoveredCard === principle.id;
+
+              return (
+                <div
+                  key={principle.id}
+                  className="group relative"
+                  onMouseEnter={() => setHoveredCard(principle.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  style={{
+                    animation: `slideInScale 0.8s ease-out ${index * 0.2}s both`,
+                  }}
+                >
+                  {/* Main Card */}
+                  <div
+                    className={`
+                  relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-2xl 
+                  border border-slate-700/50 rounded-3xl p-8 h-full
+                  transition-all duration-700 ease-out cursor-pointer overflow-hidden
+                  group-hover:border-slate-600 group-hover:${principle.glowColor} group-hover:shadow-2xl
+                  transform group-hover:-translate-y-3 group-hover:scale-[1.02]
+                `}
+                  >
+                    {/* Dynamic Background Pattern */}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
+                      style={{ background: principle.bgPattern }}
+                    />
+
+                    {/* Animated Border */}
+                    <div
+                      className={`
+                    absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500
+                    bg-gradient-to-r ${principle.gradient} p-[1px]
+                  `}
+                    >
+                      <div className="w-full h-full bg-gradient-to-br from-slate-800/95 to-slate-900/95 rounded-3xl" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="relative z-20 h-full flex flex-col">
+                      {/* Header */}
+                      <div className="flex items-start justify-between mb-8">
+                        <div className="flex items-center gap-6">
+                          {/* Number Badge */}
+                          <div
+                            className={`
+                          text-3xl font-black bg-gradient-to-r ${principle.gradient} bg-clip-text text-transparent
+                          group-hover:scale-110 transition-transform duration-500
+                        `}
+                          >
+                            {principle.id}
+                          </div>
+
+                          {/* Icon */}
+                          <div
+                            className={`
+                          relative w-16 h-16 bg-gradient-to-br ${principle.gradient} rounded-2xl 
+                          flex items-center justify-center shadow-lg
+                          group-hover:rotate-12 group-hover:scale-110 transition-all duration-500
+                        `}
+                          >
+                            <Icon className="w-8 h-8 text-white" />
+
+                            {/* Icon Glow */}
+                            <div
+                              className={`
+                            absolute inset-0 bg-gradient-to-br ${principle.gradient} rounded-2xl opacity-0 
+                            group-hover:opacity-50 scale-110 blur-xl transition-all duration-500
+                          `}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Action Arrow */}
+                        <div
+                          className={`
+                        w-10 h-10 bg-gradient-to-r ${principle.accentGradient} rounded-xl 
+                        flex items-center justify-center opacity-0 group-hover:opacity-100
+                        transform translate-x-4 group-hover:translate-x-0 transition-all duration-500
+                      `}
+                        >
+                          <ArrowUpRight className="w-5 h-5 text-white" />
+                        </div>
+                      </div>
+
+                      {/* Text Content */}
+                      <div className="flex-grow space-y-4">
+                        <div>
+                          <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-slate-100 transition-colors duration-300">
+                            {principle.title}
+                          </h3>
+                          <div
+                            className={`
+                          text-sm font-semibold bg-gradient-to-r ${principle.accentGradient} bg-clip-text text-transparent
+                          opacity-75 group-hover:opacity-100 transition-opacity duration-300
+                        `}
+                          >
+                            {principle.subtitle}
+                          </div>
+                        </div>
+
+                        <p className="text-slate-300 group-hover:text-slate-200 leading-relaxed transition-colors duration-300">
+                          {principle.description}
+                        </p>
+                      </div>
+
+                      {/* Bottom Accent */}
+                      <div className="mt-8 pt-6 border-t border-slate-700/50 group-hover:border-slate-600/50 transition-colors duration-300">
+                        <div
+                          className={`
+                        h-1 bg-gradient-to-r ${principle.gradient} rounded-full
+                        transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left
+                      `}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Shimmer Effect */}
+                    <div className="absolute inset-0 overflow-hidden rounded-3xl">
+                      <div
+                        className={`
+                      absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
+                      transform -translate-x-full group-hover:translate-x-full 
+                      transition-transform duration-1000 ease-in-out
+                    `}
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              {/* Content */}
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold mb-4 text-primary group-hover:text-accent transition-colors duration-300">
-                  Excellence
-                </h3>
-                <p className="text-secondary leading-relaxed font-medium text-sm">
-                  Upholding high standards in educational psychology and technology solutions with unwavering commitment
-                  to quality.
-                </p>
-              </div>
-
-              {/* Decorative Elements */}
-              <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-to-br from-[#283a89] to-[#1e2d6f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-              {/* Shimmer Effect */}
-              <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300" />
-            </div>
-
-            {/* Innovation Card */}
-            <div
-              className="excellence-card group p-8 rounded-xl shadow-lg relative animate-fade-up backdrop-blur-sm"
-              style={{ animationDelay: "0.1s" }}
-            >
-              <div className="relative mb-6">
-                <div className="icon-container w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">
-                  <Lightbulb className="w-8 h-8 text-white" />
-                </div>
-              </div>
-
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold mb-4 text-primary group-hover:text-accent transition-colors duration-300">
-                  Innovation
-                </h3>
-                <p className="text-secondary leading-relaxed font-medium text-sm">
-                  Pioneering cutting-edge solutions that transform educational experiences through advanced technology
-                  integration.
-                </p>
-              </div>
-
-              <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-to-br from-[#283a89] to-[#1e2d6f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300" />
-            </div>
-
-            {/* Integrity Card */}
-            <div
-              className="excellence-card group p-8 rounded-xl shadow-lg relative animate-fade-up backdrop-blur-sm"
-              style={{ animationDelay: "0.2s" }}
-            >
-              <div className="relative mb-6">
-                <div className="icon-container w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">
-                  <Shield className="w-8 h-8 text-white" />
-                </div>
-              </div>
-
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold mb-4 text-primary group-hover:text-accent transition-colors duration-300">
-                  Integrity
-                </h3>
-                <p className="text-secondary leading-relaxed font-medium text-sm">
-                  Building trust through transparent practices, ethical conduct, and reliable educational technology
-                  solutions.
-                </p>
-              </div>
-
-              <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-to-br from-[#283a89] to-[#1e2d6f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300" />
-            </div>
-
-            {/* Impact Card */}
-            <div
-              className="excellence-card group p-8 rounded-xl shadow-lg relative animate-fade-up backdrop-blur-sm"
-              style={{ animationDelay: "0.3s" }}
-            >
-              <div className="relative mb-6">
-                <div className="icon-container w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
-              </div>
-
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold mb-4 text-primary group-hover:text-accent transition-colors duration-300">
-                  Impact
-                </h3>
-                <p className="text-secondary leading-relaxed font-medium text-sm">
-                  Creating meaningful change in educational outcomes through research-backed psychology and technology
-                  solutions.
-                </p>
-              </div>
-
-              <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-to-br from-[#283a89] to-[#1e2d6f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300" />
-            </div>
-          </div>
-
-          {/* Bottom Accent */}
-          <div className="mt-16 text-center animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            <div className="inline-flex items-center gap-2 text-sm text-secondary font-medium">
-              <div className="w-12 h-px bg-gradient-to-r from-transparent via-[#283a89] to-transparent"></div>
-              <Star className="w-4 h-4 text-[#283a89]" />
-              <span>Trusted by 500+ Educational Institutions</span>
-              <Star className="w-4 h-4 text-[#283a89]" />
-              <div className="w-12 h-px bg-gradient-to-r from-transparent via-[#283a89] to-transparent"></div>
-            </div>
+              );
+            })}
           </div>
         </div>
+
+        <style jsx>{`
+          @keyframes slideInScale {
+            0% {
+              opacity: 0;
+              transform: translateY(50px) scale(0.9);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0) scale(1);
+            }
+          }
+        `}</style>
       </section>
 
       {/* Our Values Section */}
       <section className="py-16 bg-white relative">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-12 animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#fbb040] bg-opacity-10 text-[#283a89] rounded-full text-sm font-medium mb-4 border border-[#fbb040] border-opacity-30">
-              <Lightbulb className="w-4 h-4" />
-              Our Values
-            </div>
-            <h2 className="text-4xl text-center text-[#283a89] font-extrabold mb-4">
-              <span className="underline-animate">EXCELLENCE</span> &{" "}
-              <span className="underline-animate">INNOVATION</span>
+            <h2 className="text-4xl font-extrabold mb-4">
+              <span className="text-[#283a89]">Our Core Values -</span>{" "}
+              <span className="text-[#f97316]">Excellence & Innovation</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
               The driving forces behind our commitment to transforming educational experiences worldwide.
@@ -924,11 +835,7 @@ const About = () => {
       <section className="py-16 bg-gray-50 relative">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-12 animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#283a89] rounded-full text-sm font-medium mb-4 shadow-md border border-gray-200">
-              <Users className="w-4 h-4" />
-              Meet Our Team
-            </div>
-            <h2 className="text-3xl font-bold mb-4 text-[#283a89]">Expert Leadership</h2>
+            <h2 className="text-3xl font-bold mb-4 text-[#283a89]">Our Expert Leadership Team</h2>
             <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Meet the passionate educators and technologists driving our mission forward.
             </p>
