@@ -1,4 +1,4 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   GraduationCap,
   BookOpen,
@@ -13,7 +13,14 @@ import {
   Award,
   TrendingUp,
 } from "lucide-react";
-
+import sam from "../assets/sam.jpg";
+import angel from "../assets/angel.jpg";
+import titus from "../assets/titus.jpg";
+import remali from "../assets/remali.jpg";
+import larsen from "../assets/Larsen.jpg";
+import hycinth from "../assets/hycinth.jpg";
+import jabez from "../assets/jabez.jpg";
+import bhuvi from "../assets/bhuvi.jpg";
 const About = () => {
   // State for animations
   const [hoveredValue, setHoveredValue] = useState(null);
@@ -149,43 +156,85 @@ const About = () => {
 
   // Team members data
   const teamMembers = [
-    {
-      id: 1,
-      name: "Alex Reynolds",
-      title: "Founder & CEO",
-      image:
-        "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      bio: "Former educator with 15 years of experience in teaching and school administration. Leading the vision to transform educational technology.",
-      skills: ["Leadership", "Education", "Strategy"],
-    },
-    {
-      id: 2,
-      name: "Sophia Chen",
-      title: "Chief Technology Officer",
-      image:
-        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      bio: "Tech innovator with extensive experience in educational software development. Passionate about creating scalable solutions.",
-      skills: ["React", "Node.js", "AI/ML"],
-    },
-    {
-      id: 3,
-      name: "Marcus Wilson",
-      title: "Head of Product",
-      image:
-        "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      bio: "Product specialist dedicated to creating intuitive educational tools. Focus on user experience and product strategy.",
-      skills: ["UX Design", "Product Strategy", "Analytics"],
-    },
-    {
-      id: 4,
-      name: "Priya Sharma",
-      title: "Director of Education",
-      image:
-        "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      bio: "Education expert focused on aligning technology with pedagogical best practices. Curriculum development specialist.",
-      skills: ["Pedagogy", "Curriculum", "Training"],
-    },
-  ];
+  {
+    id: 1,
+    name: "Sam Giftson",
+    title: "Founder & CEO",
+    image: sam,
+    bio: "Former educator with 15 years of experience in teaching and school administration. Leading the vision to transform educational technology.",
+    accent: "emerald",
+  },
+  {
+    id: 2,
+    name: "Shiny Rachel",
+    title: "Operations Head",
+    image: angel,
+    bio: "Operations leader ensuring seamless execution and organizational growth.",
+    accent: "blue",
+  },
+  {
+    id: 3,
+    name: "Remali Sarah",
+    title: "Softskill and Communication Trainer",
+    image: remali,
+    bio: "A Post-Doctoral Research Scholar in English Literature and Communication from Bharathidasan University, with over a decade of expertise in lecturing and training students in English communication and soft skills, significantly shaping the academic and personal growth of hundreds of learners.",
+    accent: "indigo",
+  },
+  {
+    id: 4,
+    name: "Larsen Michael",
+    title: "Head - Training Workshop and Seminars (TWS)",
+    image: larsen,
+    bio: "An experienced professional with over 12 years in education, training, and curriculum development. He specializes in teacher training, student growth, and inclusive practices for diverse learning needs. With strong skills in life skills education, he helps learners build confidence, communication, and problem-solving. He has also led corporate training programs on leadership, career growth, and team building. His expertise connects academic learning with career readiness and workplace success. Through practical strategies and empathy, he empowers teachers, students, and professionals to reach their potential.",
+    accent: "indigo",
+  },
+  {
+    id: 5,
+    name: "Jabez",
+    title: "Head - Media & Design",
+    image: jabez,
+    bio: "A young and passionate creative professional with a Bachelor’s degree in Visual Communication, he has cultivated strong expertise in media and design. As a key pillar of Cultive, he leads the media team with innovation and artistic vision.",
+    accent: "orange",
+  },
+  {
+    id: 6,
+    name: "Titus",
+    title: "IT Head",
+    image: titus,
+    bio: "Titus, a Computer Science Engineer with over five years of professional experience, is a driving force behind Cultive’s technology vision. With his deep expertise in information technology, he leads the IT team with precision, delivering innovative, technology-driven solutions that strengthen the company’s operations and digital presence. His problem-solving skills, strategic approach, and commitment to excellence make him one of the strongest pillars of Cultive, ensuring the organization stays at the forefront of technological advancements.",
+    accent: "cyan",
+  },
+  {
+    id: 7,
+    name: "Bhuvaneshwaran",
+    title: "MAD (Music Art & Dance) Head",
+    image: bhuvi,
+    bio: "An engineering graduate who discovered his true passion in music and pursued it to professional excellence by completing 8 grades in Piano. He has actively contributed to numerous MAD workshops and performances, showcasing both his musical talent and creative engagement. His strong organizational skills, particularly in managing and executing MAD events across India, stand as a key strength that defines his professional journey.",
+    accent: "red",
+  },
+  {
+    id: 8,
+    name: "Hycinth",
+    title: "Communication Dept Head",
+    image: hycinth,
+    bio: "A passionate professional with over 5 years of experience in customer relations and client management in the aviation industry. She is known for her ability to understand client needs, resolve issues with empathy, and build lasting relationships. At Cultive, she serves as a strong pillar in her role as Relationship Manager. Her proactive approach and interpersonal skills help strengthen client trust and partnerships. With her dedication, Hycinth contributes greatly to Cultive’s mission of delivering impactful educational solutions.",
+    accent: "indigo",
+  },
+];
+
+  const getAccentClasses = (accent) => {
+    const accentMap = {
+      emerald: "from-emerald-500 to-teal-600",
+      blue: "from-blue-500 to-indigo-600",
+      purple: "from-purple-500 to-violet-600",
+      pink: "from-pink-500 to-rose-600",
+      orange: "from-orange-500 to-amber-600",
+      cyan: "from-cyan-500 to-blue-600",
+      red: "from-red-500 to-pink-600",
+      indigo: "from-indigo-500 to-purple-600",
+    };
+    return accentMap[accent] || "from-gray-500 to-slate-600";
+  };
 
   // Company values with matching gradients from home page
   const values = [
@@ -226,6 +275,92 @@ const About = () => {
       bgColor: "bg-yellow-50",
     },
   ];
+    const generateStars = () => {
+    return Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      delay: Math.random() * 3,
+      duration: 2 + Math.random() * 3,
+    }));
+  };
+
+  const stars = generateStars();
+
+  const TeamCard = ({ member, index }) => (
+    <div
+      className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-6 transition-all duration-500 hover:scale-105 hover:bg-white/20"
+      onMouseEnter={() => setHoveredCard(member.id)}
+      onMouseLeave={() => setHoveredCard(null)}
+      style={{
+        background: `linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))`,
+      }}
+    >
+      {/* Dynamic background */}
+      <div
+        className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+      />
+
+      {/* Glowing border effect */}
+      <div
+        className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${member.gradient} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`}
+      />
+
+      {/* Floating particles effect */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(4)].map((_, i) => (
+          <div
+            key={i}
+            className={`absolute w-1 h-1 bg-white rounded-full opacity-30 animate-pulse ${
+              hoveredCard === member.id ? "animate-bounce" : ""
+            }`}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${i * 0.8}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="relative z-10">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="relative">
+            <div
+              className={`absolute inset-0 bg-gradient-to-br ${member.gradient} rounded-xl blur-md opacity-50 group-hover:opacity-80 transition-opacity duration-500`}
+            />
+            <div
+              className={`relative w-16 h-16 bg-gradient-to-br ${member.gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}
+            >
+              <img src={member.image} alt={member.name} className="w-12 h-12 object-cover rounded-lg" />
+            </div>
+            <div className="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full border-2 border-white shadow-lg animate-pulse" />
+          </div>
+
+          <div className="flex-1">
+            <h3 className="text-lg font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-500">
+              {member.name}
+            </h3>
+            <div className={`inline-block px-3 py-1 bg-gradient-to-r ${member.gradient} rounded-full mt-1 mb-2`}>
+              <p className="text-xs font-semibold text-white">{member.title}</p>
+            </div>
+          </div>
+        </div>
+
+        <p className="text-sm text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-500">
+          {member.bio}
+        </p>
+      </div>
+
+      {/* Animated corner accent */}
+      <div
+        className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl ${member.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500 rounded-bl-full`}
+      />
+
+      {/* Hover glow effect */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    </div>
+  );
 
   return (
     <div className="min-h-screen font-sans bg-white mt-8">
@@ -468,69 +603,58 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our core principles */}
-
-      <section className="relative min-h-screen bg-slate-900 overflow-hidden">
-        {/* Dynamic Background */}
+   {/* Our Core Principles */}
+     {/* Our Core Principles */}
+      <section className="py-16 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+        {/* Animated Stars Background */}
         <div className="absolute inset-0">
-          {/* Animated Mesh Background */}
-          <div
-            className="absolute inset-0 opacity-30"
-            style={{
-              background: `
-              radial-gradient(circle at ${mousePosition.x * 0.1}% ${
-                mousePosition.y * 0.1
-              }%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-              radial-gradient(circle at ${100 - mousePosition.x * 0.1}% ${
-                100 - mousePosition.y * 0.1
-              }%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
-              linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.9) 100%)
-            `,
-            }}
-          />
-
-          {/* Floating Orbs */}
-          <div className="absolute top-1/4 left-1/6 w-2 h-2 bg-blue-400 rounded-full animate-ping" />
-          <div
-            className="absolute top-3/4 right-1/4 w-1 h-1 bg-purple-400 rounded-full animate-pulse"
-            style={{ animationDelay: "1s" }}
-          />
-          <div
-            className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-emerald-400 rounded-full animate-bounce"
-            style={{ animationDelay: "2s" }}
-          />
-
-          {/* Grid Pattern */}
-          <div
-            className="absolute inset-0 opacity-5"
-            style={{
-              backgroundImage: `
-              linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
-            `,
-              backgroundSize: "50px 50px",
-            }}
-          />
+          {stars.map((star) => (
+            <div
+              key={star.id}
+              className="absolute w-1 h-1 bg-white rounded-full animate-pulse opacity-70"
+              style={{
+                left: `${star.left}%`,
+                top: `${star.top}%`,
+                animationDelay: `${star.delay}s`,
+                animationDuration: `${star.duration}s`,
+              }}
+            />
+          ))}
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 py-20">
-          {/* Header */}
-          <div className="text-center mb-20">
-            <h2
-              className="text-4xl md:text-5xl font-black mb-6 leading-none text-white"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
-              Our Core Principles
-            </h2>
+        {/* Floating Particles */}
+        <div className="absolute inset-0">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-30 animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${8 + Math.random() * 4}s`,
+              }}
+            />
+          ))}
+        </div>
 
-            <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed font-light">
+        <div className="container mx-auto px-6 relative max-w-7xl">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <div className="inline-block mb-4">
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent animate-fade-in">
+                Our Core Principles
+              </h2>
+              <div className="h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent mt-4 animate-expand"></div>
+            </div>
+            <p className="text-blue-100 max-w-2xl mx-auto leading-relaxed text-base opacity-90">
               The driving forces behind our educational revolution – where innovation meets excellence in transformative
               learning experiences.
             </p>
           </div>
 
           {/* Principles Grid */}
-          <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
             {principles.map((principle, index) => {
               const Icon = principle.icon;
               const isHovered = hoveredCard === principle.id;
@@ -539,127 +663,82 @@ const About = () => {
                 <div
                   key={principle.id}
                   className="group relative"
+                  style={{ animationDelay: `${principle.delay || index * 0.2}s` }}
                   onMouseEnter={() => setHoveredCard(principle.id)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  style={{
-                    animation: `slideInScale 0.8s ease-out ${index * 0.2}s both`,
-                  }}
                 >
-                  {/* Main Card */}
-                  <div
-                    className={`
-                  relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-2xl 
-                  border border-slate-700/50 rounded-3xl p-8 h-full
-                  transition-all duration-700 ease-out cursor-pointer overflow-hidden
-                  group-hover:border-slate-600 group-hover:${principle.glowColor} group-hover:shadow-2xl
-                  transform group-hover:-translate-y-3 group-hover:scale-[1.02]
-                `}
-                  >
-                    {/* Dynamic Background Pattern */}
+                  {/* Card */}
+                                      <div className="relative bg-gradient-to-br from-slate-800/50 via-blue-900/30 to-indigo-900/50 backdrop-blur-sm border border-blue-400/20 rounded-2xl p-6 transition-all duration-700 hover:scale-105 hover:border-blue-400/50 hover:shadow-2xl hover:shadow-blue-500/20 overflow-hidden animate-slide-up min-h-[320px] flex flex-col">
+                    {/* Glowing Background Effect */}
                     <div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-                      style={{ background: principle.bgPattern }}
-                    />
+                      className={`absolute inset-0 bg-gradient-to-br ${principle.gradient || 'from-blue-500 to-purple-600'} opacity-0 group-hover:opacity-10 transition-all duration-700 rounded-2xl`}
+                    ></div>
 
-                    {/* Animated Border */}
-                    <div
-                      className={`
-                    absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500
-                    bg-gradient-to-r ${principle.gradient} p-[1px]
-                  `}
-                    >
-                      <div className="w-full h-full bg-gradient-to-br from-slate-800/95 to-slate-900/95 rounded-3xl" />
+                    {/* Static Border Glow */}
+                    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                      <div className="absolute inset-0 rounded-2xl border-2 border-blue-400/30 group-hover:border-blue-400/50"></div>
+                    </div>
+
+                    {/* Top Section with Number and Icon */}
+                    <div className="flex items-start justify-between mb-5">
+                      {/* Principle Number */}
+                      <div className="text-3xl font-bold text-amber-400 group-hover:text-amber-300 transition-colors duration-500">
+                        {String(index + 1).padStart(2, "0")}
+                      </div>
+
+                      {/* Icon Container */}
+                      <div className="relative z-10">
+                        <div className="relative inline-block">
+                          <div
+                            className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${principle.gradient || 'from-blue-500 to-purple-600'} flex items-center justify-center transform transition-all duration-700 group-hover:rotate-12 group-hover:scale-110 shadow-lg group-hover:shadow-2xl`}
+                          >
+                            <Icon className="w-7 h-7 text-white" />
+                          </div>
+                          {/* Icon Glow Effect */}
+                          <div
+                            className={`absolute inset-0 w-14 h-14 bg-gradient-to-br ${principle.gradient || 'from-blue-500 to-purple-600'} rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-all duration-700`}
+                          ></div>
+                        </div>
+                      </div>
                     </div>
 
                     {/* Content */}
-                    <div className="relative z-20 h-full flex flex-col">
-                      {/* Header */}
-                      <div className="flex items-start justify-between mb-8">
-                        <div className="flex items-center gap-6">
-                          {/* Number Badge */}
-                          <div
-                            className={`
-                          text-3xl font-black bg-gradient-to-r ${principle.gradient} bg-clip-text text-transparent
-                          group-hover:scale-110 transition-transform duration-500
-                        `}
-                          >
-                            {principle.id}
-                          </div>
-
-                          {/* Icon */}
-                          <div
-                            className={`
-                          relative w-16 h-16 bg-gradient-to-br ${principle.gradient} rounded-2xl 
-                          flex items-center justify-center shadow-lg
-                          group-hover:rotate-12 group-hover:scale-110 transition-all duration-500
-                        `}
-                          >
-                            <Icon className="w-8 h-8 text-white" />
-
-                            {/* Icon Glow */}
-                            <div
-                              className={`
-                            absolute inset-0 bg-gradient-to-br ${principle.gradient} rounded-2xl opacity-0 
-                            group-hover:opacity-50 scale-110 blur-xl transition-all duration-500
-                          `}
-                            />
-                          </div>
+                    <div className="relative z-10 flex-grow">
+                      <h3 className="text-xl font-bold mb-2 text-white group-hover:text-blue-200 transition-all duration-500">
+                        {principle.title}
+                      </h3>
+                      {principle.subtitle && (
+                        <div className="text-sm font-semibold text-amber-300 mb-4 opacity-75 group-hover:opacity-100 transition-opacity duration-300">
+                          {principle.subtitle}
                         </div>
-
-                        {/* Action Arrow */}
-                        <div
-                          className={`
-                        w-10 h-10 bg-gradient-to-r ${principle.accentGradient} rounded-xl 
-                        flex items-center justify-center opacity-0 group-hover:opacity-100
-                        transform translate-x-4 group-hover:translate-x-0 transition-all duration-500
-                      `}
-                        >
-                          <ArrowUpRight className="w-5 h-5 text-white" />
-                        </div>
-                      </div>
-
-                      {/* Text Content */}
-                      <div className="flex-grow space-y-4">
-                        <div>
-                          <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-slate-100 transition-colors duration-300">
-                            {principle.title}
-                          </h3>
-                          <div
-                            className={`
-                          text-sm font-semibold bg-gradient-to-r ${principle.accentGradient} bg-clip-text text-transparent
-                          opacity-75 group-hover:opacity-100 transition-opacity duration-300
-                        `}
-                          >
-                            {principle.subtitle}
-                          </div>
-                        </div>
-
-                        <p className="text-slate-300 group-hover:text-slate-200 leading-relaxed transition-colors duration-300">
-                          {principle.description}
-                        </p>
-                      </div>
-
-                      {/* Bottom Accent */}
-                      <div className="mt-8 pt-6 border-t border-slate-700/50 group-hover:border-slate-600/50 transition-colors duration-300">
-                        <div
-                          className={`
-                        h-1 bg-gradient-to-r ${principle.gradient} rounded-full
-                        transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left
-                      `}
-                        />
-                      </div>
+                      )}
+                      <p className="text-blue-200/80 text-sm leading-relaxed group-hover:text-blue-100/90 transition-all duration-500">
+                        {principle.description}
+                      </p>
                     </div>
 
-                    {/* Shimmer Effect */}
-                    <div className="absolute inset-0 overflow-hidden rounded-3xl">
-                      <div
-                        className={`
-                      absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
-                      transform -translate-x-full group-hover:translate-x-full 
-                      transition-transform duration-1000 ease-in-out
-                    `}
-                      />
-                    </div>
+                    {/* Floating Particles */}
+                    {isHovered && (
+                      <>
+                        {[...Array(3)].map((_, i) => (
+                          <div
+                            key={i}
+                            className="absolute w-1 h-1 bg-blue-400 rounded-full animate-float-up opacity-70"
+                            style={{
+                              left: `${20 + Math.random() * 60}%`,
+                              bottom: "20px",
+                              animationDelay: `${i * 0.3}s`,
+                            }}
+                          />
+                        ))}
+                      </>
+                    )}
+
+                    {/* Bottom Accent */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+
+                    {/* Corner Decorative Element */}
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-amber-100/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 </div>
               );
@@ -668,15 +747,79 @@ const About = () => {
         </div>
 
         <style jsx>{`
-          @keyframes slideInScale {
-            0% {
+          @keyframes float {
+            0%,
+            100% {
+              transform: translateY(0px) rotate(0deg);
+            }
+            33% {
+              transform: translateY(-10px) rotate(5deg);
+            }
+            66% {
+              transform: translateY(5px) rotate(-5deg);
+            }
+          }
+
+          @keyframes fade-in {
+            from {
               opacity: 0;
-              transform: translateY(50px) scale(0.9);
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes slide-up {
+            from {
+              opacity: 0;
+              transform: translateY(40px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes expand {
+            from {
+              width: 0;
+            }
+            to {
+              width: 100%;
+            }
+          }
+
+          @keyframes float-up {
+            0% {
+              transform: translateY(0px);
+              opacity: 1;
             }
             100% {
-              opacity: 1;
-              transform: translateY(0) scale(1);
+              transform: translateY(-60px);
+              opacity: 0;
             }
+          }
+
+          .animate-float {
+            animation: float 6s ease-in-out infinite;
+          }
+
+          .animate-fade-in {
+            animation: fade-in 1s ease-out forwards;
+          }
+
+          .animate-slide-up {
+            animation: slide-up 0.8s ease-out forwards;
+          }
+
+          .animate-expand {
+            animation: expand 1.5s ease-out forwards;
+          }
+
+          .animate-float-up {
+            animation: float-up 3s linear infinite;
           }
         `}</style>
       </section>
@@ -832,50 +975,116 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-gray-50 relative">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center mb-12 animate-fade-up">
-            <h2 className="text-3xl font-bold mb-4 text-[#283a89]">Our Expert Leadership Team</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Meet the passionate educators and technologists driving our mission forward.
+      <section className="py-20 px-6 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-400 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-400 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-400 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
+              Our{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                Professional
+              </span>{" "}
+              Team
+            </h2>
+
+            <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Dedicated professionals committed to delivering exceptional educational solutions and driving innovation
+              forward
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Team Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
               <div
                 key={member.id}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover-lift animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 overflow-hidden border border-white/50 hover:border-white/80"
+                onMouseEnter={() => setHoveredCard(member.id)}
+                onMouseLeave={() => setHoveredCard(null)}
+                style={{
+                  transform: hoveredCard === member.id ? "translateY(-12px) scale(1.02)" : "translateY(0px) scale(1)",
+                }}
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-64 object-cover transition-transform duration-300 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <h3 className="text-lg font-bold mb-1">{member.name}</h3>
-                    <p className="text-white/90 text-sm">{member.title}</p>
+                {/* Top gradient accent */}
+                <div className={`h-2 bg-gradient-to-r ${getAccentClasses(member.accent)} w-full`} />
+
+                {/* Image section with larger size */}
+                <div className="relative p-8 pb-6">
+                  <div className="relative mx-auto w-48 h-56">
+                    {/* Elegant background shape */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${getAccentClasses(
+                        member.accent
+                      )} opacity-10 group-hover:opacity-20 transition-all duration-700 rounded-3xl transform rotate-3 group-hover:rotate-6`}
+                    />
+
+                    {/* Main profile image with rounded rectangle shape */}
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="relative w-full h-full object-cover rounded-3xl border-4 border-white shadow-2xl group-hover:scale-105 transition-all duration-700 group-hover:shadow-3xl"
+                    />
+
+                    {/* Subtle overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <p className="text-gray-600 leading-relaxed text-sm mb-4">{member.bio}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {member.skills.map((skill, skillIndex) => (
-                      <span
-                        key={skillIndex}
-                        className="bg-gradient-to-r from-[#283a89] to-[#fbb040] text-white px-3 py-1 rounded-full text-xs font-medium"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                {/* Content section */}
+                <div className="px-8 pb-8 text-center">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-gray-700 transition-colors duration-500">
+                    {member.name}
+                  </h3>
+
+                  <div
+                    className={`inline-block px-5 py-2 bg-gradient-to-r ${getAccentClasses(
+                      member.accent
+                    )} text-white text-sm font-semibold rounded-full mb-5 shadow-lg group-hover:shadow-xl transition-all duration-500`}
+                  >
+                    {member.title}
                   </div>
+
+                  <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-500">
+                    {member.bio}
+                  </p>
                 </div>
+
+                {/* Hover shimmer effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+
+                {/* Corner decoration */}
+                <div
+                  className={`absolute top-8 right-8 w-16 h-16 bg-gradient-to-bl ${getAccentClasses(
+                    member.accent
+                  )} opacity-5 group-hover:opacity-15 transition-opacity duration-500 rounded-full blur-xl`}
+                />
               </div>
             ))}
+          </div>
+
+          {/* Bottom decorative element */}
+          <div className="text-center mt-16">
+            <div className="flex justify-center items-center space-x-3">
+              <div className="h-px w-20 bg-gradient-to-r from-transparent to-gray-300" />
+              <div className="flex space-x-1">
+                {[...Array(3)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"
+                    style={{ animationDelay: `${i * 0.3}s` }}
+                  />
+                ))}
+              </div>
+              <div className="h-px w-20 bg-gradient-to-l from-transparent to-gray-300" />
+            </div>
+            <p className="text-gray-500 text-sm font-medium mt-4 tracking-wide">United in Excellence</p>
           </div>
         </div>
       </section>

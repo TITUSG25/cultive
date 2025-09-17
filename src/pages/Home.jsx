@@ -242,8 +242,8 @@ const Home = () => {
       id: 1,
       quote:
         "Cultive's software solutions have significantly streamlined our school operations, making daily tasks, reporting, and data management efficient and hassle-free.",
-      name: "Dr. Vinnoly Gaberial",
-      title: "Principal – AVMS, Chennai",
+      name: "Dr. Boomi Nathan",
+      title: "Principal – St.John's School, Chennai",
       role: "Principal",
       rating: 5,
     },
