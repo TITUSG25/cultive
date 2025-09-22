@@ -251,8 +251,8 @@ const Home = () => {
       id: 2,
       quote:
         "The unique and well-designed IEP provided by Cultive has given us valuable clarity and insight into our child’s development. We feel privileged to partner with Cultive, whose support has greatly enhanced our understanding and positively impacted our child’s growth.",
-      name: "Remali Sarah",
-      title: "Parent, Housewife, Trichy",
+      name: "Uma Mageshwari",
+      title: "Parent, Chennai",
       role: "Parent",
       rating: 5,
     },
@@ -269,7 +269,7 @@ const Home = () => {
       id: 4,
       quote:
         "Cultive's workshops and seminars provided us with an enriching and enjoyable learning experience. I feel fortunate to have Cultive as part of our school community, and I especially appreciate the opportunity to learn music, dance, art, and craft through their engaging programs.",
-      name: "Annanya",
+      name: "Annanya 12th",
       title: "Student, DMI group of institutions",
       role: "Student",
       rating: 5,

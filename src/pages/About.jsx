@@ -20,7 +20,7 @@ import remali from "../assets/remali.jpg";
 import larsen from "../assets/Larsen.jpg";
 import hycinth from "../assets/hycinth.jpg";
 import jabez from "../assets/jabez.jpg";
-import bhuvi from "../assets/bhuvi.jpg";
+import bhuvi from "../assets/bhuvi.png";
 const About = () => {
   // State for animations
   const [hoveredValue, setHoveredValue] = useState(null);
@@ -156,71 +156,72 @@ const About = () => {
 
   // Team members data
   const teamMembers = [
-  {
-    id: 1,
-    name: "Sam Giftson",
-    title: "Founder & CEO",
-    image: sam,
-    bio: "Former educator with 15 years of experience in teaching and school administration. Leading the vision to transform educational technology.",
-    accent: "emerald",
-  },
-  {
-    id: 2,
-    name: "Shiny Rachel",
-    title: "Operations Head",
-    image: angel,
-    bio: "Operations leader ensuring seamless execution and organizational growth.",
-    accent: "blue",
-  },
-  {
-    id: 3,
-    name: "Remali Sarah",
-    title: "Softskill and Communication Trainer",
-    image: remali,
-    bio: "A Post-Doctoral Research Scholar in English Literature and Communication from Bharathidasan University, with over a decade of expertise in lecturing and training students in English communication and soft skills, significantly shaping the academic and personal growth of hundreds of learners.",
-    accent: "indigo",
-  },
-  {
-    id: 4,
-    name: "Larsen Michael",
-    title: "Head - Training Workshop and Seminars (TWS)",
-    image: larsen,
-    bio: "An experienced professional with over 12 years in education, training, and curriculum development. He specializes in teacher training, student growth, and inclusive practices for diverse learning needs. With strong skills in life skills education, he helps learners build confidence, communication, and problem-solving. He has also led corporate training programs on leadership, career growth, and team building. His expertise connects academic learning with career readiness and workplace success. Through practical strategies and empathy, he empowers teachers, students, and professionals to reach their potential.",
-    accent: "indigo",
-  },
-  {
-    id: 5,
-    name: "Jabez",
-    title: "Head - Media & Design",
-    image: jabez,
-    bio: "A young and passionate creative professional with a Bachelor’s degree in Visual Communication, he has cultivated strong expertise in media and design. As a key pillar of Cultive, he leads the media team with innovation and artistic vision.",
-    accent: "orange",
-  },
-  {
-    id: 6,
-    name: "Titus",
-    title: "IT Head",
-    image: titus,
-    bio: "Titus, a Computer Science Engineer with over five years of professional experience, is a driving force behind Cultive’s technology vision. With his deep expertise in information technology, he leads the IT team with precision, delivering innovative, technology-driven solutions that strengthen the company’s operations and digital presence. His problem-solving skills, strategic approach, and commitment to excellence make him one of the strongest pillars of Cultive, ensuring the organization stays at the forefront of technological advancements.",
-    accent: "cyan",
-  },
-  {
-    id: 7,
-    name: "Bhuvaneshwaran",
-    title: "MAD (Music Art & Dance) Head",
-    image: bhuvi,
-    bio: "An engineering graduate who discovered his true passion in music and pursued it to professional excellence by completing 8 grades in Piano. He has actively contributed to numerous MAD workshops and performances, showcasing both his musical talent and creative engagement. His strong organizational skills, particularly in managing and executing MAD events across India, stand as a key strength that defines his professional journey.",
-    accent: "red",
-  },
-  {
-    id: 8,
-    name: "Hycinth",
-    title: "Communication Dept Head",
-    image: hycinth,
-    bio: "A passionate professional with over 5 years of experience in customer relations and client management in the aviation industry. She is known for her ability to understand client needs, resolve issues with empathy, and build lasting relationships. At Cultive, she serves as a strong pillar in her role as Relationship Manager. Her proactive approach and interpersonal skills help strengthen client trust and partnerships. With her dedication, Hycinth contributes greatly to Cultive’s mission of delivering impactful educational solutions.",
-    accent: "indigo",
-  },
-];
+    {
+      id: 1,
+      name: "Sam Giftson",
+      title: "Founder & Director",
+      image: sam,
+      bio: "An educationist and visionary entrepreneur with over 15 years of experience in the education sector and 4 years of groundbreaking research in child psychology, counseling, and high-tech school systems. Starting his journey as a teacher and school administrator, he quickly advanced into teacher training, curriculum development, and alternative education models that integrate psychology-driven, student-centric approaches with modern technology.His Individualized Education Plans have transformed learning outcomes, delivering measurable success for hundreds of students, while empowering parents and teachers with effective strategies. Drawing from his deep expertise and passion for redefining education, Sam founded Cultive—a next-generation solution provider designed to empower schools, teachers, parents, and students. Cultive stands as the embodiment of his vision: blending research, innovation, and technology to build smarter, future-ready education  ecosystems.",
+      accent: "emerald",
+    },
+    {
+      id: 2,
+      name: "Shiny Rachel",
+      title: "Operations Head",
+      image: angel,
+      bio: "holds an MBA from Anna University and brings over 10 years of expertise in project operations, client management, and customer support within the IT sector. Renowned for her commitment to quality delivery, operational excellence, and team collaboration, she consistently ensures flawless execution and successful outcomes. Today, she stands as a key pillar of strength, leading Cultive’s operations with precision, dedication, and vision.",
+      accent: "blue",
+    },
+    {
+      id: 3,
+      name: "Larsen Michael",
+      title: "Head - Training Workshop and Seminars (TWS)",
+      image: larsen,
+      bio: "An experienced professional with over 12 years in education, training, and curriculum development. He specializes in teacher training, student growth, and inclusive practices for diverse learning needs. With strong skills in life skills education, he helps learners build confidence, communication, and problem-solving. He has also led corporate training programs on leadership, career growth, and team building. His expertise connects academic learning with career readiness and workplace success. Through practical strategies and empathy, he empowers teachers, students, and professionals to reach their potential.",
+      accent: "red",
+    },
+    {
+      id: 4,
+      name: "Remali Sarah",
+      title: "Softskill and Communication Trainer",
+      image: remali,
+      bio: "A Post-Doctoral Research Scholar in English Literature and Communication from Bharathidasan University, with over a decade of expertise in lecturing and training students in English communication and soft skills, significantly shaping the academic and personal growth of hundreds of learners.",
+      accent: "cyan",
+    },
+
+    {
+      id: 5,
+      name: "Jabez",
+      title: "Head - Media & Design",
+      image: jabez,
+      bio: "A young and passionate creative professional with a Bachelor’s degree in Visual Communication, he has cultivated strong expertise in media and design. As a key pillar of Cultive, he leads the media team with innovation and artistic vision.",
+      accent: "orange",
+    },
+    {
+      id: 6,
+      name: "Titus",
+      title: "IT Head",
+      image: titus,
+      bio: "Titus, a Computer Science Engineer with over five years of professional experience, is a driving force behind Cultive’s technology vision. With his deep expertise in information technology, he leads the IT team with precision, delivering innovative, technology-driven solutions that strengthen the company’s operations and digital presence. His problem-solving skills, strategic approach, and commitment to excellence make him one of the strongest pillars of Cultive, ensuring the organization stays at the forefront of technological advancements.",
+      accent: "cyan",
+    },
+    {
+      id: 7,
+      name: "Bhuvaneshwaran",
+      title: "MAD (Music Art & Dance) Head",
+      image: bhuvi,
+      bio: "An engineering graduate who discovered his true passion in music and pursued it to professional excellence by completing 8 grades in Piano. He has actively contributed to numerous MAD workshops and performances, showcasing both his musical talent and creative engagement. His strong organizational skills, particularly in managing and executing MAD events across India, stand as a key strength that defines his professional journey.",
+      accent: "red",
+    },
+    {
+      id: 8,
+      name: "Hycinth Elizabeth",
+      title: "Relationship Manager",
+      image: hycinth,
+      bio: "A passionate professional with over 5 years of experience in customer relations and client management in the aviation industry. She is known for her ability to understand client needs, resolve issues with empathy, and build lasting relationships. At Cultive, she serves as a strong pillar in her role as Relationship Manager. Her proactive approach and interpersonal skills help strengthen client trust and partnerships. With her dedication, Hycinth contributes greatly to Cultive’s mission of delivering impactful educational solutions.",
+      accent: "indigo",
+    },
+  ];
 
   const getAccentClasses = (accent) => {
     const accentMap = {
@@ -275,7 +276,7 @@ const About = () => {
       bgColor: "bg-yellow-50",
     },
   ];
-    const generateStars = () => {
+  const generateStars = () => {
     return Array.from({ length: 50 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
@@ -603,8 +604,8 @@ const About = () => {
         </div>
       </section>
 
-   {/* Our Core Principles */}
-     {/* Our Core Principles */}
+      {/* Our Core Principles */}
+      {/* Our Core Principles */}
       <section className="py-16 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
         {/* Animated Stars Background */}
         <div className="absolute inset-0">
@@ -668,10 +669,12 @@ const About = () => {
                   onMouseLeave={() => setHoveredCard(null)}
                 >
                   {/* Card */}
-                                      <div className="relative bg-gradient-to-br from-slate-800/50 via-blue-900/30 to-indigo-900/50 backdrop-blur-sm border border-blue-400/20 rounded-2xl p-6 transition-all duration-700 hover:scale-105 hover:border-blue-400/50 hover:shadow-2xl hover:shadow-blue-500/20 overflow-hidden animate-slide-up min-h-[320px] flex flex-col">
+                  <div className="relative bg-gradient-to-br from-slate-800/50 via-blue-900/30 to-indigo-900/50 backdrop-blur-sm border border-blue-400/20 rounded-2xl p-6 transition-all duration-700 hover:scale-105 hover:border-blue-400/50 hover:shadow-2xl hover:shadow-blue-500/20 overflow-hidden animate-slide-up min-h-[320px] flex flex-col">
                     {/* Glowing Background Effect */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${principle.gradient || 'from-blue-500 to-purple-600'} opacity-0 group-hover:opacity-10 transition-all duration-700 rounded-2xl`}
+                      className={`absolute inset-0 bg-gradient-to-br ${
+                        principle.gradient || "from-blue-500 to-purple-600"
+                      } opacity-0 group-hover:opacity-10 transition-all duration-700 rounded-2xl`}
                     ></div>
 
                     {/* Static Border Glow */}
@@ -690,13 +693,17 @@ const About = () => {
                       <div className="relative z-10">
                         <div className="relative inline-block">
                           <div
-                            className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${principle.gradient || 'from-blue-500 to-purple-600'} flex items-center justify-center transform transition-all duration-700 group-hover:rotate-12 group-hover:scale-110 shadow-lg group-hover:shadow-2xl`}
+                            className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${
+                              principle.gradient || "from-blue-500 to-purple-600"
+                            } flex items-center justify-center transform transition-all duration-700 group-hover:rotate-12 group-hover:scale-110 shadow-lg group-hover:shadow-2xl`}
                           >
                             <Icon className="w-7 h-7 text-white" />
                           </div>
                           {/* Icon Glow Effect */}
                           <div
-                            className={`absolute inset-0 w-14 h-14 bg-gradient-to-br ${principle.gradient || 'from-blue-500 to-purple-600'} rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-all duration-700`}
+                            className={`absolute inset-0 w-14 h-14 bg-gradient-to-br ${
+                              principle.gradient || "from-blue-500 to-purple-600"
+                            } rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-all duration-700`}
                           ></div>
                         </div>
                       </div>
@@ -1029,7 +1036,7 @@ const About = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="relative w-full h-full object-cover rounded-3xl border-4 border-white shadow-2xl group-hover:scale-105 transition-all duration-700 group-hover:shadow-3xl"
+                      className="relative w-full h-full object-cover object-top rounded-3xl border-4 border-white shadow-2xl group-hover:scale-105 transition-all duration-700 group-hover:shadow-3xl"
                     />
 
                     {/* Subtle overlay gradient */}
@@ -1051,7 +1058,7 @@ const About = () => {
                     {member.title}
                   </div>
 
-                  <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-500">
+                  <p className="text-gray-600 text-sm leading-relaxed text-right group-hover:text-gray-800 transition-colors duration-500">
                     {member.bio}
                   </p>
                 </div>
