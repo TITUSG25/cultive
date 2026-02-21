@@ -24,7 +24,7 @@ const teamMembers = [
   {
     id: 2,
     name: "Ganesha",
-    title: "Technical Partner of Cultive",
+    title: "Head - Technical Partner of Cultive",
     image: Ganesh,
     bio: `He is a visionary and execution-driven leader with over 20 years of experience in IT services, digital transformation, EdTech, and international business development, building multi-vertical enterprises across India and the GCC region.
     He is known for his ecosystem-centric leadership approach that aligns technology, people, and strategy to create sustainable and future-ready growth. His professional focus is on outcome-driven education, human-centred technology adoption, and scalable digital platforms.
