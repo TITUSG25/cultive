@@ -24,7 +24,7 @@ const teamMembers = [
   {
     id: 2,
     name: "Ganesha",
-    title: "Head - Technical Partner of Cultive",
+    title: "Technical Partner of Cultive",
     image: Ganesh,
     bio: `He is a visionary and execution-driven leader with over 20 years of experience in IT services, digital transformation, EdTech, and international business development, building multi-vertical enterprises across India and the GCC region.
     He is known for his ecosystem-centric leadership approach that aligns technology, people, and strategy to create sustainable and future-ready growth. His professional focus is on outcome-driven education, human-centred technology adoption, and scalable digital platforms.
@@ -45,7 +45,7 @@ const teamMembers = [
   {
     id:4,
     name: "Anand David",
-    title: "Education and Career Development",
+    title: "Head - Education and Career Development",
     image: Anand,
     bio: "Anand David is a development professional with nearly three decades of experience in the international development sector. He has worked with the United Nations, the Irish Embassy, and the European Union in New Delhi, India. His key areas of involvement have included supporting and managing grants for development projects, on several development themes including basic education, vocational training, capacity building, entrepreneurship, and micro-enterprise development. His articles have been published in The Hindu, The Times of India, Management Devotional and Forerunner.  Anand has traveled extensively across 25 states in India and internationally, including visits to the United States, South Korea, Malaysia, China, Thailand, Nepal, Bhutan, and Sri Lanka. Currently, he Heads the department of education and career development and training programs",
     accent: "blue",
