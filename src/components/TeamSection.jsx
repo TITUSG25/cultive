@@ -45,7 +45,7 @@ const teamMembers = [
   {
     id:4,
     name: "Anand David",
-    title: "Head - Education and Career Development",
+    title: "Honorary Advisor - Parterships",
     image: Anand,
     bio: "Anand David is a development professional with nearly three decades of experience in the international development sector. He has worked with the United Nations, the Irish Embassy, and the European Union in New Delhi, India. His key areas of involvement have included supporting and managing grants for development projects, on several development themes including basic education, vocational training, capacity building, entrepreneurship, and micro-enterprise development. His articles have been published in The Hindu, The Times of India, Management Devotional and Forerunner.  Anand has traveled extensively across 25 states in India and internationally, including visits to the United States, South Korea, Malaysia, China, Thailand, Nepal, Bhutan, and Sri Lanka. Currently, he Heads the department of education and career development and training programs",
     accent: "blue",
