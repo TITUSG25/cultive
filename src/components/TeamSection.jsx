@@ -45,9 +45,9 @@ const teamMembers = [
   {
     id:4,
     name: "Anand David",
-    title: "Honorary Advisor - Parterships",
+    title: "Advisor for Collaborations",
     image: Anand,
-    bio: "Anand David is a development professional with nearly three decades of experience in the international development sector. He has worked with the United Nations, the Irish Embassy, and the European Union in New Delhi, India. His key areas of involvement have included supporting and managing grants for development projects, on several development themes including basic education, vocational training, capacity building, entrepreneurship, and micro-enterprise development. His articles have been published in The Hindu, The Times of India, Management Devotional and Forerunner.  Anand has traveled extensively across 25 states in India and internationally, including visits to the United States, South Korea, Malaysia, China, Thailand, Nepal, Bhutan, and Sri Lanka. Currently, he Heads the department of education and career development and training programs",
+    bio: "Anand David is a seasoned development professional with nearly three decades of experience in the international development sector. Over the course of his career, he has worked with leading institutions such as the United Nations, the European Union, and the Irish Embassy in New Delhi, India, in addition to early work experience with a project of the USAID in Chennai. He has worked extensively with NGOs across a wide spectrum of thematic areas, including education, vocational training, community health, water and sanitation, women’s empowerment, child development, livelihoods and capacity building for improved governance through public-private partnerships. Anand has traveled extensively across 25 states in India and internationally, including the United States, South Korea, Malaysia, China, Thailand, Nepal, Bhutan, and Sri Lanka. In an honorary capacity as well-wisher of Cultive, he advises Cultive on fostering collaborations for value-added service delivery.",
     accent: "blue",
   },
   {
