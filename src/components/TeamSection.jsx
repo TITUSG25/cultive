@@ -22,19 +22,6 @@ const teamMembers = [
     accent: "emerald",
   },
   {
-    id: 2,
-    name: "Ganesha",
-    title: "Technical Partner of Cultive",
-    image: Ganesh,
-    bio: `He is a visionary and execution-driven leader with over 20 years of experience in IT services, digital transformation, EdTech, and international business development, building multi-vertical enterprises across India and the GCC region.
-    He is known for his ecosystem-centric leadership approach that aligns technology, people, and strategy to create sustainable and future-ready growth. His professional focus is on outcome-driven education, human-centred technology adoption, and scalable digital platforms.
-    Ganesha actively works with colleges and institutions to bridge the employability gap through initiatives such as Robotics and STEM Labs, Drone Technology programs, AI-enabled English Language Labs, Centers of Excellence, international internship pathways, and Kidopreneur programs.
-    His core expertise includes IT strategy and digital transformation, multi-stakeholder program leadership, ERP, IoT, AI, and LMS platform conceptualisation, global partner ecosystem development, and industry–academia collaboration.
-    With extensive cross-border experience, he has successfully enabled institutions, enterprises, and SMEs to grow through strategic alliances and technology-led execution.
-    Currently, as the Technical Partner of Cultive, he supports advanced digital solutions and innovation-driven educational ecosystems.`,
-    accent: "red",
-  },
-  {
     id: 3,
     name: "Shiny Rachel",
     title: "Operations Head",
