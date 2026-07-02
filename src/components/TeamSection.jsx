@@ -22,7 +22,7 @@ const teamMembers = [
     accent: "emerald",
   },
   {
-    id: 3,
+    id: 2,
     name: "Shiny Rachel",
     title: "Operations Head",
     image: angel,
@@ -30,7 +30,7 @@ const teamMembers = [
     accent: "blue",
   },
   {
-    id:4,
+    id:3,
     name: "Anand David",
     title: "Advisor for Collaborations",
     image: Anand,
