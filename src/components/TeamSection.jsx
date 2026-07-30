@@ -17,15 +17,15 @@ const teamMembers = [
   {
     id: 1,
     name: "Sam Giftson",
-    title: "Executive Director",
+    title: "Co-founder & Executive Director",
     image: sam,
     bio: "An educationist and visionary entrepreneur with over 15 years of experience in the education sector and 4 years of groundbreaking research in child psychology, counseling, and high-tech school systems. Starting his journey as a teacher and school administrator, he quickly advanced into teacher training, curriculum development, and alternative education models that integrate psychology-driven, student-centric approaches with modern technology.His Individualized Education Plans have transformed learning outcomes, delivering measurable success for hundreds of students, while empowering parents and teachers with effective strategies. Drawing from his deep expertise and passion for redefining education, Sam founded Cultive—a next-generation solution provider designed to empower schools, teachers, parents, and students. Cultive stands as the embodiment of his vision: blending research, innovation, and technology to build smarter, future-ready education  ecosystems.",
     accent: "emerald",
   },
   {
     id: 2,
-    name: "Jayanthi T",
-    title: "Co-founder & Head - Training Workshop & Seminars (TWS) & Curriculum Founder, Meta Cognition Learning Space",
+    name: "Jayanthi",
+    title: "Co-founder & Head - Training Workshop & Seminars (TWS)\nFounder - Meta Cognition Learning Space",
     image: jayanthi,
     bio: "Jayanthi, is an accomplished educator, school leader, curriculum designer, and founder of Meta Cognition Learning Space, with over two decades of experience in transforming teaching and learning. Throughout her 20-year journey in education, she has championed the belief that true education is not merely about acquiring knowledge but about empowering learners to understand how to learn, think critically, and continuously grow.Driven by this philosophy, she established Meta Cognition Learning Space to create innovative and experiential learning solutions that inspire curiosity, creativity, metacognitive thinking, reflection, and real-world application. Her programmes are designed to make learning meaningful, engaging, and transferable beyond the classroom.Jayanthi has developed several signature learning experiences, including School Essence, Learning Carnival, Word Lab, Accelerated Reading Programme, Study Hack, Design Your Notes, and Create Your Own Calligraphy. She also designs teacher development programmes, curriculum frameworks, and school transformation initiatives that equip educators and institutions with effective, learner-centric practices.Passionate about lifelong learning, Jayanthi continues to research, innovate, and develop educational experiences that unlock every learner's potential. She firmly believes that education is an evolving journey, and her mission is to empower individuals with the mindset, skills, and confidence to become independent, reflective, and limitless learners.You're Limitless. is more than a tagline—it reflects her vision of helping every learner discover and realize their true potential.",
     accent: "cyan",
@@ -468,6 +468,7 @@ export default function TeamSection() {
                     boxShadow: `0 8px 24px ${colors.shadow}`,
                     width: "fit-content",
                     letterSpacing: "0.3px",
+                    whiteSpace: "pre-line",
                   }}
                 >
                   {m.title}
