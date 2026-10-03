@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { X, Menu, ChevronRight, Home, Users, Zap, Phone } from "lucide-react";
-import rocket_design from "../assets/rocket_design.png";
-import bulb_img from "../assets/bulb_img.png";
+import heroBrain from "../assets/hero-brain.jpg";
 import cultive_logo from "../assets/cultive_logo.svg";
 
 const NewHome = () => {
@@ -55,26 +54,9 @@ const NewHome = () => {
   ];
 
   const Logo = () => (
-    <a href="/" className="flex items-center">
+    <a href="/" className="ml-2 flex items-center sm:ml-4">
       <div className="flex flex-col items-start">
-        <div className="flex-shrink-0">
-          <img
-            src={cultive_logo}
-            alt="Cultive Logo"
-            className={`object-contain transition-all duration-150 ${
-              scrolled
-                ? "w-16 h-12 sm:w-18 sm:h-14 md:w-20 md:h-16 lg:w-24 lg:h-18"
-                : "w-24 h-18 sm:w-28 sm:h-20 md:w-32 md:h-24 lg:w-36 lg:h-26"
-            }`}
-          />
-        </div>
-        <p
-          className={`text-sm pl-2 font-medium text-slate-600 transition-all duration-150 -mt-1 ${
-            scrolled ? "text-xs -mt-0.5" : "text-sm -mt-1"
-          }`}
-        >
-          The solution ocean
-        </p>
+        <img src={cultive_logo} alt="Cultive Logo" className="h-16 w-auto object-contain sm:h-20" />
       </div>
     </a>
   );
@@ -86,17 +68,15 @@ const NewHome = () => {
       <a
         href={href}
         onClick={() => setActiveLink(href)}
-        className={`flex items-center gap-2 px-4 py-2 font-medium transition-colors duration-150 relative group ${
-          scrolled ? "text-[#283a89]" : "text-white"
-        }`}
+        className="flex items-center gap-2 px-4 py-2 font-medium transition-colors duration-150 relative group text-[#283a89]"
       >
         <IconComponent className="w-4 h-4" />
         <span>{children}</span>
         {/* Underline animation with gradient - active state */}
         <div
-          className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 transition-all duration-200 ease-out ${
-            scrolled ? "underline-gradient" : "bg-white"
-          } ${isActive ? "w-3/4" : "w-0 group-hover:w-3/4"}`}
+          className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 transition-all duration-200 ease-out underline-gradient ${
+            isActive ? "w-3/4" : "w-0 group-hover:w-3/4"
+          }`}
         ></div>
       </a>
     );
@@ -236,38 +216,32 @@ const NewHome = () => {
       `}</style>
 
       {/* Fixed Navbar Header */}
-      <header
-        className={`fixed w-full z-40 transition-all duration-150 ${
-          scrolled
-            ? "bg-white/95 backdrop-blur-lg shadow-lg py-0.5 border-b border-slate-200/30"
-            : "bg-transparent py-3"
-        }`}
-      >
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-          <div className="flex justify-between items-center">
-            {/* Logo */}
-            <Logo />
+      <header className="fixed inset-x-0 top-0 z-40 border-b border-slate-200/70 bg-white/90 backdrop-blur-lg">
+        <div
+          className={`mx-auto flex w-full max-w-[92rem] items-center justify-between px-5 transition-all duration-150 sm:px-8 ${
+            scrolled ? "py-2" : "py-3.5"
+          }`}
+        >
+          {/* Logo */}
+          <Logo />
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
-              {navItems.map((item) => (
-                <DesktopNavLink key={item.text} href={item.path} icon={item.icon}>
-                  {item.text}
-                </DesktopNavLink>
-              ))}
-            </nav>
+          {/* Desktop Navigation */}
+          <nav className="hidden items-center space-x-1 lg:flex">
+            {navItems.map((item) => (
+              <DesktopNavLink key={item.text} href={item.path} icon={item.icon}>
+                {item.text}
+              </DesktopNavLink>
+            ))}
+          </nav>
 
-            {/* Mobile Menu Button - FIXED FOR MOBILE VISIBILITY */}
+          <div className="flex items-center gap-3">
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsSidebarOpen(true)}
-              className={`lg:hidden p-2 rounded-lg transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-opacity-50 z-50 ${
-                scrolled
-                  ? "text-slate-600 hover:text-slate-800 focus:ring-blue-500 bg-white/80 hover:bg-white"
-                  : "text-white hover:text-slate-200 focus:ring-white bg-black/20 hover:bg-black/30"
-              }`}
+              className="p-2.5 rounded-full transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-opacity-50 z-50 text-slate-600 hover:text-slate-800 focus:ring-blue-500 bg-slate-100/80 hover:bg-slate-100 lg:hidden"
               aria-label="Open menu"
             >
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5" />
             </button>
           </div>
         </div>
@@ -296,7 +270,6 @@ const NewHome = () => {
                 <img src={cultive_logo} alt="Cultive Logo" className="w-10 h-8 object-contain" />
                 <div>
                   <h3 className="font-bold text-[#283a89]">Cultive</h3>
-                  <p className="text-xs text-slate-500">The solution ocean</p>
                 </div>
               </div>
               <button
@@ -338,136 +311,55 @@ const NewHome = () => {
       )}
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="flex w-full min-h-screen flex-col lg:flex-row">
-          {/* Left Section - White Background */}
-          <div className="flex-1 bg-white relative">
-            <div className="container mx-auto px-6 relative z-10 h-full flex items-center">
-              <div className="space-y-6 animate-slide-left m-4 lg:m-12 mt-40">
-                <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-[#283a89] text-shadow">
-                  Transforming Education with
-                  <span className="text-[#fbb040]"> Digital Excellence</span>
-                </h1>
-                <p className="text-base lg:text-lg text-[#283a89] leading-relaxed max-w-lg font-medium">
-                  Experience the future of education management with our comprehensive suite of innovative solutions
-                  designed for modern educational institutions.
-                </p>
-              </div>
-            </div>
-
-            {/* Rocket Image - Hidden on mobile, visible on larger screens */}
-            <div className="absolute bottom-0 right-0 animate-slide-right flex-col justify-end items-center h-full hidden lg:flex">
-              <div className="relative mb-0">
-                <img
-                  src={rocket_design}
-                  alt="Rocket"
-                  className="w-80 h-auto animate-float"
-                  style={{ animationDelay: "1s" }}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Right Section - Gradient Background */}
+      <section className="relative overflow-hidden bg-white">
+        {/* Subtle wavy light patterns */}
+        <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
           <div
-            className="flex-1 relative overflow-hidden min-h-[50vh] lg:min-h-screen"
-            style={{
-              background: "linear-gradient(135deg, #061b2e 0%, #0f2a47 30%, #1a365d 70%, #2c5282 100%)",
-            }}
-          >
-            {/* Curved Cloud Divider - Only visible on larger screens */}
-            <div
-              className="absolute top-0 left-0 w-48 h-full bg-white z-10 hidden lg:block"
-              style={{
-                left: "-160px",
-                width: "200px",
-                maskImage: `url("data:image/svg+xml;utf8,<svg width='200' height='1000' viewBox='0 0 200 1000' xmlns='http://www.w3.org/2000/svg'><path fill='white' d='M200,1000 C170,970 170,930 200,900 C170,870 170,830 200,800 C170,770 170,730 200,700 C170,670 170,630 200,600 C170,570 170,530 200,500 C170,470 170,430 200,400 C170,370 170,330 200,300 C170,270 170,230 200,200 C170,170 170,130 200,100 C170,70 170,30 200,0 L0,0 L0,1000 Z' /></svg>")`,
-                WebkitMaskImage: `url("data:image/svg+xml;utf8,<svg width='200' height='1000' viewBox='0 0 200 1000' xmlns='http://www.w3.org/2000/svg'><path fill='white' d='M200,1000 C170,970 170,930 200,900 C170,870 170,830 200,800 C170,770 170,730 200,700 C170,670 170,630 200,600 C170,570 170,530 200,500 C170,470 170,430 200,400 C170,370 170,330 200,300 C170,270 170,230 200,200 C170,170 170,130 200,100 C170,70 170,30 200,0 L0,0 L0,1000 Z' /></svg>")`,
-                maskRepeat: "no-repeat",
-                maskSize: "cover",
-                WebkitMaskRepeat: "no-repeat",
-                WebkitMaskSize: "cover",
-              }}
-            />
+            className="absolute -bottom-24 -left-20 h-72 w-72 bg-[#eaf1fb]"
+            style={{ borderRadius: "58% 42% 55% 45% / 45% 55% 45% 55%" }}
+          />
+          <div
+            className="absolute left-[38%] top-[10%] h-40 w-40 bg-[#fdf3e0]/70"
+            style={{ borderRadius: "45% 55% 48% 52% / 55% 45% 52% 48%" }}
+          />
+          <div
+            className="absolute -right-16 top-[55%] h-56 w-56 bg-[#eef4fd]"
+            style={{ borderRadius: "50% 50% 46% 54% / 54% 46% 54% 46%" }}
+          />
+        </div>
 
-            {/* Stars */}
-            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-              {/* Star 1 */}
-              <div
-                className="absolute bg-white rounded-full"
-                style={{
-                  width: "3px",
-                  height: "3px",
-                  top: "15%",
-                  left: "80%",
-                  animation: "twinkle 2s infinite alternate",
-                  animationDelay: "0s",
-                }}
-              />
-              {/* Star 2 */}
-              <div
-                className="absolute bg-white rounded-full"
-                style={{
-                  width: "2px",
-                  height: "2px",
-                  top: "25%",
-                  left: "70%",
-                  animation: "twinkle 2s infinite alternate",
-                  animationDelay: "0.5s",
-                }}
-              />
-              {/* Star 3 */}
-              <div
-                className="absolute bg-white rounded-full"
-                style={{
-                  width: "4px",
-                  height: "4px",
-                  top: "35%",
-                  left: "90%",
-                  animation: "twinkle 2s infinite alternate",
-                  animationDelay: "1s",
-                }}
-              />
-              {/* Star 4 */}
-              <div
-                className="absolute bg-white rounded-full"
-                style={{
-                  width: "3px",
-                  height: "3px",
-                  top: "50%",
-                  left: "75%",
-                  animation: "twinkle 2s infinite alternate",
-                  animationDelay: "1.5s",
-                }}
-              />
-              {/* Star 5 */}
-              <div
-                className="absolute bg-white rounded-full"
-                style={{
-                  width: "2px",
-                  height: "2px",
-                  top: "65%",
-                  left: "85%",
-                  animation: "twinkle 2s infinite alternate",
-                  animationDelay: "2s",
-                }}
-              />
-            </div>
+        {/* Copy — centered in the left ~55% */}
+        <div className="relative z-10 mx-auto flex max-w-[92rem] items-center px-6 pb-6 pt-32 sm:px-10 lg:min-h-[48rem] lg:pt-0">
+          <div className="mx-auto w-full max-w-2xl animate-fade-up text-left lg:mx-0 lg:ml-[3%]">
+            <span className="inline-flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.3em] text-[#d98b15]">
+              <span className="h-px w-9 bg-[#e7a334]" aria-hidden="true" />
+              Empowering Education
+              <span className="h-px w-9 bg-[#e7a334]" aria-hidden="true" />
+            </span>
 
-            {/* Right-side Content */}
-            <div className="relative animate-slide-right flex-col justify-end items-center h-full flex lg:hidden xl:flex z-20">
-              <div className="relative mb-0">
-                <img
-                  src={bulb_img}
-                  alt="Innovation Bulb"
-                  className="w-60 lg:w-80 h-auto relative z-10 mt-10"
-                  style={{ animationDelay: "1s" }}
-                />
-              </div>
-            </div>
+            <h1 className="mt-6 font-serif text-4xl font-semibold leading-[1.08] tracking-[-0.02em] text-[#1c3d8f] sm:text-5xl lg:text-[3.5rem] xl:text-[4rem]">
+              Transforming Education
+              <br />
+              with <span className="text-[#f6a623]">Digital Excellence</span>
+            </h1>
+
+            <p className="mt-6 max-w-xl text-base leading-[1.6] text-[#536987] sm:text-lg">
+              Experience the future of education management with our comprehensive suite of innovative solutions
+              designed for modern educational institutions.
+            </p>
           </div>
         </div>
+
+        {/* Student image — white bg blends into the hero */}
+        <div className="pointer-events-none relative z-0 mx-auto mt-2 w-full max-w-xl lg:absolute lg:bottom-0 lg:right-0 lg:m-0 lg:w-[46%] lg:max-w-none">
+          <img
+            src={heroBrain}
+            alt="Student with glowing knowledge concepts"
+            className="h-[22rem] w-full object-cover object-center sm:h-[26rem] lg:h-[40rem] lg:w-full"
+          />
+        </div>
       </section>
+
     </div>
   );
 };

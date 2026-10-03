@@ -64,11 +64,6 @@ const Navbar = () => {
             }`}
           />
         </div>
-        <p className={`text-sm pl-2 font-medium text-slate-600 transition-all duration-300 -mt-1 ${
-          scrolled ? 'text-xs -mt-0.5' : 'text-sm -mt-1'
-        }`}>
-          The solution ocean
-        </p>
       </div>
     </a>
   );

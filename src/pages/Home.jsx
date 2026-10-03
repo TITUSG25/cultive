@@ -880,43 +880,6 @@ const Home = () => {
           className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: "url('/path-to-your-education-themed-image.png')" }}
         ></div>
-
-        {/* 💬 Main Content Card */}
-        <div className="relative max-w-5xl mx-auto px-6 py-12 bg-[#1e2a6d] bg-opacity-90 rounded-3xl shadow-2xl backdrop-blur-md">
-          {/* 💡 CTA Text */}
-          <div className="relative z-30 text-center">
-            <h2 className="text-4xl font-extrabold text-white mb-4 leading-tight">
-              Ready to Transform Your Institution?
-            </h2>
-            <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Join thousands of educational institutions worldwide that trust{" "}
-              <span className="text-yellow-400 font-medium">Cultive</span> for their digital transformation journey.
-            </p>
-
-            {/* 📊 Trust Indicators */}
-            <div className="mt-10 pt-8 border-t border-white border-opacity-10">
-              <div className="text-sm text-gray-400 mb-4 tracking-wide">
-                Trusted by educational institutions worldwide
-              </div>
-              <div className="flex flex-wrap justify-center items-center gap-8 text-white opacity-90">
-                <div className="text-center">
-                  <div className="text-2xl font-bold">500+</div>
-                  <div className="text-xs tracking-wider mt-1">Institutions</div>
-                </div>
-                <div className="w-px h-8 bg-white opacity-30"></div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">15+</div>
-                  <div className="text-xs tracking-wider mt-1">Countries</div>
-                </div>
-                <div className="w-px h-8 bg-white opacity-30"></div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">99%</div>
-                  <div className="text-xs tracking-wider mt-1">Satisfaction</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
     </div>
   );

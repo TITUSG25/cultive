@@ -7,10 +7,9 @@ import {
   Send,
   MessageCircle,
   CheckCircle,
-  Headphones,
-  Sparkles,
-  Heart,
   Building,
+  User,
+  MessageSquare,
 } from "lucide-react";
 
 const Contact = () => {
@@ -209,114 +208,200 @@ const Contact = () => {
         }
       `}</style>
 
-      <section className="relative py-16 flex items-center overflow-hidden bg-white">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="space-y-6 animate-slide-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#fbb040] bg-opacity-10 text-[#283a89] rounded-full text-sm font-medium border border-[#fbb040] border-opacity-30">
-                <Headphones className="w-4 h-4" />
-                We're Here to Help You
-              </div>
+      <section className="relative flex items-center overflow-hidden bg-[#fdfaf5] py-14 lg:py-20">
+        <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#dbeafe]/70" aria-hidden="true" />
+        <div className="pointer-events-none absolute -bottom-16 right-1/4 h-56 w-56 rounded-full bg-[#fde9cf]/80 blur-2xl" aria-hidden="true" />
 
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-[#283a89] text-shadow">
-                Get in Touch with
-                <span className="text-[#fbb040]"> Educational Experts</span>
+        <div className="relative z-10 mx-auto w-full max-w-[92rem] px-6">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
+            {/* Left Content */}
+            <div className="animate-slide-left">
+              <span className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.28em] text-[#1e3a8f]">
+                <span className="h-0.5 w-8 bg-[#f5a41d]" aria-hidden="true" />
+                Let&rsquo;s Connect
+              </span>
+
+              <h1 className="mt-5 font-serif text-5xl font-bold leading-[1.08] text-[#1e3a8f] sm:text-6xl lg:text-[4.3rem]">
+                Let&rsquo;s Create
+                <svg className="ml-4 inline-block h-7 w-10 align-baseline sm:h-8" viewBox="0 0 40 26" fill="none" aria-hidden="true">
+                  <path d="M4 22 L11 8" stroke="#f5a41d" strokeWidth="3.5" strokeLinecap="round" />
+                  <path d="M17 22 L25 4" stroke="#f5a41d" strokeWidth="3.5" strokeLinecap="round" />
+                  <path d="M30 22 L36 11" stroke="#f5a41d" strokeWidth="3.5" strokeLinecap="round" />
+                </svg>
+                <br />
+                <span className="text-[#f5a41d]">Brighter</span> Futures
               </h1>
 
-              <p className="text-lg text-[#283a89] leading-relaxed max-w-lg font-medium">
-                Ready to transform your educational experience? Contact our team of experts and let's discuss how we can
-                help you achieve your goals.
+              <p className="mt-6 max-w-md text-[1.05rem] leading-8 text-[#4a5a94]">
+                Have questions, partnership ideas, or want to know more about our programs? Our team is here to help
+                you.
               </p>
 
               {/* Contact Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 pt-6">
-                {/* Call Button */}
+              <div className="mt-9 flex flex-col gap-4 sm:flex-row">
                 <a
                   href="tel:+918680804060"
-                  className="flex items-center gap-3 px-5 py-4 bg-[#283a89] text-white rounded-xl hover:bg-[#1e2a6d] transition-all duration-300 shadow-sm hover:shadow-md group min-w-[200px]"
+                  className="group flex items-center gap-4 rounded-full bg-[#1e3a8f] py-3 pl-4 pr-8 text-white shadow-[0_16px_36px_rgba(30,58,143,0.35)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#16306f]"
                 >
-                  <Phone className="w-5 h-5 flex-shrink-0" />
-                  <div className="text-left">
-                    <p className="text-sm font-semibold leading-tight">Call Now</p>
-                    <p className="text-xs opacity-90 whitespace-nowrap">+91-8680804060</p>
-                  </div>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/15">
+                    <Phone className="h-5 w-5" />
+                  </span>
+                  <span className="text-left">
+                    <span className="block text-sm font-bold">Call Us</span>
+                    <span className="block text-xs font-medium text-blue-200">+91 8680804060</span>
+                  </span>
                 </a>
 
-                {/* Email Button */}
                 <a
-                  href="mailto:cultivetech@gmail.com"
-                  className="flex items-center gap-3 px-5 py-4 bg-[#fbb040] text-white rounded-xl hover:bg-[#e09d35] transition-all duration-300 shadow-sm hover:shadow-md group min-w-[200px]"
+                  href="mailto:connect@cultive.in"
+                  className="group flex items-center gap-4 rounded-full bg-[#f5a41d] py-3 pl-4 pr-8 text-white shadow-[0_16px_36px_rgba(245,164,29,0.4)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#e8940a]"
                 >
-                  <Mail className="w-5 h-5 flex-shrink-0" />
-                  <div className="text-left">
-                    <p className="text-sm font-semibold leading-tight">Email Us</p>
-                    <p className="text-xs opacity-90">connect@cultive.in</p>
-                  </div>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/20">
+                    <Mail className="h-5 w-5" />
+                  </span>
+                  <span className="text-left">
+                    <span className="block text-sm font-bold">Email Us</span>
+                    <span className="block text-xs font-medium text-amber-100">connect@cultive.in</span>
+                  </span>
                 </a>
-
-                {/* WhatsApp Button */}
-                <button
-                  onClick={openWhatsApp}
-                  className="flex items-center gap-3 px-5 py-4 bg-[#25D366] text-white rounded-xl hover:bg-[#20c558] transition-all duration-300 shadow-sm hover:shadow-md group min-w-[200px]"
-                >
-                  <MessageCircle className="w-5 h-5 flex-shrink-0" />
-                  <div className="text-left">
-                    <p className="text-sm font-semibold leading-tight">WhatsApp</p>
-                    <p className="text-xs opacity-90">24/7 Support</p>
-                  </div>
-                </button>
               </div>
             </div>
 
-            {/* Right Content - Contact Image */}
+            {/* Right Content - Blob image + floating message card */}
             <div className="relative animate-slide-right">
-              <div className="relative">
-                <img
-                  src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="Contact Us - Customer Support Team"
-                  className="w-full h-[400px] object-cover rounded-2xl shadow-2xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#283a89]/20 to-transparent rounded-2xl"></div>
+              <span className="absolute -top-8 right-8 h-44 w-44 rounded-full bg-[#dbeafe]" aria-hidden="true" />
+              <span className="absolute -bottom-10 right-40 h-36 w-36 rounded-full bg-[#fde9cf] blur-md" aria-hidden="true" />
 
-                {/* Floating Elements */}
-                <div className="absolute -top-3 -left-6 w-20 h-20 bg-[#fbb040] rounded-2xl flex items-center justify-center animate-float shadow-lg">
-                  <Sparkles className="w-12 h-12 text-white" />
-                </div>
+              <img
+                src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Contact Us - Our team is here to help"
+                className="relative h-[420px] w-full object-cover shadow-[0_30px_70px_rgba(30,58,143,0.25)] lg:h-[460px]"
+                style={{ borderRadius: "52% 48% 40% 60% / 58% 46% 54% 42%" }}
+              />
 
-                <div
-                  className="absolute -bottom-6 -right-6 w-20 h-20 bg-[#283a89] rounded-2xl flex items-center justify-center animate-float shadow-lg"
-                  style={{ animationDelay: "2s" }}
-                >
-                  <Heart className="w-12 h-12 text-white" />
-                </div>
-              </div>
+              {/* Dotted pattern */}
+              <span
+                className="absolute -bottom-8 -right-4 h-24 w-32"
+                style={{
+                  backgroundImage: "radial-gradient(rgba(30,58,143,0.28) 1.6px, transparent 1.6px)",
+                  backgroundSize: "14px 14px",
+                }}
+                aria-hidden="true"
+              />
+
+
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact Form & Information Section */}
-      <section className="py-16 bg-white relative">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center mb-12 animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#fbb040] bg-opacity-10 text-[#283a89] rounded-full text-sm font-medium mb-4 border border-[#fbb040] border-opacity-30">
-              <Send className="w-4 h-4" />
-              Send us a Message
+      <section className="relative bg-white py-20">
+        <div className="mx-auto max-w-[92rem] px-6">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#0c1a45] via-[#15306e] to-[#1e3a8f] shadow-[0_40px_90px_rgba(10,20,60,0.45)]">
+            {/* Pattern + glow overlays */}
+            <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+              <div className="absolute inset-0 opacity-40 [background-image:radial-gradient(rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:22px_22px]" />
+              <div
+                className="absolute inset-y-0 right-0 w-1/3 [mask-image:linear-gradient(to_left,black_35%,transparent)]"
+                style={{ backgroundImage: "repeating-linear-gradient(135deg, rgba(255,255,255,0.1) 0 2px, transparent 2px 16px)" }}
+              />
+              <div className="absolute -left-24 -top-28 h-80 w-80 rounded-full bg-[#4e77da]/25 blur-3xl" />
+              <div className="absolute -bottom-28 left-1/3 h-72 w-72 rounded-full bg-[#8b5cf6]/20 blur-3xl" />
+              <div className="absolute -right-16 top-0 h-64 w-64 rounded-full bg-[#f5a41d]/15 blur-3xl" />
             </div>
-            <h2 className="text-3xl font-bold mb-4 text-[#283a89]">Ready to Get Started?</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Fill out the form below and we'll get back to you within 24 hours with a customized solution for your
-              needs.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Contact Form */}
-            <div className="lg:col-span-1">
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover-lift max-w-lg mx-auto">
+            <div className="relative z-10 grid gap-10 p-7 sm:p-10 lg:grid-cols-[1fr_1.15fr] lg:gap-12 lg:p-14">
+              {/* Info side */}
+              <div className="flex flex-col">
+                <span className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.28em] text-[#fbb040]">
+                  <span className="h-0.5 w-8 bg-[#fbb040]" aria-hidden="true" />
+                  Get in Touch
+                </span>
+                <h2 className="mt-5 font-serif text-4xl font-bold leading-[1.1] text-white sm:text-5xl">
+                  Ready to Get{" "}
+                  <span className="bg-gradient-to-r from-[#fbb040] to-[#f5a41d] bg-clip-text text-transparent">
+                    Started?
+                  </span>
+                </h2>
+                <p className="mt-5 max-w-md text-base leading-8 text-blue-200/80">
+                  Tell us about your goals and our team will get back to you within 24 hours with a customized
+                  solution.
+                </p>
+
+                <div className="mt-9 space-y-4">
+                  <a
+                    href="tel:+918680804060"
+                    className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition duration-300 hover:bg-white/10"
+                  >
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#f5a41d] shadow-[0_10px_24px_rgba(245,164,29,0.4)]">
+                      <Phone className="h-5 w-5 text-white" />
+                    </span>
+                    <span>
+                      <span className="block text-sm font-bold text-white">Call Us</span>
+                      <span className="block text-sm text-blue-200/80">+91 8680804060</span>
+                    </span>
+                  </a>
+                  <a
+                    href="mailto:connect@cultive.in"
+                    className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition duration-300 hover:bg-white/10"
+                  >
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#4e77da] shadow-[0_10px_24px_rgba(78,119,218,0.4)]">
+                      <Mail className="h-5 w-5 text-white" />
+                    </span>
+                    <span>
+                      <span className="block text-sm font-bold text-white">Email Us</span>
+                      <span className="block text-sm text-blue-200/80">connect@cultive.in</span>
+                    </span>
+                  </a>
+                  <a
+                    href="https://www.google.com/maps/dir//Pallavaram,+Chennai,+Tamil+Nadu/@12.9675,80.1491,13z"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition duration-300 hover:bg-white/10"
+                  >
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#8b5cf6] shadow-[0_10px_24px_rgba(139,92,246,0.4)]">
+                      <MapPin className="h-5 w-5 text-white" />
+                    </span>
+                    <span>
+                      <span className="block text-sm font-bold text-white">Visit Our Office</span>
+                      <span className="block text-sm text-blue-200/80">Pallavaram, Chennai, Tamil Nadu</span>
+                    </span>
+                  </a>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-blue-100">
+                    <Clock className="h-4 w-4 text-[#fbb040]" aria-hidden="true" />
+                    Mon – Sat · 9:00 AM – 6:00 PM
+                  </span>
+                  <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-blue-100">
+                    <Building className="h-4 w-4 text-[#fbb040]" aria-hidden="true" />
+                    Educational Solutions Center
+                  </span>
+                </div>
+
+                {/* Mini map */}
+                <div className="relative mt-8 overflow-hidden rounded-2xl border border-white/10">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124418.12345!2d80.1491!3d12.9675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d624a2a6b8d%3A0x5c5b9b6b7b8b9b8b!2sPallavaram%2C+Chennai%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1234567890"
+                    width="100%"
+                    height="176"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Cultive office location"
+                  ></iframe>
+                </div>
+              </div>
+
+              {/* Form card */}
+              <div className="rounded-[2rem] border border-slate-100 bg-white p-6 shadow-[0_30px_70px_rgba(0,0,0,0.35)] sm:p-8">
+                <h3 className="font-serif text-2xl font-bold text-[#1e3a8f]">Send us a Message</h3>
+                <p className="mt-1 text-sm text-slate-500">We&rsquo;ll get back to you within 24 hours.</p>
                 {submitSuccess && (
-                  <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center">
+                  <div className="mt-5 mb-5 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
                     <div>
                       <p className="text-green-800 font-semibold text-sm">Message sent successfully!</p>
@@ -326,225 +411,132 @@ const Contact = () => {
                 )}
 
                 {submitError && (
-                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
+                  <div className="mt-5 mb-5 p-4 bg-red-50 border border-red-200 rounded-xl">
                     <p className="text-red-800 text-sm">{submitError}</p>
                   </div>
                 )}
 
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-semibold text-[#283a89] mb-2">Full Name *</label>
+                <div className="mt-6 space-y-4">
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <label className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50/60 px-4 py-3 transition focus-within:border-[#f5a41d] focus-within:ring-2 focus-within:ring-[#f5a41d]/20">
+                      <User className="h-4 w-4 shrink-0 text-[#1e3a8f]/50" aria-hidden="true" />
                       <input
                         type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#fbb040] focus:border-[#fbb040] transition-all duration-300 text-sm"
-                        placeholder="Enter your full name"
+                        placeholder="Full Name *"
+                        className="w-full bg-transparent text-sm font-medium text-slate-700 placeholder-slate-400 focus:outline-none"
                       />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-[#283a89] mb-2">Email Address *</label>
+                    </label>
+                    <label className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50/60 px-4 py-3 transition focus-within:border-[#f5a41d] focus-within:ring-2 focus-within:ring-[#f5a41d]/20">
+                      <Mail className="h-4 w-4 shrink-0 text-[#1e3a8f]/50" aria-hidden="true" />
                       <input
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#fbb040] focus:border-[#fbb040] transition-all duration-300 text-sm"
-                        placeholder="Enter your email"
+                        placeholder="Email Address *"
+                        className="w-full bg-transparent text-sm font-medium text-slate-700 placeholder-slate-400 focus:outline-none"
                       />
-                    </div>
+                    </label>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-semibold text-[#283a89] mb-2">School/Institution</label>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <label className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50/60 px-4 py-3 transition focus-within:border-[#f5a41d] focus-within:ring-2 focus-within:ring-[#f5a41d]/20">
+                      <Building className="h-4 w-4 shrink-0 text-[#1e3a8f]/50" aria-hidden="true" />
                       <input
                         type="text"
                         name="company"
                         value={formData.company}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#fbb040] focus:border-[#fbb040] transition-all duration-300 text-sm"
-                        placeholder="Your school/institution"
+                        placeholder="School / Institution"
+                        className="w-full bg-transparent text-sm font-medium text-slate-700 placeholder-slate-400 focus:outline-none"
                       />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-[#283a89] mb-2">Phone Number</label>
+                    </label>
+                    <label className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50/60 px-4 py-3 transition focus-within:border-[#f5a41d] focus-within:ring-2 focus-within:ring-[#f5a41d]/20">
+                      <Phone className="h-4 w-4 shrink-0 text-[#1e3a8f]/50" aria-hidden="true" />
                       <input
                         type="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#fbb040] focus:border-[#fbb040] transition-all duration-300 text-sm"
-                        placeholder="+91 XXXXX XXXXX"
+                        placeholder="Phone Number"
+                        className="w-full bg-transparent text-sm font-medium text-slate-700 placeholder-slate-400 focus:outline-none"
                       />
+                    </label>
+                  </div>
+
+                  <div className="relative">
+                    <select
+                      name="service"
+                      value={formData.service}
+                      onChange={handleInputChange}
+                      required={false}
+                      className="w-full appearance-none rounded-xl border border-slate-200 bg-slate-50/60 px-4 py-3 pr-10 text-sm font-medium text-slate-700 transition focus:border-[#f5a41d] focus:outline-none focus:ring-2 focus:ring-[#f5a41d]/20"
+                    >
+                      <option value="" disabled>
+                        Service Interest
+                      </option>
+                      <option value="iep">Individualized Education Plans (IEPs)</option>
+                      <option value="curriculum">Curriculum Development</option>
+                      <option value="counseling">Psychological Counseling</option>
+                      <option value="technology">Educational Technology</option>
+                      <option value="training">Soft Skills Training</option>
+                      <option value="career">Career Counseling</option>
+                      <option value="sis">Student Information Systems</option>
+                      <option value="custom">Custom Solutions</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4">
+                      <svg className="h-4 w-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-semibold text-[#283a89] mb-2">Service Interest</label>
-                    <div className="relative">
-                      <select
-                        name="service"
-                        value={formData.service}
-                        onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#fbb040] focus:border-[#fbb040] transition-all duration-300 appearance-none bg-white text-sm"
-                        required={false}
-                      >
-                        <option value="" disabled>
-                          Select a service
-                        </option>
-                        <option value="iep">Individualized Education Plans (IEPs)</option>
-                        <option value="curriculum">Curriculum Development</option>
-                        <option value="counseling">Psychological Counseling</option>
-                        <option value="technology">Educational Technology</option>
-                        <option value="training">Soft Skills Training</option>
-                        <option value="career">Career Counseling</option>
-                        <option value="sis">Student Information Systems</option>
-                        <option value="custom">Custom Solutions</option>
-                      </select>
-                      <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-[#283a89] mb-2">Subject *</label>
+                  <label className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50/60 px-4 py-3 transition focus-within:border-[#f5a41d] focus-within:ring-2 focus-within:ring-[#f5a41d]/20">
+                    <MessageSquare className="h-4 w-4 shrink-0 text-[#1e3a8f]/50" aria-hidden="true" />
                     <input
                       type="text"
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#fbb040] focus:border-[#fbb040] transition-all duration-300 text-sm"
-                      placeholder="What can we help you with?"
+                      placeholder="Subject *"
+                      className="w-full bg-transparent text-sm font-medium text-slate-700 placeholder-slate-400 focus:outline-none"
                     />
-                  </div>
+                  </label>
 
-                  <div>
-                    <label className="block text-sm font-semibold text-[#283a89] mb-2">Message *</label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows="4"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#fbb040] focus:border-[#fbb040] transition-all duration-300 resize-none text-sm"
-                      placeholder="Tell us about your project and goals..."
-                    ></textarea>
-                  </div>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows="4"
+                    placeholder="Tell us about your project and goals... *"
+                    className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-sm font-medium text-slate-700 placeholder-slate-400 transition focus:border-[#f5a41d] focus:outline-none focus:ring-2 focus:ring-[#f5a41d]/20"
+                  ></textarea>
 
                   <button
                     type="button"
                     onClick={handleSubmit}
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-[#283a89] to-[#1e2a6d] text-white font-semibold py-3 px-6 rounded-lg hover:from-[#1e2a6d] hover:to-[#283a89] transform hover:scale-[1.02] hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                    className="flex w-full items-center justify-center gap-2 rounded-full bg-[#f5a41d] py-4 text-sm font-bold text-white shadow-[0_14px_30px_rgba(245,164,29,0.4)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#e8940a] disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                        <span className="text-sm">Sending...</span>
+                        <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+                        <span>Sending...</span>
                       </>
                     ) : (
                       <>
-                        <Send className="w-4 h-4" />
-                        <span className="text-sm">Send Message</span>
+                        <Send className="h-4 w-4" aria-hidden="true" />
+                        <span>Send Message</span>
                       </>
                     )}
                   </button>
-                </div>
-              </div>
-            </div>
-            {/* Google Map & Office Information Section */}
-            <div className="space-y-6 lg:col-span-1">
-              {/* Google Map */}
-              <div className="bg-white rounded-xl shadow-lg border border-gray-100 hover-lift overflow-hidden">
-                <div className="p-6 pb-0">
-                  <h3 className="text-xl font-bold text-[#283a89] mb-4">Visit Our Office</h3>
-                  <p className="text-gray-600 text-sm mb-4">Click on the map to get directions to our Chennai office</p>
-                </div>
-
-                <div
-                  className="relative group cursor-pointer"
-                  onClick={() =>
-                    window.open(
-                      "https://www.google.com/maps/dir//Pallavaram,+Chennai,+Tamil+Nadu/@12.9675,80.1491,13z",
-                      "_blank"
-                    )
-                  }
-                >
-                  <div className="h-64 bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden">
-                    {/* Map Container */}
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124418.12345!2d80.1491!3d12.9675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d624a2a6b8d%3A0x5c5b9b6b7b8b9b8b!2sPallavaram%2C+Chennai%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1234567890"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen=""
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="transition-all duration-300 group-hover:scale-105"
-                    ></iframe>
-
-                    {/* Overlay with direction hint */}
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                      <div className="bg-white bg-opacity-0 group-hover:bg-opacity-95 text-transparent group-hover:text-[#283a89] px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-2">
-                        <MapPin className="w-5 h-5" />
-                        <span className="font-semibold">Get Directions</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Address Details */}
-                <div className="p-6 pt-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 bg-[#fbb040] rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-[#283a89] mb-1">Our Location</p>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        Pallavaram, Chennai
-                        <br />
-                        Tamil Nadu, India
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Office Information */}
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover-lift">
-                <h3 className="text-xl font-bold text-[#283a89] mb-6">Office Details</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 bg-[#283a89] rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-[#283a89] mb-1">Business Hours</p>
-                      <p className="text-gray-600 text-sm">Monday - Saturday</p>
-                      <p className="text-gray-600 text-sm">9:00 AM - 6:00 PM</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 bg-[#fbb040] rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Building className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-[#283a89] mb-1">Office Type</p>
-                      <p className="text-gray-600 text-sm">Educational Solutions Center</p>
-                      <p className="text-gray-600 text-sm">Consultation & Support Hub</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

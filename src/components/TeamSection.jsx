@@ -7,7 +7,6 @@ import hycinth from "../assets/hycinth.jpg";
 import jabez from "../assets/jabez.jpg";
 import bhuvi from "../assets/bhuvi.png";
 import Anand from "../assets/AnandDavid.jpeg"
-import Ganesh from "../assets/Ganesh.jpeg"
 import jayanthi from "../assets/jayanthi.jpeg"
 
 import { useEffect } from "react";
@@ -154,113 +153,36 @@ export default function TeamSection() {
       style={{
         width: "100%",
         padding: "100px 5%",
-        background: "linear-gradient(180deg, #1e293b 0%, #334155 50%, #475569 100%)",
+        background: "#f7f9fd",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Modern Geometric Pattern Background */}
+      {/* Soft pastel blobs */}
       <div
         style={{
           position: "absolute",
-          inset: 0,
-          backgroundImage: `
-            radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
-            linear-gradient(rgba(148, 163, 184, 0.02) 1.5px, transparent 1.5px),
-            linear-gradient(90deg, rgba(148, 163, 184, 0.02) 1.5px, transparent 1.5px)
-          `,
-          backgroundSize: "100% 100%, 100% 100%, 60px 60px, 60px 60px",
-          opacity: 0.8,
-        }}
-      />
-
-      {/* Diagonal Lines Pattern */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(148, 163, 184, 0.015) 35px, rgba(148, 163, 184, 0.015) 70px)",
-        }}
-      />
-
-      {/* Animated Background Elements */}
-      <div
-        style={{
-          position: "absolute",
-          top: "10%",
-          left: "5%",
-          width: "400px",
-          height: "400px",
+          top: "8%",
+          left: "-4%",
+          width: "340px",
+          height: "340px",
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(59, 130, 246, 0.12), transparent 70%)",
-          filter: "blur(60px)",
-          animation: "float 20s ease-in-out infinite",
+          background: "#eaf1fb",
+          opacity: 0.7,
+          pointerEvents: "none",
         }}
       />
       <div
         style={{
           position: "absolute",
-          bottom: "15%",
-          right: "10%",
-          width: "350px",
-          height: "350px",
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(168, 85, 247, 0.1), transparent 70%)",
-          filter: "blur(60px)",
-          animation: "float 25s ease-in-out infinite reverse",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          right: "20%",
+          bottom: "12%",
+          right: "-5%",
           width: "300px",
           height: "300px",
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(236, 72, 153, 0.08), transparent 70%)",
-          filter: "blur(50px)",
-          animation: "float 18s ease-in-out infinite",
-        }}
-      />
-
-      {/* Decorative Geometric Shapes */}
-      <div
-        style={{
-          position: "absolute",
-          top: "15%",
-          right: "12%",
-          width: "120px",
-          height: "120px",
-          background: "linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(59, 130, 246, 0.08))",
-          clipPath: "polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)",
-          animation: "float 22s ease-in-out infinite",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          bottom: "20%",
-          left: "8%",
-          width: "100px",
-          height: "100px",
-          background: "linear-gradient(135deg, rgba(236, 72, 153, 0.05), rgba(249, 115, 22, 0.06))",
-          clipPath: "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
-          animation: "float 28s ease-in-out infinite reverse",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          top: "40%",
-          left: "5%",
-          width: "80px",
-          height: "80px",
-          background: "linear-gradient(135deg, rgba(34, 211, 238, 0.06), rgba(59, 130, 246, 0.04))",
-          borderRadius: "20px",
-          transform: "rotate(25deg)",
-          animation: "float 20s ease-in-out infinite",
+          background: "#fbf1dd",
+          opacity: 0.7,
+          pointerEvents: "none",
         }}
       />
 
@@ -268,15 +190,17 @@ export default function TeamSection() {
       <div style={{ textAlign: "center", marginBottom: 80, position: "relative" }}>
         <div
           style={{
-            display: "inline-block",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 12,
             padding: "8px 20px",
-            background: "linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(59, 130, 246, 0.15))",
-            border: "1px solid rgba(99, 102, 241, 0.3)",
+            background: "#eef3fb",
+            border: "1px solid #dbe4f2",
             borderRadius: "999px",
-            color: "#a5b4fc",
-            fontSize: "14px",
+            color: "#2445a0",
+            fontSize: "12px",
             fontWeight: "700",
-            letterSpacing: "0.5px",
+            letterSpacing: "2.5px",
             marginBottom: "20px",
             textTransform: "uppercase",
           }}
@@ -286,11 +210,9 @@ export default function TeamSection() {
         <h2
           style={{
             fontSize: 56,
-            fontWeight: 900,
+            fontWeight: 700,
             letterSpacing: "-1.5px",
-            background: "linear-gradient(135deg, #ffffff, #e0e7ff)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
+            color: "#1c3d8f",
             marginBottom: 18,
           }}
         >
@@ -298,7 +220,7 @@ export default function TeamSection() {
         </h2>
         <p
           style={{
-            color: "#cbd5e1",
+            color: "#536987",
             maxWidth: 640,
             margin: "0 auto",
             fontSize: 18,
@@ -330,7 +252,7 @@ export default function TeamSection() {
                 background: "rgba(255, 255, 255, 0.95)",
                 backdropFilter: "blur(20px)",
                 border: "1px solid rgba(226, 232, 240, 0.8)",
-                boxShadow: "0 10px 40px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1)",
+                boxShadow: "0 10px 35px rgba(24, 58, 130, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04)",
                 transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
               }}
               onMouseEnter={(e) => {
@@ -340,7 +262,7 @@ export default function TeamSection() {
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0) scale(1)";
-                e.currentTarget.style.boxShadow = "0 10px 40px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1)";
+                e.currentTarget.style.boxShadow = "0 10px 35px rgba(24, 58, 130, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04)";
                 e.currentTarget.style.borderColor = "rgba(226, 232, 240, 0.8)";
               }}
             >
